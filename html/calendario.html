@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>UNIMAP - Calendario Escolar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="icon" href="data:image/x-icon;base64,AAABAAMAAQ=="> <!-- Favicon vacío para evitar error 404 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+        
+        .header {
+            padding: 12px 15px;
+            background-color: #2c3e50;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 100;
+            text-align: center;
+        }
+        
+        .toolbar {
+            display: flex;
+            padding: 8px;
+            background: #f1f1f1;
+            border-bottom: 1px solid #ddd;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .toolbar button {
+            padding: 8px 16px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        
+        #viewerContainer {
+            flex: 1;
+            width: 100%;
+            overflow: auto;
+            background-color: #525659;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        canvas {
+            display: block;
+            margin: 10px auto;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+            max-width: 100%;
+        }
+        
+        .error-message {
+            text-align: center;
+            padding: 20px;
+            color: red;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.1rem;
+            }
+            
+            .toolbar button {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
+            canvas {
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Calendario Escolar 2024-2025</h1>
+    </div>
+    
+    <div class="toolbar">
+        <button id="prev">Anterior</button>
+        <button id="next">Siguiente</button>
+        <button id="zoomIn">+ Zoom</button>
+        <button id="zoomOut">- Zoom</button>
+        <button id="fitWidth">Ajustar ancho</button>
+        <span id="pageNum">Página 1 de 1</span>
+    </div>
+    
+    <div id="viewerContainer">
+        <canvas id="pdfCanvas"></canvas>
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+    </div>
+
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.min.js" defer></script>
+    
+    <script>
+        // Esperar a que PDF.js esté cargado
+        function initPDFViewer() {
+            if (typeof pdfjsLib === 'undefined') {
+                document.getElementById('errorMessage').textContent = 'Error: No se pudo cargar la biblioteca PDF.js. Verifica tu conexión a internet o intenta de nuevo.';
+                document.getElementById('errorMessage').style.display = 'block';
+                return;
+            }
+
+            // Configuración de PDF.js
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.7.76/pdf.worker.min.js';
+            
+            let pdfDoc = null,
+                pageNum = 1,
+                pageRendering = false,
+                pageNumPending = null,
+                scale = 1.0; // Escala inicial ajustada para móviles
+            
+            const canvas = document.getElementById('pdfCanvas');
+            const ctx = canvas.getContext('2d');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // URL del PDF
+            const originalPdfUrl = 'https://www.unacar.mx/control_escolar/Documentos/calendario_escolar/2024-2025/TE_MEDIO_SUPERIOR.pdf';
+            const proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(originalPdfUrl);
+            
+            // Función para mostrar errores
+            function showError(message) {
+                errorMessage.textContent = message;
+                errorMessage.style.display = 'block';
+                errorMessage.innerHTML += `<br><a href="${originalPdfUrl}" download style="color: blue;">Descargar PDF directamente</a>`;
+            }
+            
+            // Cargar PDF
+            function loadPdf(url) {
+                pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+                    pdfDoc = pdfDoc_;
+                    document.getElementById('pageNum').textContent = `Página 1 de ${pdfDoc.numPages}`;
+                    adjustScaleForMobile();
+                    renderPage(pageNum);
+                }).catch(function(error) {
+                    console.error('Error al cargar PDF:', error);
+                    showError('Error al cargar el PDF: ' + error.message);
+                });
+            }
+            
+            // Ajustar escala para dispositivos móviles
+            function adjustScaleForMobile() {
+                if (window.innerWidth <= 768) {
+                    const containerWidth = document.getElementById('viewerContainer').clientWidth;
+                    pdfDoc.getPage(pageNum).then(function(page) {
+                        const viewport = page.getViewport({ scale: 1 });
+                        scale = (containerWidth - 20) / viewport.width;
+                        queueRenderPage(pageNum);
+                    });
+                }
+            }
+            
+            // Renderizar página
+            function renderPage(num) {
+                pageRendering = true;
+                
+                pdfDoc.getPage(num).then(function(page) {
+                    const viewport = page.getViewport({ scale: scale });
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport
+                    };
+                    
+                    const renderTask = page.render(renderContext);
+                    
+                    renderTask.promise.then(function() {
+                        pageRendering = false;
+                        if (pageNumPending !== null) {
+                            renderPage(pageNumPending);
+                            pageNumPending = null;
+                        }
+                        
+                        document.getElementById('pageNum').textContent = `Página ${num} de ${pdfDoc.numPages}`;
+                    }).catch(function(error) {
+                        console.error('Error al renderizar página:', error);
+                        showError('Error al renderizar la página: ' + error.message);
+                    });
+                });
+            }
+            
+            // Controladores de botones
+            document.getElementById('prev').addEventListener('click', function() {
+                if (pageNum <= 1) return;
+                pageNum--;
+                queueRenderPage(pageNum);
+            });
+            
+            document.getElementById('next').addEventListener('click', function() {
+                if (pageNum >= pdfDoc.numPages) return;
+                pageNum++;
+                queueRenderPage(pageNum);
+            });
+            
+            document.getElementById('zoomIn').addEventListener('click', function() {
+                scale += 0.2;
+                queueRenderPage(pageNum);
+            });
+            
+            document.getElementById('zoomOut').addEventListener('click', function() {
+                if (scale <= 0.3) return;
+                scale -= 0.2;
+                queueRenderPage(pageNum);
+            });
+            
+            document.getElementById('fitWidth').addEventListener('click', function() {
+                const containerWidth = document.getElementById('viewerContainer').clientWidth;
+                pdfDoc.getPage(pageNum).then(function(page) {
+                    const viewport = page.getViewport({ scale: 1 });
+                    scale = (containerWidth - 20) / viewport.width;
+                    queueRenderPage(pageNum);
+                });
+            });
+            
+            function queueRenderPage(num) {
+                if (pageRendering) {
+                    pageNumPending = num;
+                } else {
+                    renderPage(num);
+                }
+            }
+            
+            // Detectar cambios de orientación o tamaño de ventana
+            window.addEventListener('resize', adjustScaleForMobile);
+            
+            // Iniciar carga del PDF
+            loadPdf(proxyUrl);
+        }
+
+        // Esperar a que el script de PDF.js se cargue
+        document.querySelector('script[src*="pdf.min.js"]').addEventListener('load', initPDFViewer);
+        document.querySelector('script[src*="pdf.min.js"]').addEventListener('error', function() {
+            document.getElementById('errorMessage').textContent = 'Error: No se pudo cargar la biblioteca PDF.js. Verifica tu conexión a internet o intenta de nuevo.';
+            document.getElementById('errorMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

@@ -61,7 +61,7 @@ p, h2 {
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 5px;
-    height: 70px;
+    height: 60px;
     width: auto;
     /*background-color: rgb(131, 126, 126);*/
     background-color:rgb(0, 51, 102);
@@ -203,7 +203,7 @@ p, h2 {
 .container3,
 .aboutme, .containerinf {
     width: auto;
-    height: 60px;
+    height: 50px;
     margin: 10px;
     text-align: left;
     display: flex;
@@ -236,7 +236,7 @@ p, h2 {
     .container3,
     .aboutme, .containerinf{
         width: auto;
-        height: 70px;
+        height: 60px;
         flex-direction: column;
         margin: 5px;
         flex-shrink: 0; /* Prevent shrinking */
@@ -291,7 +291,7 @@ a.btn:hover, .container3 .fab:hover {
 }
 
 #searchForm select, #searchForm input[type="number"], #searchForm input[type="file"] {
-    width: 100%;
+    width: 50%;
     padding: 0.4rem;
     border-radius: 6px;
     transition: border-color 0.3s ease;
@@ -343,7 +343,7 @@ a.btn:hover, .container3 .fab:hover {
     background-color: white;
     border-radius: 10px;
     width: auto; 
-    max-width: 1200px;
+    max-width: auto;
     height: auto;
     padding: 0px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -617,7 +617,7 @@ tr:nth-child(even) td {
     }
     
     .supercontainer {
-        height: 70px;
+        height: 60px;
     }
     .inisesion {
         top: 90px;
@@ -872,9 +872,9 @@ body.menu-no-scroll {
 
 #location-controls {
     position: fixed;
-    left: 20px;
-    top: 30%;
-    bottom: 55px;
+    left: 8px;
+    top: 25%;
+    bottom: 25px;
     width: 300px;
     max-height: auto;
     background: rgba(255, 255, 255, 0.95);
@@ -980,7 +980,7 @@ body.menu-no-scroll {
     #location-controls {
         right: 30%;
         width: auto;
-        left: 20px;
+        left: 8px;
     }
     .building-section h3 {
         font-size: 1.0em;

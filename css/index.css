@@ -64,10 +64,10 @@ p, h2 {
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 5px;
-    height: 70px;
+    height: 60px;
     width: auto;
     background-color: rgb(0, 51, 102);
-    border-radius: 10px;
+    border-radius: 35px;
 }
 /* -----------------------------------------Botón del menú hamburguesa---------------------------*/
 
@@ -111,10 +111,10 @@ p, h2 {
     display: flex;
     position: absolute;
     top: 60px;
-    right: 0px;
+    right: -10px;
     bottom: auto;
     border-radius: 5px;
-    padding: 6px;
+    padding: 5px;
     flex-direction: column;
     z-index: 3;
     background-color: #00000000;
@@ -165,11 +165,12 @@ p, h2 {
     width: 45px;
     height: 45px;
     margin: 2px;
+    margin-left: 5px;
 }
 
 #logoweb img {
     width: 100%;
-    margin-left: 4px;
+    margin-left: 5px;
     height: auto;
     transition: transform 0.3s ease;
 }
@@ -211,7 +212,7 @@ p, h2 {
 .container3,
 .aboutme {
     min-width: auto ; /* Fixed width to prevent shrinking */
-    height: 60px; /* Fixed height */
+    height: 50px; /* Fixed height */
     margin: 10px;
     text-align: left;
     display: flex;
@@ -244,10 +245,10 @@ p, h2 {
     .container2,
     .container3,
     .aboutme {
-        min-width: auto; /* Maintain fixed width */
+        width: auto; /* Maintain fixed width */
         height: 60px; /* Maintain fixed height */
-        margin: 10px;
-        flex-direction: row; /* Keep row direction for consistency */
+        margin: 5px;
+        flex-direction: column;/* Keep row direction for consistency */
         flex-shrink: 0; /* Prevent shrinking */
     }
 
@@ -292,24 +293,6 @@ a.btn:hover, .container3 .fab:hover {
     font-size: 18px;
 }
 
-/* Scrollbar styling for better appearance */
-.menu-container.active::-webkit-scrollbar {
-    width: 8px;
-}
-
-.menu-container.active::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-}
-
-.menu-container.active::-webkit-scrollbar-thumb {
-    background: #ffffff;
-    border-radius: 5px;
-}
-
-.menu-container.active::-webkit-scrollbar-thumb:hover {
-    background: #fbff00;
-}
 
 /*---Fin contenedor de barra-------------------------------------------------------------------------------------------------*/
 
@@ -317,22 +300,21 @@ a.btn:hover, .container3 .fab:hover {
 
 #map-container {
     position: absolute;
-    top: 85px;
-    left: 10px;
-    right: 10px;
-    bottom: 45px;
-    border: 2px solid #0000001c;
-    border-radius: 25px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    /*border: 2px solid #0000001c;
+    border-radius: 25px;*/
     box-sizing: border-box;
     overflow: hidden;
     box-shadow: 4px 4px 4px #888888, -4px -4px 10px #cccccc;
-    z-index: 1;
+    z-index: -10;
 }
   
   #map {
     height: 100%;
     width: 100%;
-    position: relative;
     will-change: transform;
   }
 
@@ -357,7 +339,7 @@ a.btn:hover, .container3 .fab:hover {
 /* Contenedor de los controles de zoom */
 .leaflet-control-zoom {
     position: absolute !important;
-    bottom: 12px !important; /* Posiciona en la parte inferior */
+    bottom: 15px !important; /* Posiciona en la parte inferior */
     right: 20px !important;  /* Posiciona en la parte derecha */
     top: auto !important;
     left: auto !important;
@@ -458,15 +440,15 @@ a.btn:hover, .container3 .fab:hover {
     justify-content: center; /* Centra horizontalmente */
     align-items: center; /* Centra verticalmente */
     text-align: center;
-    left: 5px;
-    right: 5px;
-    height: 30px;
-    bottom: 5px;
-    border-radius: 10px;
+    left: 0px;
+    right: 0px;
+    height: 20px;
+    bottom: 0px;
+    border-radius: 0px;
 }
 
 .barra p {
-    font-size: 16px;
+    font-size: 15px;
     margin: 0; /* Elimina márgenes que podrían desalinearlo */
 }
 
@@ -516,7 +498,7 @@ a.btn:hover, .container3 .fab:hover {
     }
     
     .supercontainer {
-        height: 70px;
+        height: 60px;
     }
     .inisesion{
     top: 90px;
@@ -525,7 +507,7 @@ a.btn:hover, .container3 .fab:hover {
     top: 110px;
     } 
     #map-container{
-        top: 85px;
+        top: 0px;
     }
 }
 
@@ -541,8 +523,8 @@ body.menu-no-scroll {
 /* Controles de ubicación */
 #guia-container {
     position: fixed;
-    left: 15px;
-    bottom: 55px;
+    left: 5px;
+    bottom: 25px;
     z-index: 20;
 }
 
@@ -565,10 +547,11 @@ body.menu-no-scroll {
 .palpitante2{
     position: absolute;
     border-radius: 50%;
-    left: 20px;
-    bottom: 32px;
+    background-color: #000;
+    left: 25px;
+    bottom: 45px;
     width: auto;
-    height: 48px;
+    height: 1px;
     z-index: 1;
 }
 
@@ -678,9 +661,9 @@ body.menu-no-scroll {
 
 #location-controls {
     position: fixed;
-    left: 20px;
-    top: 30%;
-    bottom: 55px;
+    left: 8px;
+    top: 25%;
+    bottom: 25px;
     width: 300px;
     max-height: auto;
     background: rgba(255, 255, 255, 0.95);
@@ -789,7 +772,7 @@ body.menu-no-scroll {
     #location-controls {
         right: 30%;
         width: auto;
-        left: 20px;
+        left: 8px;
     }
     .building-section h3 {
         font-size: 1.0em;
@@ -819,7 +802,7 @@ body.menu-no-scroll {
         font-size: 13px;
     }
 
-    @keyframes palpitante2 {
+       @keyframes palpitante2 {
         0%{
             transform: scale(0) translate(0px);
         }
@@ -890,7 +873,9 @@ body.menu-no-scroll {
             transform: scale(0)translateX(0);
         }
     }
+    
 }
+
 /*--movimiento del pin y popup al redireccion--------------------------------------------*/
 /* Contenedor interno para animaciones del pin */
 .marker-inner {
@@ -953,20 +938,20 @@ body.menu-no-scroll {
 /* Estilos para el panel de detalles de ubicación */
 #location-details {
     position: fixed;
-    left: 20px;
-    right: 20px;
-    bottom: 55px;
-    height: 50vh;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 65%;
     background: rgba(255, 255, 255, 0.95);
     padding: 15px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 20px 20px 0 0;
     box-shadow: 0 -2px 15px rgba(0,0,0,0.2);
     overflow-y: auto;
     transform: translateY(100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 21; /* Por encima de #location-controls */
+    z-index: 21;
 }
 
 #location-details.visible {
@@ -979,7 +964,7 @@ body.menu-no-scroll {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 24px;
+    font-size: 40px;
     color: #0040c9;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1023,11 +1008,6 @@ body.menu-no-scroll {
 }
 
 @media (max-width: 768px) {
-    #location-details {
-        left: 10px;
-        right: 10px;
-        height: 60vh; /* Ajuste para pantallas pequeñas */
-    }
 
     #location-details .photos img {
         width: 120px;

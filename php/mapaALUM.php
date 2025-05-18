@@ -71,7 +71,7 @@ if (!isset($_SESSION['alumno']) ||
                 <div class="containerinf2">
                     <div id="top-nav2" class="clearfix">
                         <nav class="fr2">
-                            <a class="btn" href="https://www.unacar.mx/control_escolar/calendario.html" target="_blank">Calendario Escolar</a>
+                            <a class="btn" href="../html/calendario.html" target="_blank">Calendario Escolar</a>
                         </nav>
                     </div>
                 </div>
