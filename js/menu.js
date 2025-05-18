@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     var menuToggle = document.getElementById('menu-toggle');
     var menuContainer = document.getElementById('menu-container');
@@ -59,8 +58,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-// Al abrir el menú
-document.body.classList.add('menu-no-scroll');
-
-// Al cerrar el menú
-document.body.classList.remove('menu-no-scroll');

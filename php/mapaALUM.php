@@ -1,12 +1,9 @@
 <?php
 session_start();
-
 $allowed = ['alumno']; // Solo acceso alumnos
-
 if (!isset($_SESSION['alumno']) || 
     !isset($_SESSION['alumno']['tipo']) || 
     !in_array($_SESSION['alumno']['tipo'], $allowed)) {
-    
     header("HTTP/1.1 403 Forbidden");
     echo "Acceso restringido a alumnos. Redirigiendo...";
     header("Refresh: 3; URL=iniciosesion.php");
