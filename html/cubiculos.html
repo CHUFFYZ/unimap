@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Cubículos de Profesores</title>
+    <link rel="stylesheet" href="../css/cubiculos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo-facultad">Cubículos de Profesores</h1>
+    </header>
+
+    <section id="introduccion">
+        <h2>Bienvenido al sistema de consulta de cubículos</h2>
+        <p>
+            En esta plataforma, podrás consultar la información de los profesores de las diferentes facultades de nuestra universidad. 
+            Cada profesor tiene asignado un cubículo donde puedes encontrarlo durante sus horas de atención. 
+            Además, algunos profesores tienen el rol de <strong>tutores</strong>, quienes brindan apoyo adicional a los estudiantes.
+        </p>
+        <p>
+            Selecciona una facultad en el menú desplegable y haz clic en "Consultar" para ver la lista de profesores y sus detalles.
+        </p>
+    </section>
+
+    <section id="seleccion-facultad">
+        <div class="selector-container">
+            <label for="facultad">Selecciona una facultad:</label>
+            <select id="facultad">
+                <option value="">-- Selecciona --</option>
+                <option value="FCI">Facultad de Ciencias de la Informacion</option>
+                <option value="FCEA">Facultad de Ciencias Economico Administrativas</option>
+                <option value="FQ">Facultad de Quimica</option>
+                <option value="FA">Facultad de Arquitectura</option>
+            </select>
+            <button onclick="mostrarGaleria()">
+                <i class="fas fa-search"></i> Consultar
+            </button>
+            <button onclick="recargarPagina()">
+                <i class="fas fa-sync-alt"></i> Recargar
+            </button>
+        </div>
+    </section>
+
+
+    <section id="galeria" class="hidden">
+        <a class="btn-volver" href="mapaALUM.html">
+            <i >Volver al Mapa</i>
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Universidad Autonoma del Carmen. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        
+        const profesores = {
+            FCI: [
+                { nombre: "Dr. Jose Angel Perez Rejon", edificio: "CTI", piso: "1", cubiculo: 101, horario:"7:00-16:00", tutor: true, imagen: "../image/docentes/perez-rejon.jpeg"  },
+                { nombre: "Ing. Alejandra Soto Valenzuela", edificio: "CTI", piso: "1",cubiculo: 102, horario:"7:00-16:00", tutor: false, imagen: "../image/docentes/soto-valenzuela.jpeg"  },
+                { nombre: "Dr. Jose Angel Perez Rejon", edificio: "CTI", piso: "1", cubiculo: 101, tutor: true, imagen: "../image/docentes/perez-rejon.jpeg"  },
+                { nombre: "Ing. Alejandra Soto Valenzuela", edificio: "CTI", piso: "1",cubiculo: 102, tutor: false, imagen: "../image/docentes/soto-valenzuela.jpeg"  },
+                { nombre: "Dr. Jose Angel Perez Rejon", edificio: "CTI", piso: "1", cubiculo: 101, tutor: true, imagen: "../image/docentes/perez-rejon.jpeg"  },
+                { nombre: "Ing. Alejandra Soto Valenzuela", edificio: "CTI", piso: "1",cubiculo: 102, tutor: false, imagen: "../image/docentes/soto-valenzuela.jpeg"  }
+                
+                
+
+            ],
+            FCEA: [
+                { nombre: "Ing. Patricia Zavaleta Carrillo", edificio: "CTI", piso: "2", cubiculo: 201, tutor: true, imagen: "../image/docentes/zavaleta-carrillo.jpeg" },
+                { nombre: "Dr. Juan Carlos Canto Rodriguez", edificio: "CTI", piso: "2", cubiculo: 202, tutor: false, imagen: "../image/docentes/canto-rodriguez.jpeg" },
+                { nombre: "Ing. Patricia Zavaleta Carrillo", edificio: "CTI", piso: "2", cubiculo: 201, tutor: true, imagen: "../image/docentes/zavaleta-carrillo.jpeg" },
+                { nombre: "Dr. Juan Carlos Canto Rodriguez", edificio: "CTI", piso: "2", cubiculo: 202, tutor: false, imagen: "../image/docentes/canto-rodriguez.jpeg" },
+                { nombre: "Ing. Patricia Zavaleta Carrillo", edificio: "CTI", piso: "2", cubiculo: 201, tutor: true, imagen: "../image/docentes/zavaleta-carrillo.jpeg" },
+                { nombre: "Dr. Juan Carlos Canto Rodriguez", edificio: "CTI", piso: "2", cubiculo: 202, tutor: false, imagen: "../image/docentes/canto-rodriguez.jpeg" }
+                
+                
+            ],
+            FQ: [
+                { nombre: "Dr. Jose Angel Perez Rejon", edificio: "CTI", piso: "1", cubiculo: 101, tutor: true, imagen: "../image/docentes/ingeniero.jpeg"  },
+                { nombre: "Ing. Alejandra Soto Valenzuela", edificio: "CTI", piso: "1",cubiculo: 102, tutor: false, imagen: "../image/docentes/hernandez-rosado.jpeg"  },
+                { nombre: "Dr. Jose Angel Perez Rejon", edificio: "CTI", piso: "1", cubiculo: 101, tutor: true, imagen: "../image/docentes/ingeniero.jpeg"  },
+                { nombre: "Ing. Alejandra Soto Valenzuela", edificio: "CTI", piso: "1",cubiculo: 102, tutor: false, imagen: "../image/docentes/hernandez-rosado.jpeg"  },
+                { nombre: "Dr. Jose Angel Perez Rejon", edificio: "CTI", piso: "1", cubiculo: 101, tutor: true, imagen: "../image/docentes/ingeniero.jpeg"  },
+                { nombre: "Ing. Alejandra Soto Valenzuela", edificio: "CTI", piso: "1",cubiculo: 102, tutor: false, imagen: "../image/docentes/hernandez-rosado.jpeg"  }
+                
+            ],
+            FA: [
+            { nombre: "Ing. Patricia Zavaleta Carrillo", edificio: "CTI", piso: "2", cubiculo: 201, tutor: true, imagen: "../image/docentes/zavaleta-carrillo.jpeg" },
+            { nombre: "Dr. Juan Carlos Canto Rodriguez", edificio: "CTI", piso: "2", cubiculo: 202, tutor: false, imagen: "../image/docentes/canto-rodriguez.jpeg" },
+            { nombre: "Ing. Patricia Zavaleta Carrillo", edificio: "CTI", piso: "2", cubiculo: 201, tutor: true, imagen: "../image/docentes/zavaleta-carrillo.jpeg" },
+            { nombre: "Dr. Juan Carlos Canto Rodriguez", edificio: "CTI", piso: "2", cubiculo: 202, tutor: false, imagen: "../image/docentes/canto-rodriguez.jpeg" },
+            { nombre: "Ing. Patricia Zavaleta Carrillo", edificio: "CTI", piso: "2", cubiculo: 201, tutor: true, imagen: "../image/docentes/zavaleta-carrillo.jpeg" },
+            { nombre: "Dr. Juan Carlos Canto Rodriguez", edificio: "CTI", piso: "2", cubiculo: 202, tutor: false, imagen: "../image/docentes/canto-rodriguez.jpeg" },
+            ]
+        };
+
+        function mostrarGaleria() {
+            const facultad = document.getElementById('facultad').value;
+            const titulo = document.getElementById('titulo-facultad');
+            const galeria = document.getElementById('galeria');
+            const introduccion = document.getElementById('introduccion');
+
+            
+            titulo.textContent = `Cubículos de Profesores - ${facultad.charAt(0).toUpperCase() + facultad.slice(1)}`;
+
+            galeria.innerHTML = '<a class="btn-volver" href="mapaALUM.html"><i >Volver al Mapa</i> </a>';
+
+            const profesoresFacultad = profesores[facultad];
+
+            profesoresFacultad.forEach(profesor => {
+                const profesorHTML = `
+                    <div class="profesor">
+                        <img src="${profesor.imagen}" alt="${profesor.nombre}">
+                        <div class="info">
+                            <p><strong>Nombre:</strong> ${profesor.nombre}</p>
+                            <p><strong>Edificio:</strong> ${profesor.edificio}</p>
+                            <p><strong>Piso:</strong> ${profesor.piso}</p>
+                            <p><strong>Cubículo:</strong> ${profesor.cubiculo}</p>
+                            <p><strong>Horario:</strong> ${profesor.horario}</p>
+                            <p><strong>Tutor:</strong> ${profesor.tutor ? '<span class="tutor">Sí</span>' : '<span class="no-tutor">No</span>'}</p>
+                        </div>
+                    </div>
+                `;
+                galeria.innerHTML += profesorHTML;
+            });
+
+            // Ocultar introducción y mostrar galería
+            introduccion.classList.add('hidden');
+            galeria.classList.remove('hidden');
+        }
+
+        function recargarPagina() {
+            location.reload();
+        }
+
+    </script>
+</body>
+</html>

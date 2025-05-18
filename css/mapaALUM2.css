@@ -1,0 +1,761 @@
+/*Fuente Principal*/
+/*Body es el elemento que se llama para enlazarlo con html a css*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #0040c9;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all .3s;
+}
+
+/* Elementos de encabezados */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #464646;
+}
+
+h2 {
+    font-size: 44px;
+    color: rgb(224, 228, 5);
+}
+
+h4 {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+p, h4 {
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Se elimina el margen por predeterminado del párrafo debajo del título */
+p, h2 {
+    margin: 0;
+}
+
+/* Centralizado de los elementos */
+.supercontainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%-10px;
+    height: 95px;
+    margin: 5px;
+    /*background-color: rgb(131, 126, 126);*/
+    background-color:rgb(0, 51, 102);
+    border-radius: 10px;
+}
+
+/* -----------------------------------------Botón del menú hamburguesa---------------------------*/
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translate(-50%,-50%);
+    color: #ffffff; 
+   
+    align-items: center;
+    justify-content: center; 
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+
+}
+
+@media only screen and (max-width: 1480px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-container {
+        display: none;
+        flex-direction: column;
+    }
+
+    .containerinfo,
+    .container2,
+    .container3,
+    .aboutme{
+        display: none;
+    }
+}
+
+.menu-container.active {
+    display: flex;
+    position: absolute;
+    top: 80px;
+    right: 10px;
+    /*background: rgba(128, 128, 128, 0.945);*/
+   /* border: 2.5px solid #ccc;*/
+    border-radius: 5px;
+    padding: 10px;
+    flex-direction: column;
+    z-index: 3; /* Asegura que el menú esté encima del mapa */
+
+    /*------------------------------*/
+    max-height: calc(100vh - 100px); /* Altura máxima = 100% del viewport - margen superior */
+    overflow-y: auto; /* Habilita scroll vertical cuando el contenido excede la altura */
+    overflow-x: hidden; /* Previene scroll horizontal no deseado */
+    width: auto; /* Ancho automático según contenido */
+
+}
+/* Mantiene dimensiones originales de los contenedores hijos */
+.menu-container.active > div {
+    flex-shrink: 0; /* Evita que se encojan */
+    height: 80px !important; /* Fuerza altura original */
+    width: auto !important; /* Fuerza ancho original */
+    margin: 10px 0; /* Ajusta márgenes para disposición vertical */
+}
+/* Ajusta posición del menú desplegado */
+.menu-container.active {
+    right: 5px;
+    top: 95px;
+    gap: 5px;
+}
+.menu-no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+/*----------------------animacionn del meniu-------------------------------------------*/
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.menu-container {
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-container.active {
+    animation: slideIn 0.3s forwards;
+}
+
+.menu-container.exit {
+    animation: slideOut 0.3s forwards;
+}
+
+
+/*--------------------------------------------------------------------------------------*/
+
+.containerlogo {
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+}
+
+#logoweb img {
+    width: 100%;
+    margin-left: 4px;
+    height: auto;
+    transition: transform 0.3s ease;
+    /*background-color: rgb(131, 126, 126);*/
+}
+#logoweb img:hover{
+    transform: scale(1.2);
+}
+
+
+.MensajeUNIMAP {
+    width: auto;
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#nombrelogo {
+    width: 100%;
+    height: auto;
+}
+/* Container info */
+.containerinfo,
+.containerinf1,
+.containerinf2,
+.container2,
+.container3,
+.aboutme{
+    width: auto;
+    height: 80px;
+    margin: 10px;
+    text-align: left;
+    border: 0px solid rgb(180, 65, 225);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(131, 126, 126);
+    border-radius: 45px;
+    border: 2.5px solid #ccc;
+    cursor: pointer;
+}
+
+
+
+.container3 {
+    width: auto;
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container3 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container3 i {
+    font-size: 24px; /* Tamaño original del ícono */
+    transform: scale(1.6); /* Ajusta la escala según tus necesidades */
+    transition: transform 0.3s; /* Suaviza la transición */
+}
+
+
+@media only screen and (max-width: 768px) {
+    .containerinfo,
+    .containerinf1,
+    .containerinf2,
+    .container2,
+    .container3,
+    .aboutme {
+        width: 100%;
+        flex-direction: column;
+        margin: 10px 0;
+    }
+
+    .menu-container.active .containerinfo,
+    .menu-container.active .container2,
+    .menu-container.active .container3,
+    .menu-container.active .containerinf1,
+    .menu-container.active .containerinf2,
+    .menu-container.active .aboutme
+
+    {
+        display: flex;
+    }
+}
+
+/* Estilo de colores para los enlaces .btn y del ícono de Facebook */
+a.btn, .container3 .fab {
+    background-color: transparent;
+    padding: 23px;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+a.btn:hover, .container3 .fab:hover {
+    animation: cambioColor 2s forwards;
+}
+
+@keyframes cambioColor {
+    0% { color: #75a63c; }
+    100% { color: #fbff00; }
+}
+
+a.btn, .container3 .fab {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 2px;
+    transition: font-size 0.3s ease;
+}
+
+a.btn:hover, .container3 .fab:hover {
+    font-size: 18px;
+}
+
+
+/*---Fin contenedor de barra-------------------------------------------------------------------------------------------------*/
+/*----inicio mostrar afis------------------------------------/*
+/************************/
+#searchForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    font-weight: 500;
+}
+
+#searchForm select, #searchForm input[type="number"], #searchForm input[type="file"] {
+    width: 100%;
+    padding: 0.4rem;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+#searchForm select:focus, #searchForm input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+#searchForm button, #searchForm .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#searchForm button:hover, #searchForm .btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*----inicio mostrar afis------------------------------------*/
+/* Estilos para el popup */
+/*---- Estilos corregidos para el popup y tabla ----*/
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.popup h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.form-container {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.table-container {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 0px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #56940f;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+td {
+    background-color: white;
+    color: #000;
+}
+
+tr:nth-child(even) td {
+    background-color: #f8f9fa;
+}
+
+/* Botones dentro del popup */
+#searchForm button {
+    margin: 5px;
+    padding: 8px 20px;
+}
+
+#searchForm button[type="submit"] {
+    background-color: #3498db;
+}
+
+#searchForm button[type="button"] {
+    background-color: #6c757d;
+}
+
+@media only screen and (max-width: 480px) {
+    
+
+    table {
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 4px;
+    }
+}
+/*------fin mostrar afis-----------------------------------------------/*
+/* Containermapa */
+
+#map-container {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    right: 20px;
+    bottom: 55px;
+    border: 2px solid #0000001c;
+    border-radius: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px #888888, -4px -4px 10px #cccccc;
+    z-index: 1;
+}
+  
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+
+  
+/*--guia inicio----------------------------------------------------*/
+#guia-container {
+    position: absolute;
+    left: 20px;
+    bottom: 55px;
+    width: 500px;
+    height: 250px;
+    border: 2px solid #0000001c;
+    border-radius: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px #888888, -4px -4px 10px #cccccc;
+    z-index: 2;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#guia-container.collapsed {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+#guia {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+#guia-container.collapsed #guia {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fa-circle-info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    color: #666;
+    background: white;
+    border-radius: 50%;
+    padding: 0px;
+}
+
+#guia-container.collapsed .fa-circle-info {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+@media only screen and (min-width: 481px) and (max-width:550px){
+
+    #guia-container {
+        position: absolute;
+        left: 20px;
+        bottom: 55px;
+        width: 430px; /* Ajusta el ancho a un tamaño más pequeño */
+        height: 220px; /* Ajusta la altura proporcionalmente */
+        border: 2px solid #0000001c;
+        border-radius: 25px;
+        box-sizing: border-box;
+        overflow: hidden;
+        box-shadow: 4px 4px 4px #888888, -4px -4px 10px #cccccc;
+        z-index: 2;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    #guia {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Asegura que la imagen se ajuste al nuevo tamaño del contenedor */
+        pointer-events: none; /* Hace la imagen completamente estática e interactuable */
+    }
+}
+@media only screen and (max-width: 480px) {
+
+    #guia-container {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 55px;
+        width: auto; /* Ajusta el ancho a un tamaño más pequeño */
+        height: auto; /* Ajusta la altura proporcionalmente */
+        border: 2px solid #0000001c;
+        border-radius: 25px;
+        box-sizing: border-box;
+        overflow: hidden;
+        box-shadow: 4px 4px 4px #888888, -4px -4px 10px #cccccc;
+        z-index: 2;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    #guia {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Asegura que la imagen se ajuste al nuevo tamaño del contenedor */
+        pointer-events: none; /* Hace la imagen completamente estática e interactuable */
+        image-rendering: crisp-edges; /* Mejora la nitidez */
+    }
+}
+/*---guia final-----------------------------------------------------*/
+
+
+  /* CSS para ocultar la marca de agua de Leaflet */
+.leaflet-control-attribution {
+    display: none;
+  }
+  
+
+/* botones */
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    
+    border-radius: 30px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 30px !important;
+    filter: drop-shadow(2px 2px 2px #00000079) !important;
+    margin: 8px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  
+  }
+  
+  .leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover {
+    transform: scale(1.2);
+  }
+  
+  .leaflet-control-zoom {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+  }
+  
+
+/*NuevoAlan*/
+
+
+/* Estilos para la pantalla de bienvenida */
+.pantalla-bienvenida {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: grey;*/
+    background-color: rgb(255, 255, 255);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 1s forwards;
+    animation-delay: 1s; /* Esperar 1 segundo antes de iniciar la animación */
+}
+
+/* Estilo para el mensaje de bienvenida */
+#mensajeBienvenida {
+    font-size: 35px;
+    animation: fadeOut 1s forwards;
+    animation-delay: 1s; /* Esperar 0.5 segundos antes de iniciar la animación */
+}
+#mensajeCargando {
+    font-size: 20px;
+    animation: fadeOut 1s forwards;
+    animation-delay: 1s; /* Esperar 0.5 segundos antes de iniciar la animación */
+}
+
+/* Estilo para la imagen de bienvenida */
+.imagen-bienvenida {
+    margin-top: 20px;
+    width: 60px;
+    height: auto;
+    opacity: 1;
+    animation: fadeOut 2s forwards, App-logo-spin 2s infinite linear;
+    animation-delay: 0s; /* Esperar 0.5 segundos antes de iniciar la animación */
+}
+
+/* Animación para desvanecerse */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    /*to{
+        opacity: 1;
+    }*/
+    to {
+        opacity: 0.1;
+        visibility: hidden; /* Ocultar el elemento después del desvanecimiento */
+    }
+}
+
+/* Animación para girar la imagen */
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.barra {
+    position: absolute;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    justify-content: center ;
+    align-items: center;  
+    text-align: center;
+    left: 5px;
+    right: 5px;
+    height: 40px;
+    width: auto;
+    bottom: 5px;
+    border-radius: 10px;
+    
+    }
+    
+    .barra p {
+        margin: 0;
+        font-size: 16px;
+        text-align: center;
+    }
+    @media only screen and (min-width: 551px) and (max-width:768px){
+        .barra p {
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+    @media only screen and (min-width: 481px) and (max-width:550px){
+        .barra p {
+            margin: 0;
+            font-size: 13px;
+            text-align: center;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .barra p {
+            margin: 0;
+            font-size: 10px;
+            text-align: center;
+        }
+    }
+    body.menu-no-scroll {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }

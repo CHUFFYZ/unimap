@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" href="../image/cargando.png"/>
+    <link rel="stylesheet" href="../css/cubiculos1.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">Cubículos de Profesores</h1>
+        <p>En esta página podrás consultar la ubicación de los cubículos de los profesores, así como su disponibilidad como tutores. Selecciona una facultad para ver más información.</p>
+        <label for="facultad">Selecciona una facultad:</label>
+        <select id="facultad" onchange="cargarProfesores()">
+            <option value="">-- Selecciona --</option>
+            <option value="ingenieria">Ingeniería</option>
+            <option value="medicina">Medicina</option>
+            <option value="derecho">Derecho</option>
+        </select>
+        <div class="gallery" id="galeria"></div>
+        <div class="buttons">
+            <button class="reload" onclick="location.reload()">Recargar Página</button>
+            <button class="home" onclick="window.location.href='index.html'">Volver al Inicio</button>
+        </div>
+    </div>
+
+    <script>
+        const profesores = {
+            ingenieria: [
+                { nombre: "Dr. Jose Angel Perez Rejon", cubiculo: "101", tutor: "Sí", imagen: "../image/perez-rejon.jpeg" },
+                { nombre: "Ing. Alejandra Soto Valenzuela", cubiculo: "102", tutor: "No", imagen: "../image/soto-valenzuela.jpeg" },
+                { nombre: "Dr. Jose Angel Perez Rejon", cubiculo: "101", tutor: "Sí", imagen: "../image/perez-rejon.jpeg" },
+                { nombre: "Ing. Alejandra Soto Valenzuela", cubiculo: "102", tutor: "No", imagen: "../image/soto-valenzuela.jpeg" },
+                { nombre: "Dr. Jose Angel Perez Rejon", cubiculo: "101", tutor: "Sí", imagen: "../image/perez-rejon.jpeg" },
+                { nombre: "Ing. Alejandra Soto Valenzuela", cubiculo: "102", tutor: "No", imagen: "../image/soto-valenzuela.jpeg" }
+            ],
+            medicina: [
+                { nombre: "Ing. Patricia Zavaleta Carrillo", cubiculo: "101", tutor: "Sí", imagen: "../image/zavaleta-carrillo.jpeg" },
+                { nombre: "Ing. Juan Carlos Canto Rodriguez", cubiculo: "102", tutor: "No", imagen: "../image/canto-rodriguez.jpeg" },
+                { nombre: "Ing. Patricia Zavaleta Carrillo", cubiculo: "101", tutor: "Sí", imagen: "../image/zavaleta-carrillo.jpeg" },
+                { nombre: "Ing. Juan Carlos Canto Rodriguez", cubiculo: "102", tutor: "No", imagen: "../image/canto-rodriguez.jpeg" },
+                { nombre: "Ing. Patricia Zavaleta Carrillo", cubiculo: "101", tutor: "Sí", imagen: "../image/zavaleta-carrillo.jpeg" },
+                { nombre: "Ing. Juan Carlos Canto Rodriguez", cubiculo: "102", tutor: "No", imagen: "../image/canto-rodriguez.jpeg" }
+                
+            ],
+            derecho: [
+                { nombre: "Lic. Chuina Estrellita Guadalupe Hernandez Rosado", cubiculo: "301", tutor: "Sí", imagen: "../image/hernandez-rosado.jpeg"},
+                { nombre: "Doctor Christian Ceballos Hernandez ", cubiculo: "302", tutor: "No", imagen: "../image/ingeniero.jpeg" },
+                { nombre: "Lic. Chuina Estrellita Guadalupe Hernandez Rosado", cubiculo: "301", tutor: "Sí", imagen: "../image/hernandez-rosado.jpeg"},
+                { nombre: "Doctor Christian Ceballos Hernandez ", cubiculo: "302", tutor: "No", imagen: "../image/ingeniero.jpeg" },
+                { nombre: "Lic. Chuina Estrellita Guadalupe Hernandez Rosado", cubiculo: "301", tutor: "Sí", imagen: "../image/hernandez-rosado.jpeg"},
+                { nombre: "Doctor Christian Ceballos Hernandez ", cubiculo: "302", tutor: "No", imagen: "../image/ingeniero.jpeg" }
+            ]
+        };
+
+        function cargarProfesores() {
+            const facultad = document.getElementById("facultad").value;
+            const titulo = document.getElementById("titulo");
+            const galeria = document.getElementById("galeria");
+            
+            if (facultad) {
+                titulo.innerText = "Cubículos de Profesores - " + facultad.charAt(0).toUpperCase() + facultad.slice(1);
+                galeria.innerHTML = "";
+                
+                profesores[facultad].forEach(profesor => {
+                    const div = document.createElement("div");
+                    div.classList.add("profesor");
+                    div.innerHTML = `
+                        <img src="${profesor.imagen}" alt="${profesor.nombre}">
+                        <p><strong>${profesor.nombre}</strong></p>
+                        <p>Cubículo: ${profesor.cubiculo}</p>
+                        <p>Tutor: ${profesor.tutor}</p>
+                    `;
+                    galeria.appendChild(div);
+                });
+            } else {
+                titulo.innerText = "Cubículos de Profesores";
+                galeria.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

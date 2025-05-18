@@ -1,0 +1,322 @@
+/* Estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f7fb;
+    color: #2d3436;
+    padding: 0px;
+}
+
+/* Header */
+.welcome-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-header h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-header p {
+    color: #ecf0f1;
+    font-size: 0.9rem;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+}
+.regresar{
+    display: flex;
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 50px;
+    align-items: center;
+    justify-content: end;
+}
+.back-button {
+    text-shadow: 2px 2px 5px #ffffff;
+    margin-right: 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-10px) scale(1.02);
+    color: rgb(255, 0, 0);
+
+}
+
+/* Formulario de Registro */
+#studentForm {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+#studentForm h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #dfe6e9;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.btn-primary {
+    background: #3498db;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*--------------------------------------*/
+/* Pie de página */
+
+.regresar{
+    display: flex;
+    width: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 50px;
+    align-items: center;
+    justify-content: end;
+}
+.barra {
+    display: flex;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    justify-content: center ;
+    align-items: center;  
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 40px;
+    width: auto;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    
+    }
+    
+    .barra p {
+        margin: 0;
+        font-size: 16px;
+        text-align: center;
+    }
+    @media only screen and (min-width: 551px) and (max-width:800px){
+        .barra p {
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        .welcome-header{
+            padding: 1rem;
+        }
+        .welcome-header h2{
+            font-size: 1rem;
+        }
+        .welcome-header p{
+            font-size: .7rem;
+        }
+        .logo img{
+            width: auto;
+            height: 45px;
+        }
+        
+        #studentForm{
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 50px;
+        }
+        #studentForm h2{
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        
+        .form-group label {
+            font-weight: 500;
+            font-size: .8rem;
+        }
+
+        .form-group input {
+            font-size: .8rem;
+        }
+
+        .btn-primary {
+            font-size: .8rem;
+        }
+        
+        }
+    
+    @media only screen and (min-width: 481px) and (max-width:550px){
+        .barra p {
+            margin: 0;
+            font-size: 13px;
+            text-align: center;
+        }
+        .welcome-header{
+            padding: 1rem;
+        }
+        .welcome-header h2{
+            font-size: 1rem;
+        }
+        .welcome-header p{
+            font-size: .7rem;
+        }
+        .logo img{
+            width: auto;
+            height: 45px;
+        }
+        
+        #studentForm{
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 50px;
+        }
+        #studentForm h2{
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        
+        .form-group label {
+            font-weight: 500;
+            font-size: .8rem;
+        }
+
+        .form-group input {
+            font-size: .8rem;
+        }
+
+        .btn-primary {
+            font-size: .8rem;
+        }
+    }
+    
+    @media only screen and (max-width: 480px) {
+        .barra p {
+            margin: 0;
+            font-size: 10px;
+        }
+        .welcome-header{
+            padding: .8rem;
+        }
+        .welcome-header h2{
+            font-size: 1rem;
+        }
+        .welcome-header p{
+            font-size: .7rem;
+        }
+        .logo img{
+            width: auto;
+            height: 45px;
+        }
+        #studentForm{
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 50px;
+        }
+        #studentForm h2{
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        
+        .form-group label {
+            font-weight: 500;
+            font-size: .8rem;
+        }
+
+        .form-group input {
+            font-size: .8rem;
+        }
+
+        .btn-primary {
+            font-size: .8rem;
+        }
+
+    }
+    /* Mensajes de éxito */
+.success-message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Mensajes de error (ya existente) */
+.error-message {
+    background-color: #f44336;
+    color: white;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}

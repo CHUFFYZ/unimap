@@ -1,0 +1,991 @@
+/*Fuente Principal*/
+/*Body es el elemento que se llama para enlazarlo con html a css*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #0040c9;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all .3s;
+}
+
+/* Elementos de encabezados */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #464646;
+}
+
+h2 {
+    font-size: 44px;
+    color: rgb(6, 14, 121);
+}
+
+h4 {
+    font-size: 16px;
+    color: rgb(97, 95, 95);
+}
+
+p, h4 {
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Se elimina el margen por predeterminado del párrafo debajo del título */
+p, h2 {
+    margin: 0;
+}
+
+/* Centralizado de los elementos */
+.supercontainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%-10px;
+    height: 95px;
+    margin: 5px;
+    /*background-color: rgb(131, 126, 126);*/
+    background-color:rgb(0, 51, 102);
+    border-radius: 10px;
+}
+
+/* -----------------------------------------Botón del menú hamburguesa---------------------------*/
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translate(-50%,-50%);
+    color: #ffffff; 
+    align-items: center;
+    justify-content: center; 
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+
+}
+
+@media only screen and (max-width: 1120px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-container {
+        display: none;
+        flex-direction: column;
+    }
+
+    .containerinfo,
+    .container2,
+    .container3,
+    .containerinf{
+        
+        display: none;
+    }
+}
+
+.menu-container.active {
+    display: flex;
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    /*background: rgba(128, 128, 128, 0.945);*/
+   /* border: 2.5px solid #ccc;*/
+    border-radius: 5px;
+    padding: 0px;
+    flex-direction: column;
+    z-index: 3; /* Asegura que el menú esté encima del mapa */
+}
+/*----------------------animacionn del meniu-------------------------------------------*/
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.menu-container {
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-container.active {
+    animation: slideIn 0.3s forwards;
+}
+
+.menu-container.exit {
+    animation: slideOut 0.3s forwards;
+}
+
+
+/*--------------------------------------------------------------------------------------*/
+
+.containerlogo {
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+}
+
+#logoweb img {
+    width: 100%;
+    margin-left: 4px;
+    height: auto;
+    transition: transform 0.3s ease;
+    /*background-color: rgb(131, 126, 126);*/
+}
+#logoweb img:hover{
+    transform: scale(1.2);
+}
+
+
+.MensajeUNIMAP {
+    width: auto;
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#nombrelogo {
+    width: 100%;
+    height: auto;
+}
+
+.MensajeUNIMAP h2{
+    color: rgb(224, 228, 5);
+}
+
+
+.MensajeUNIMAP h4{
+    color: #ffffff;
+}
+
+
+/* Container info */
+.containerinfo,
+.containerinf1,
+.containerinf2,
+.container2,
+.container3,
+.containerinf {
+    width: auto;
+    height: 70px;
+    margin: 5px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(2, 22, 102);
+    border-radius: 45px;
+    border: 2.5px solid #ffffff;
+    cursor: pointer;
+}
+
+.container3 {
+    width: auto;
+    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container3 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container3 i {
+    font-size: 24px; /* Tamaño original del ícono */
+    transform: scale(1.6); /* Ajusta la escala según tus necesidades */
+    transition: transform 0.3s; /* Suaviza la transición */
+}
+
+
+@media only screen and (max-width: 1140px) {
+    .containerinfo,
+    .containerinf1,
+    .containerinf2,
+    .containerinf,
+    .container2,
+    .container3 {
+        width: auto;
+        height: 70px;
+        flex-direction: column;
+        margin: 5px;
+    }
+
+    .menu-container.active .containerinfo,
+    .menu-container.active .container2,
+    .menu-container.active .container3,
+    .menu-container.active .containerinf1,
+    .menu-container.active .containerinf2 {
+        display: flex;
+    }
+}
+
+/* Estilo de colores para los enlaces .btn y del ícono de Facebook */
+a.btn, .container3 .fab {
+    background-color: transparent;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+a.btn:hover, .container3 .fab:hover {
+    animation: cambioColor 2s forwards;
+}
+
+@keyframes cambioColor {
+    0% { color: #75a63c; }
+    100% { color: #fbff00; }
+}
+
+a.btn, .container3 .fab {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 2px;
+    transition: font-size 0.3s ease;
+}
+
+a.btn:hover, .container3 .fab:hover {
+    font-size: 18px;
+}
+
+/*---Fin contenedor de barra-------------------------------------------------------------------------------------------------*/
+
+/* Containermapa */
+
+#map-container {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    right: 20px;
+    bottom: 55px;
+    border: 2px solid #0000001c;
+    border-radius: 25px;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px #888888, -4px -4px 10px #cccccc;
+    z-index: 1;
+}
+  
+  #map {
+    height: 100%;
+    width: 100%;
+  }
+
+  
+/*--guia inicio----------------------------------------------------*/
+/*---guia final-----------------------------------------------------*/
+
+/* CSS para ocultar la marca de agua de Leaflet */
+.leaflet-control-attribution {
+    display: none;
+  }
+  
+
+/* botones */
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    
+    border-radius: 30px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 30px !important;
+    filter: drop-shadow(2px 2px 2px #00000079) !important;
+    margin: 8px;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  
+  }
+  
+  .leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover {
+    transform: scale(1.2);
+  }
+  
+  .leaflet-control-zoom {
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+  }
+  
+
+/*NuevoAlan*/
+
+
+/* Estilos para la pantalla de bienvenida */
+.pantalla-bienvenida {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: grey;*/
+    background-color: rgb(0, 85, 134);
+    color: rgb(92, 92, 92);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 1.5s forwards;
+    animation-delay: 1.5s; /* Esperar 1 segundo antes de iniciar la animación */
+}
+
+/* Estilo para el mensaje de bienvenida */
+#mensajeBienvenida {
+    font-size: 35px;
+    animation: fadeOut 1s forwards;
+    animation-delay: 1s; /* Esperar 0.5 segundos antes de iniciar la animación */
+    color: #ffffff;
+}
+#mensajeCargando {
+    font-size: 20px;
+    animation: fadeOut 1s forwards;
+    animation-delay: 1s; /* Esperar 0.5 segundos antes de iniciar la animación */
+    color: #ffffff;
+}
+
+/* Estilo para la imagen de bienvenida */
+.imagen-bienvenida {
+    margin-top: 20px;
+    width: 60px;
+    height: auto;
+    opacity: 1;
+    animation: fadeOut 2s forwards, App-logo-spin 2s infinite linear;
+    animation-delay: 0s; /* Esperar 0.5 segundos antes de iniciar la animación */
+}
+
+/* Animación para desvanecerse */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    /*to{
+        opacity: 1;
+    }*/
+    to {
+        opacity: 0;
+        visibility: hidden; /* Ocultar el elemento después del desvanecimiento */
+    }
+}
+
+/* Animación para girar la imagen */
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.link-unacar {
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 700;
+    color: #4536ca;
+/*Agregar efecto en el header de las letras*/
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 500;/*se agrego el margin pq se desarreglo al momento de añadir el spam */
+    
+}
+.link-unacar:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+.unacarmensaje{
+    position: relative;
+    margin-right: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Pie de página */
+.barra {
+    position: absolute;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px;
+    justify-content: center ;
+    align-items: center;  
+    text-align: center;
+    left: 5px;
+    right: 5px;
+    height: 40px;
+    width: auto;
+    bottom: 5px;
+    border-radius: 10px;
+    
+    }
+    
+    .barra p {
+        margin: 0;
+        font-size: 16px;
+        text-align: center;
+    }
+    @media only screen and (min-width: 551px) and (max-width:768px){
+        .barra p {
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        .containerlogo {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        #logoweb img{
+            margin-left: 0;
+        }
+        .MensajeUNIMAP {
+            width: auto;
+            height: 50px;
+            margin-left: 10px;
+        }
+        
+        #nombrelogo {
+            width: 100%;
+            height: auto;
+        }
+        #nombrelogo h2{
+            font-size: 35px;
+    
+        }
+        #nombrelogo h4{
+            font-size: 13px;
+            margin-top: -5px;
+        }
+        
+        .supercontainer {
+            height: 70px;
+        }
+        .inisesion{
+        top: 90px;
+        }
+        .containerini{
+        top: 110px;
+        } 
+        #map-container{
+            top: 90px;
+        }
+    }
+    @media only screen and (min-width: 481px) and (max-width:550px){
+        .barra p {
+            margin: 0;
+            font-size: 13px;
+            text-align: center;
+        }
+        .containerlogo {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        #logoweb img{
+            margin-left: 0;
+        }
+        .MensajeUNIMAP {
+            width: auto;
+            height: 50px;
+            margin-left: 10px;
+        }
+        
+        #nombrelogo {
+            width: 100%;
+            height: auto;
+        }
+        #nombrelogo h2{
+            font-size: 35px;
+    
+        }
+        #nombrelogo h4{
+            font-size: 13px;
+            margin-top: -5px;
+        }
+        
+        .supercontainer {
+            height: 70px;
+        }
+        .inisesion{
+        top: 90px;
+        }
+        .containerini{
+        top: 110px;
+        } 
+        #map-container{
+            top: 90px;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .barra p {
+            margin: 0;
+            font-size: 10px;
+        }
+        .containerlogo {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        #logoweb img{
+            margin-left: 0;
+        }
+        .MensajeUNIMAP {
+            width: auto;
+            height: 50px;
+            margin-left: 10px;
+        }
+        
+        #nombrelogo {
+            width: 100%;
+            height: auto;
+        }
+        #nombrelogo h2{
+            font-size: 35px;
+    
+        }
+        #nombrelogo h4{
+            font-size: 13px;
+            margin-top: -5px;
+        }
+        
+        .supercontainer {
+            height: 70px;
+        }
+        .inisesion{
+        top: 90px;
+        }
+        .containerini{
+        top: 110px;
+        } 
+        #map-container{
+            top: 90px;
+        }
+    }
+
+    body.menu-no-scroll {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+      
+ /*--inicio locaclicaciones-----------------------------------------------*/
+/* Controles de ubicación */
+#guia-container {
+    position: fixed;
+    left: 20px;
+    bottom: 55px;
+    z-index: 20;
+}
+
+#guia-container .fa-circle-info {
+    position: static;
+    font-size: 24px;
+    color: #0040c9;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#guia-container .fa-circle-info:hover {
+    transform: scale(1.1);
+}
+
+#location-controls {
+    position: fixed;
+    left: 20px;
+    top: 30%;
+    bottom: 55px;
+    width: 300px;
+    max-height: auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    transform: translateY(0px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+#location-controls.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-55px);
+}
+
+.building-section {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.building-section h3 {
+    color: #0040c9;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.location-link {
+    display: block;
+    padding: 8px 12px;
+    margin: 5px 0;
+    background: #f0f4ff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    color: #0040c9;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+}
+
+.location-link:hover {
+    background: #0040c9;
+    color: white;
+    transform: translateX(5px);
+    border-color: transparent;
+}
+
+.location-link.marker-amarillo {
+    border-color: #f8da00;
+}
+
+.location-link.marker-verde-oscuro {
+    border-color: #009502;
+}
+
+.location-link.marker-azul-claro {
+    border-color: #86f1fb;
+}
+
+.location-link.marker-verde-azul {
+    border-color: #01c78a;
+}
+
+.location-link.marker-durazno {
+    border-color: #ff9e7b;
+}
+
+.location-link.marker-azul {
+    border-color: #8f9cd0;
+}
+
+.location-link.marker-verde-claro {
+    border-color: #bfde76;
+}
+
+.location-link.marker-cafe {
+    border-color: #d7a570;
+}
+
+.location-link.marker-rosa-oscuro {
+    border-color: #ff36ae;
+}
+
+.location-link.marker-rosa-claro {
+    border-color: #ffaff4;
+}
+
+.location-link.marker-azul-oscuro {
+    border-color: #0194fe;
+}
+
+.location-link.marker-naranja {
+    border-color: #ff6829;
+}
+
+.location-link.marker-rojo {
+    border-color: #ea3838;
+}
+
+.location-link.marker-morado {
+    border-color: #c250fe;
+}
+
+@media (max-width: 768px) {
+    #location-controls {
+        right: 30%;
+        width: auto;
+        left: 20px;
+    }
+    .building-section h3 {
+        font-size: 1.0em;
+    }
+}
+
+.leaflet-popup-close-button {
+    font-size: 25px !important;
+}
+
+#search-box {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #0040c9;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+#search-box:focus {
+    outline: none;
+    border-color: #002366;
+    box-shadow: 0 0 8px rgba(0, 64, 201, 0.3);
+}
+
+@media (max-width: 768px) {
+    #search-box {
+        padding: 8px;
+        font-size: 13px;
+    }
+}
+
+.marker-inner {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    transform-origin: bottom center;
+    transform: scale(1);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 1, 0.425));
+}
+
+.leaflet-marker-icon.marker-animated .marker-inner {
+    animation: floatMarker 1.5s forwards, floatMarkerloop 1.2s infinite alternate ease-in-out;
+    animation-delay: 0.5s, 2s;
+}
+
+@keyframes floatMarker {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.7);
+    }
+}
+
+@keyframes floatMarkerloop {
+    from {
+        transform: scale(1.7);
+    }
+    to {
+        transform: scale(1.4);
+    }
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip-container {
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+}
+
+.popup-animated,
+.popup-animated ~ .leaflet-popup-tip-container {
+    animation: popupLift 1.5s forwards;
+    animation-delay: 0s;
+}
+
+@keyframes popupLift {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-20px); 
+    }
+}
+
+#location-details {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 65%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -2px 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 21;
+}
+
+#location-details.visible {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+#location-details .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: #0040c9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#location-details .close-btn:hover {
+    transform: scale(1.2);
+}
+
+#location-details h2 {
+    color: #0040c9;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+#location-details .faculty {
+    color: #464646;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+#location-details .photos {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#location-details .photos img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+
+#location-details .comments {
+    color: #464646;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    #location-details .photos img {
+        width: 120px;
+        height: 80px;
+    }
+}
+
+#fullscreen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 22;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+#fullscreen-image.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#fullscreen-image img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+#fullscreen-image .fullscreen-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#fullscreen-image .fullscreen-close-btn:hover {
+    transform: scale(1.2);
+    color: #0040c9;
+}
+
+@media (max-width: 768px) {
+    #fullscreen-image img {
+        max-width: 95%;
+        max-height: 85%;
+    }
+
+    #fullscreen-image .fullscreen-close-btn {
+        font-size: 40px;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Estilo para el marcador del usuario */
+.user-marker {
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+.leaflet-right .leaflet-control {
+    margin-right: 0px;
+}
+
+.leaflet-bottom .leaflet-control {
+    margin-bottom: 15px;
+}
+
+.leaflet-marker-icon, .leaflet-popup-content-wrapper {
+    will-change: transform;
+}
+

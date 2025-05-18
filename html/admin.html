@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIMAP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+        <h1>Cargar AFIs a la Base de Datos</h1>
+        <form id="uploadForm" method="POST" action="../upload_afis.php">
+            <label for="month">Mes:</label>
+            <select id="month" name="month" required>
+                <option value="ENERO">Enero</option>
+                <option value="FEBRERO">Febrero</option>
+                <option value="MARZO">Marzo</option>
+                <option value="ABRIL">Abril</option>
+                <option value="MAYO">Mayo</option>
+                <option value="Junio">Junio</option>
+                <option value="JULIO">Julio</option>
+                <option value="AGOSTO">Agosto</option>
+                <option value="SEPTIEMBRE">Septiembre</option>
+                <option value="OCTUBRE">Octubre</option>
+                <option value="NOVIEMBRE">Noviembre</option>
+                <option value="DICIEMBRE">Diciembre</option>
+            </select>
+    
+            <label for="year">Año:</label>
+            <input type="number" id="year" name="year" min="2023" required>
+    
+            <button type="submit">Cargar AFIs</button>
+        </form>
+
+         <!-- Formulario para borrar datos -->
+    <form id="deleteForm" method="POST" action="../delete_afis.php" onsubmit="return confirmDelete()">
+        <h2>Borrar AFIs</h2>
+        <label for="deleteMonth">Mes:</label>
+        <select id="deleteMonth" name="month" required>
+                <option value="ENERO">Enero</option>
+                <option value="FEBRERO">Febrero</option>
+                <option value="MARZO">Marzo</option>
+                <option value="ABRIL">Abril</option>
+                <option value="MAYO">Mayo</option>
+                <option value="Junio">Junio</option>
+                <option value="JULIO">Julio</option>
+                <option value="AGOSTO">Agosto</option>
+                <option value="SEPTIEMBRE">Septiembre</option>
+                <option value="OCTUBRE">Octubre</option>
+                <option value="NOVIEMBRE">Noviembre</option>
+                <option value="DICIEMBRE">Diciembre</option>
+        </select>
+        <button type="submit">Borrar AFIs</button>
+    </form>
+    <!-- Botón para mostrar el popup -->
+    <button onclick="showPopup()">Mostrar</button>
+    <a class="btn" href="mapaADMIN.html">Regresar</a>
+
+    <!-- Fondo del popup -->
+    <div id="popup-overlay" class="popup-overlay"></div>
+
+    <!-- Contenido del popup -->
+<div id="popup" class="popup">
+    <h1>Mostrar AFIs por Mes</h1>
+    <div class="form-container">
+        <form id="searchForm" method="GET" action="../mostraafi.php">
+            <label for="month1">Mes:</label>
+            <select id="month1" name="month1" required>
+                <option value="ENERO">Enero</option>
+                <option value="FEBRERO">Febrero</option>
+                <option value="MARZO">Marzo</option>
+                <option value="ABRIL">Abril</option>
+                <option value="MAYO">Mayo</option>
+                <option value="JUNIO">Junio</option>
+                <option value="JULIO">Julio</option>
+                <option value="AGOSTO">Agosto</option>
+                <option value="SEPTIEMBRE">Septiembre</option>
+                <option value="OCTUBRE">Octubre</option>
+                <option value="NOVIEMBRE">Noviembre</option>
+                <option value="DICIEMBRE">Diciembre</option>
+            </select>
+            <button type="submit">Buscar</button>
+            <button type="button" onclick="closePopup()">Cerrar</button>
+        </form>
+    </div>
+    <div class="table-container" id="results">
+        <!-- Aquí se mostrarán los resultados de la tabla -->
+    </div>
+</div>
+    
+
+        
+    </div>
+
+    <script src="../zoom2.js"></script>
+    <script src="../js/popup-afi.js"></script>
+    <script src="../js/mostarafi.js"></script>
+    
+    <script>
+        // Función para confirmar dos veces antes de borrar
+        function confirmDelete() {
+            if (confirm("¿Estás seguro de que quieres borrar los datos seleccionados?")) {
+                return confirm("Esta acción es irreversible. ¿Confirmas el borrado?");
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
