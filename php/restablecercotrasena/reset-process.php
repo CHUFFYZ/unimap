@@ -69,7 +69,7 @@ try {
     $resetLink = "https://unimap-synh.onrender.com/php/restablecercotrasena/restcontra.php?token=$token";
     
     // Configurar PHPMailer
-    require_once __DIR__ . '/../../vendor/autoload.php';
+    require_once __DIR__ . '../../vendor/autoload.php';
     
     $mail = new PHPMailer\PHPMailer\PHPMailer();
     $mail->SMTPDebug = 2;

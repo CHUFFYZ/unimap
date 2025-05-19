@@ -287,7 +287,7 @@ a.btn:hover, .fab:hover {
 
 .inisesion {
     position: relative;
-    top: 20px; /* Reduced from 120px */
+    top: 10px; /* Reduced from 120px */
     text-align: center;
     width: 100%;
 }
@@ -306,6 +306,7 @@ a.btn:hover, .fab:hover {
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin: 0px auto;
+    margin-top: 20px;
     width: 300px;
     min-height: 355px;
     position: relative;
@@ -504,47 +505,6 @@ a.btn:hover, .fab:hover {
     background-color: #0066cc;
 }
 
-/* Responsive adjustments */
-@media only screen and (max-width: 480px) {
-    .supercontainer {
-        height: 70px;
-    }
-
-    .containerlogo {
-        width: 40px;
-        height: 40px;
-        margin-left: 10px;
-    }
-
-    #logoweb img {
-        margin-left: 0;
-    }
-
-    .MensajeUNIMAP {
-        margin-left: 10px;
-    }
-
-    #nombrelogo h2 {
-        font-size: 35px;
-    }
-
-    #nombrelogo h4 {
-        font-size: 13px;
-        margin-top: -5px;
-    }
-
-    .inisesion {
-        top: 0;
-    }
-
-    .containerini {
-        margin-top: 20px;
-    }
-
-    .toggle-container {
-        margin-top: 10px;
-    }
-}
 
 /* Landscape mode adjustments */
 @media only screen and (max-height: 500px) {
