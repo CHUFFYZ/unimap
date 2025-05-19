@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // Inicializar mensajes
 $error = $_SESSION['error'] ?? null;
 $success = $_SESSION['success'] ?? null;
