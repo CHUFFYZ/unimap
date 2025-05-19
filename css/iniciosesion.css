@@ -513,27 +513,4 @@ a.btn:hover, .fab:hover {
         padding-bottom: 20px;
     }
 
-    .fondo {
-        min-height: 100%;
-        overflow-y: auto;
-    }
-
-    .fondosupercontainer {
-        min-height: 100%;
-        padding-bottom: 20px;
-    }
-
-    .inisesion {
-        margin-top: 10px;
-    }
-
-    .containerini {
-        margin-top: 70px;
-        margin-bottom: 20px;
-    }
-
-    .toggle-container {
-        margin-top: 10px;
-        margin-bottom: 20px;
-    }
 }
