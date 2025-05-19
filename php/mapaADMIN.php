@@ -28,6 +28,9 @@ if (!isset($_SESSION['admin']) ||
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="icon"  href="../image/LogoBlanco1.webp" type="image/webp"/>
     <link rel="stylesheet" href="../css/mapaALUM.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <!-- Pannellum para imágenes panorámicas -->
+    <link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css">
 
 </head>
 <body>
@@ -137,6 +140,7 @@ if (!isset($_SESSION['admin']) ||
     </div>
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
     <!--<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>-->
     <script src="../js/zoom2.js"></script>
     <script src="../js/menu.js"></script>
