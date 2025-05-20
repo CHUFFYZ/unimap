@@ -1,18 +1,18 @@
 <?php
+ob_start(); // Inicia el búfer de salida
 session_start();
-
 $allowed = ['alumno']; // Solo acceso alumnos
-
 if (!isset($_SESSION['alumno']) || 
     !isset($_SESSION['alumno']['tipo']) || 
     !in_array($_SESSION['alumno']['tipo'], $allowed)) {
-    
     header("HTTP/1.1 403 Forbidden");
     echo "Acceso restringido a alumnos. Redirigiendo...";
-    header("Refresh: 3; URL=iniciosesion.php");
+    header("Refresh: 1; URL=iniciosesion.php");
     exit();
 }
+ob_end_flush(); // Libera el búfer y envía la salida
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>

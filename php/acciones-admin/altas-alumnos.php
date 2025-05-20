@@ -1,15 +1,16 @@
 <?php
+ob_start(); // Inicia el búfer de salida
 session_start();
-
-$allowed = ['administrativo'];
+$allowed = ['administrativo']; // Solo acceso administrativo
 if (!isset($_SESSION['admin']) || 
     !isset($_SESSION['admin']['tipo']) || 
     !in_array($_SESSION['admin']['tipo'], $allowed)) {
     header("HTTP/1.1 403 Forbidden");
     echo "Acceso restringido a administrativos. Redirigiendo...";
-    header("Refresh: 3; URL=sesionADMIN.php");
+    header("Refresh: 1; URL=sesionADMIN.php");
     exit();
 }
+ob_end_flush(); // Libera el búfer y envía la salida
 require_once '../../DB-coneccion.php';
 ?>
 <!DOCTYPE html>
