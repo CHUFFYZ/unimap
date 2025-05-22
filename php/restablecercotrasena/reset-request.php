@@ -59,9 +59,9 @@ unset($_SESSION['error'], $_SESSION['success']);
             </div>
             
             <div class="form-group">
-                <label for="contacto">Correo o Teléfono:</label>
+                <label for="contacto">Correo</label>
                 <input type="text" id="contacto" name="contacto" required
-                    placeholder="Ej: 5512345678 o usuario@ejemplo.com"
+                    placeholder="Ej: usuario@ejemplo.com"
                     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|[0-9]{10}"
                     title="Ingresa 10 dígitos o un correo válido">
             </div>
