@@ -25,48 +25,40 @@ try {
     $pdo = new PDO("sqlite:" . $databasePath);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Log SQLite's current time
-    $stmt = $pdo->prepare("SELECT datetime('now', 'localtime') AS current_time");
-    $stmt->execute();
-    $sqlite_time = $stmt->fetchColumn();
-    error_log("SQLite current time: " . $sqlite_time);
+    // Log SQLite version and server timezone
+    error_log("SQLite version: " . $pdo->getAttribute(PDO::ATTR_SERVER_VERSION));
+    error_log("Server timezone: " . date_default_timezone_get());
 
-    // Check token existence
-    $stmt = $pdo->prepare("
-        SELECT reset_token, reset_expira 
-        FROM alumnos 
-        WHERE reset_token = :token
-        UNION ALL
-        SELECT reset_token, reset_expira 
-        FROM administrativos 
-        WHERE reset_token = :token
-    ");
-    $stmt->execute([':token' => $token]);
-    $token_status = $stmt->fetch(PDO::FETCH_ASSOC);
-    error_log("Token status in DB: " . print_r($token_status, true));
+    // Use PHP's current time for comparison
+    $currentTime = date("Y-m-d H:i:s");
+    error_log("PHP current time: $currentTime");
 
-    // Buscar token en ambas tablas con validación de tiempo
+    // Check token existence and validity
     $stmt = $pdo->prepare("
         SELECT 'alumno' AS tipo, matricula, reset_token, reset_expira 
         FROM alumnos 
         WHERE reset_token = :token 
-        AND datetime(reset_expira) > datetime('now', 'localtime')
+        AND reset_expira > :currentTime
         
         UNION ALL
         
         SELECT 'admin' AS tipo, matricula, reset_token, reset_expira 
         FROM administrativos 
         WHERE reset_token = :token 
-        AND datetime(reset_expira) > datetime('now', 'localtime')
+        AND reset_expira > :currentTime
     ");
     
-    $stmt->execute([':token' => $token]);
+    $stmt->execute([':token' => $token, ':currentTime' => $currentTime]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     error_log("Query result: " . print_r($user, true));
 
     if (!$user) {
+        error_log("No valid user found for token: $token");
         throw new Exception("El enlace ha expirado o ya fue usado");
     }
+
+    // Log expiration time for debugging
+    error_log("Token expires at: " . $user['reset_expira']);
 
     // Configurar variables de sesión
     $_SESSION['tipo_usuario'] = $user['tipo'];
@@ -77,15 +69,13 @@ try {
 } catch (PDOException $e) {
     error_log("Error SQL: " . $e->getMessage());
     $_SESSION['error'] = "Error técnico. Contacta al administrador.";
-    // Temporarily disable redirect for debugging
-    // header("Location: ../iniciosesion.php");
-    // exit();
+    header("Location: ../iniciosesion.php");
+    exit();
 } catch (Exception $e) {
     error_log("General error: " . $e->getMessage());
     $_SESSION['error'] = $e->getMessage();
-    // Temporarily disable redirect for debugging
-    // header("Location: ../iniciosesion.php");
-    // exit();
+    header("Location: ../iniciosesion.php");
+    exit();
 }
 ?>
 

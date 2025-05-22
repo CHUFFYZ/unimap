@@ -16,6 +16,9 @@ try {
     $pdo = new PDO("sqlite:" . $databasePath);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    // Log SQLite version for debugging
+    error_log("SQLite version: " . $pdo->getAttribute(PDO::ATTR_SERVER_VERSION));
+
     // Buscar en ambas tablas
     $stmt = $pdo->prepare("
         SELECT 'alumno' AS tipo, matricula, email, telefono
@@ -45,6 +48,8 @@ try {
     // Generar token y tiempo de expiración (5 minutos)
     $token = bin2hex(random_bytes(50));
     $expira = date("Y-m-d H:i:s", time() + 300);
+    error_log("Generated expiration time: $expira");
+    error_log("Server timezone: " . date_default_timezone_get());
 
     // Determinar tabla objetivo
     $tabla = ($user['tipo'] == 'alumno') ? 'alumnos' : 'administrativos';
@@ -64,9 +69,8 @@ try {
     ]);
 
     // Construir enlace de recuperación
-    //alan este es el que debes de modificar si lo lanzas en la uni, primero conectate a la unacar,
-    // luego checas el port ipv4 y le metes el ip en la parte del inicio y ya
     $resetLink = "https://unimap-synh.onrender.com/php/restablecercotrasena/restcontra.php?token=$token";
+    error_log("Reset link: $resetLink");
 
     // Configurar PHPMailer
     require_once __DIR__ . '/../../vendor/autoload.php';
@@ -108,3 +112,4 @@ try {
     header("Location: reset-request.php");
     exit();
 }
+?>
