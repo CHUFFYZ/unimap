@@ -7,7 +7,7 @@ if (!isset($_SESSION['admin']) ||
     !in_array($_SESSION['admin']['tipo'], $allowed)) {
     header("HTTP/1.1 403 Forbidden");
     echo "Acceso restringido a administrativos. Redirigiendo...";
-    header("Refresh: 1; URL=sesionADMIN.php");
+    header("Refresh: 1; URL=../sesionADMIN.php");
     exit();
 }
 ob_end_flush(); // Libera el búfer y envía la salida

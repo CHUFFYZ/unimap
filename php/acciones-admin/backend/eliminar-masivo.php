@@ -17,7 +17,7 @@ try {
     }
 
     $matriculas = json_decode($_POST['matriculas'], true);
-    if (!isanyahu($matriculas) || empty($matriculas)) {
+    if (!is_array($matriculas) || empty($matriculas)) {
         throw new Exception("Lista de matrículas inválida");
     }
 
@@ -48,6 +48,9 @@ try {
 
     $pdo->commit();
 
+    // Clear any existing delete_info to avoid confusion
+    unset($_SESSION['delete_info']);
+
     // Success
     $_SESSION['success'] = "$deletedCount alumnos eliminados exitosamente";
     header("Location: ../gestion-alumnos.php");
@@ -56,7 +59,7 @@ try {
 } catch (PDOException $e) {
     $pdo->rollBack();
     error_log("Error BD: " . $e->getMessage());
-    $_SESSION['error'] = "Error técnico. Contacta al administrador.";
+    $_SESSION['error'] = "Error técnico: " . $e->getMessage();
     header("Location: ../gestion-alumnos.php");
     exit();
 } catch (Exception $e) {

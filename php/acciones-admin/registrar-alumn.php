@@ -88,17 +88,17 @@ try {
 
     // 6. Redirigir con éxito
     $_SESSION['success'] = "Alumno registrado exitosamente";
-    header("Location: ../reg-alumn.php");
+    header("Location: ../altas-alumnos.php");
     exit();
 
 } catch (PDOException $e) {
     error_log("Error BD: " . $e->getMessage());
     $_SESSION['error'] = "Error técnico. Contacta al administrador.";
-    header("Location: ../reg-alumn.php");
+    header("Location: ../altas-alumnos.php");
     exit();
 } catch (Exception $e) {
     error_log("Error Registro: " . $e->getMessage());
     $_SESSION['error'] = $e->getMessage();
-    header("Location: ../reg-alumn.php");
+    header("Location: ../altas-alumnos.php");
     exit();
 }

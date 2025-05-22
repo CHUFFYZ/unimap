@@ -15,20 +15,14 @@
 
 </head>
 <body>
-    
-    <!-------------------- Pantalla de BienvenidaALAN------------------>
-    <!-- Pantalla de Bienvenida -->
     <div class="pantalla-bienvenida" id="pantallaBienvenida">
         <h1 id="mensajeBienvenida">¡Bienvenido!</h1>
         <img src="image/loading1.png" alt="Imagen de bienvenida" class="imagen-bienvenida" id="imagenBienvenida">
         <h1 id="mensajeCargando">Cargando...</h1>
     </div>
     <div id="contenido" style="display: none;">
-        <!-- Aquí puedes incluir tu contenido de mapa.html -->
     </div>
-
-    <!-------------------- Termino de pantalla de BienvenidaALAN------------------>
-    <div class="supercontainer">
+        <div class="supercontainer">
         <div class="containerlogo">
             <a id="logoweb" class="fl" href="index.html"><img src="image/LogoBlanco.webp" alt="LogoUnimap"></a>
         </div>
@@ -38,10 +32,8 @@
                 <h4><span>Mapa Interactivo Universitario</span></h4>
             </div>
         </div>
-    <!-- Inicio menu---------------------------------------->
         <div class="menu-toggle" id="menu-toggle">☰</div>
-        <div class="menu-container" id="menu-container">
-            <!-- Fin menu---------------------------------->            
+        <div class="menu-container" id="menu-container">           
             <div class="container2">
                 <div id="top-nav2" class="clearfix">
                     <nav class="fr2">
@@ -85,39 +77,28 @@
         </div>
         <div id="location-controls"></div>
     </div>
-    
-
     <div class="barra">
-        <p>&copy; 2025 Universidad Autonoma del Carmen. Todos los derechos reservados.</p>
+        <p>&copy; 2025 UNIMAP. Todos los derechos reservados.</p>
     </div>
-     <!--inicio localizaciones mapa-------------------------------------->
-    
-
-    <!--fincion de localizaciones mapa--------------------------------------->
-   
- 
-    <!-- funcion de ocultar por ciertos eventos--------------------------------------->
-
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-        
     <script src="js/zoom.js"></script>
     <script src="js/menu.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             document.getElementById('imagenBienvenida').classList.add('fadeOut');
-        }, 2000);//2000 milisegundos  // 20000 milisegundos = 20 segundos
+        }, 2000);
     });
 </script>
 <script>
     const h2 = document.querySelector('.palpitante2 h2');
     function restartAnimation() {
-      h2.style.animation = 'none'; // Desactiva la animación
-      h2.offsetHeight; // Forzar reflujo para reiniciar
-      h2.style.animation = 'palpitante2 8s ease-in-out forwards 3s'; // Reactiva
+      h2.style.animation = 'none'; 
+      h2.offsetHeight; 
+      h2.style.animation = 'palpitante2 8s ease-in-out forwards 3s'; 
     }
-    restartAnimation(); // Ejecutar al cargar
-    setInterval(restartAnimation, 20000); // Repetir cada 2.5 minutos
+    restartAnimation();
+    setInterval(restartAnimation, 20000);
   </script>
 </body>
 </html>

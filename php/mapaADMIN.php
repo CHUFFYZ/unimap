@@ -1,7 +1,7 @@
 <?php
-ob_start(); // Inicia el búfer de salida
+ob_start();
 session_start();
-$allowed = ['administrativo']; // Solo acceso administrativo
+$allowed = ['administrativo'];
 if (!isset($_SESSION['admin']) || 
     !isset($_SESSION['admin']['tipo']) || 
     !in_array($_SESSION['admin']['tipo'], $allowed)) {
@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin']) ||
     header("Refresh: 1; URL=sesionADMIN.php");
     exit();
 }
-ob_end_flush(); // Libera el búfer y envía la salida
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>
@@ -28,23 +28,17 @@ ob_end_flush(); // Libera el búfer y envía la salida
     <link rel="icon"  href="../image/LogoBlanco1.webp" type="image/webp"/>
     <link rel="stylesheet" href="../css/mapaALUM.css">
     <link rel="stylesheet" href="../css/global.css">
-    <!-- Pannellum para imágenes panorámicas -->
     <link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css">
 
 </head>
 <body>
-    <!-------------------- Pantalla de BienvenidaALAN------------------>
-<!-- Pantalla de Bienvenida -->
-<div class="pantalla-bienvenida" id="pantallaBienvenida">
-    <h1 id="mensajeBienvenida">¡Bienvenido!</h1>
-    <img src="../image/loading.png" alt="Imagen de bienvenida" class="imagen-bienvenida" id="imagenBienvenida">
-    <h1 id="mensajeCargando">Cargando...</h1>
-</div>
-<div id="contenido" style="display: none;">
-    <!-- Aquí puedes incluir tu contenido de mapa.html -->
-</div>
-
-    <!-------------------- Termino de pantalla de BienvenidaALAN------------------>
+    <div class="pantalla-bienvenida" id="pantallaBienvenida">
+        <h1 id="mensajeBienvenida">¡Bienvenido!</h1>
+        <img src="../image/loading.png" alt="Imagen de bienvenida" class="imagen-bienvenida" id="imagenBienvenida">
+        <h1 id="mensajeCargando">Cargando...</h1>
+    </div>
+    <div id="contenido" style="display: none;">
+    </div>
 <header>
     <div class="supercontainer">
         <div class="containerlogo">
@@ -56,14 +50,8 @@ ob_end_flush(); // Libera el búfer y envía la salida
                 <h4><span>Mapa Interactivo Universitario</span></h4>
             </div>
         </div>
-
-         <!-- Inicio menu---------------------------------------->
         <div class="menu-toggle" id="menu-toggle">&#9776;</div>
         <div class="menu-container" id="menu-container">
-    
-        
-         <!-- Fin menu---------------------------------->            
-            
             <div class="containerinf1">
                 <div id="top-nav2" class="clearfix">
                     <nav class="fr2">
@@ -78,10 +66,10 @@ ob_end_flush(); // Libera el búfer y envía la salida
                     </nav>
                 </div>
             </div>
-            <div class="containerinf2">
+            <div class="aboutme">
                 <div id="top-nav2" class="clearfix">
                     <nav class="fr2">
-                        <a class="btn" href="https://www.unacar.mx/control_escolar/calendario.html">Calendario Escolar</a>
+                        <a class="btn" href="../html/calendario.html">Calendario Escolar</a>
                     </nav>
                 </div>
             </div>
@@ -108,7 +96,6 @@ ob_end_flush(); // Libera el búfer y envía la salida
             </div>
         </div>
     </div>
-  
     <div id="map-container">
         <div id="map"></div>
     </div>
@@ -132,41 +119,29 @@ ob_end_flush(); // Libera el búfer y envía la salida
             <span class="panorama-close-btn">×</span>
         </div>
     </div>
-    
     </div>
     <div class="barra">
-        <p>&copy; 2025 Universidad Autonoma del Carmen. Todos los derechos reservados.</p>
+        <p>&copy; 2025 UNIMAP. Todos los derechos reservados.</p>
     </div>
-    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
-    <!--<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>-->
     <script src="../js/zoom2.js"></script>
     <script src="../js/menu.js"></script>
-    <!--fincion de click--------------------------------------->
-   
- 
-    <!-- funcion de ocultar por ciertos eventos--------------------------------------->
- 
-
-
-<script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            document.getElementById('imagenBienvenida').classList.add('fadeOut');
-        }, 2000); // 20000 milisegundos = 20 segundos
-    });
-</script>
-<script>
-    const h2 = document.querySelector('.palpitante2 h2');
-    function restartAnimation() {
-      h2.style.animation = 'none'; // Desactiva la animación
-      h2.offsetHeight; // Forzar reflujo para reiniciar
-      h2.style.animation = 'palpitante2 8s ease-in-out forwards 3s'; // Reactiva
-    }
-    restartAnimation(); // Ejecutar al cargar
-    setInterval(restartAnimation, 20000); // Repetir cada 2.5 minutos
-  </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('imagenBienvenida').classList.add('fadeOut');
+            }, 2000);
+        });
+    </script>
+    <script>
+        const h2 = document.querySelector('.palpitante2 h2');
+        function restartAnimation() {
+        h2.style.animation = 'none';
+        h2.offsetHeight;
+        h2.style.animation = 'palpitante2 8s ease-in-out forwards 3s';}
+        restartAnimation();
+        setInterval(restartAnimation, 20000);
+    </script>
 </body>
 </html>

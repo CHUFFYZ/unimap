@@ -18,7 +18,6 @@
             <img src="../image/fondo.webp" alt="fondoimg">
         </div>
         <div class="supercontainer">
-                <!-- Existing header content remains unchanged -->
             <div class="containerlogo">
                 <a id="logoweb" class="fl" href="mapaALUM.php"><img src="../image/LogoBlanco.webp" alt="LogoUnimap"></a>
             </div>
@@ -46,8 +45,6 @@
                     </div>
                 </div>
             </div>
-
-<!-------- New Menu Titulo ------->
         <div class="fondosupercontainer">
                 <div class="inisesion">
                     <div class="titulo" id="tituloinicio">
@@ -91,7 +88,6 @@
             </div>
 
     <script>
-    // Debug de envío de formulario
     document.querySelector('form').addEventListener('submit', function(e) {
         console.log('Formulario enviado');
         console.log('Matrícula:', document.getElementById('matricula').value);
@@ -99,18 +95,14 @@
     });
 </script>
 <script>
-/*ver contrasenna ojo---------------------------------------------------------------*/
 document.addEventListener('DOMContentLoaded', function() {
     const togglePassword = document.querySelector('#togglePassword');
     const password = document.querySelector('#contraseña');
 
     if (togglePassword && password) {
         togglePassword.addEventListener('click', function() {
-            // Alternar tipo de input
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
             password.setAttribute('type', type);
-            
-            // Alternar icono
             this.classList.toggle('fa-eye-slash');
             this.classList.toggle('fa-eye');
         });
@@ -118,7 +110,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
  <script src="../js/menu.js"></script>
-
-    <!-- funcion de ocultar por ciertos eventos--------------------------------------->
- 
 </body>

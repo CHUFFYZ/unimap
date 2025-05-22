@@ -12,13 +12,13 @@ try {
     }
 
     // Validate data
-    if (empty($_POST['alumnos'])) {
+    if (empty($_POST['alumno'])) {
         throw new Exception("No se proporcionaron datos para modificar");
     }
 
-    $alumnos = json_decode($_POST['alumnos'], true);
-    if (!is_array($alumnos) || empty($alumnos)) {
-        throw new Exception("Datos de alumnos inválidos");
+    $alumno = json_decode($_POST['alumno'], true);
+    if (!is_array($alumno)) {
+        throw new Exception("Datos de alumno inválidos");
     }
 
     // Database connection
@@ -27,62 +27,56 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $pdo->beginTransaction();
-    $updatedCount = 0;
 
-    foreach ($alumnos as $alumno) {
-        $matricula = filter_var($alumno['matricula'], FILTER_VALIDATE_INT);
-        $contrasena = $alumno['contrasena'];
-        $telefono = filter_var($alumno['telefono'], FILTER_VALIDATE_INT);
-        $email = filter_var($alumno['email'], FILTER_SANITIZE_EMAIL);
+    $matricula = filter_var($alumno['matricula'], FILTER_VALIDATE_INT);
+    $contrasena = $alumno['contrasena'];
+    $telefono = filter_var($alumno['telefono'], FILTER_VALIDATE_INT);
+    $email = filter_var($alumno['email'], FILTER_SANITIZE_EMAIL);
 
-        // Validate data
-        if (!$matricula || $matricula < 1) {
-            continue;
-        }
-
-        if (empty($contrasena) || strlen($contrasena) < 8 || !preg_match('/[A-Za-z]/', $contrasena) || !preg_match('/[0-9]/', $contrasena)) {
-            continue;
-        }
-
-        if (!$telefono || $telefono < 1) {
-            continue;
-        }
-
-        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            continue;
-        }
-
-        // Check if student exists
-        $stmt = $pdo->prepare("SELECT matricula FROM alumnos WHERE matricula = :matricula");
-        $stmt->execute([':matricula' => $matricula]);
-        if (!$stmt->fetch()) {
-            continue;
-        }
-
-        // Update student
-        $hash = password_hash($contrasena, PASSWORD_DEFAULT);
-        $stmt = $pdo->prepare("
-            UPDATE alumnos SET
-                contrasena = :contrasena,
-                telefono = :telefono,
-                email = :email
-            WHERE matricula = :matricula
-        ");
-
-        $stmt->execute([
-            ':matricula' => $matricula,
-            ':contrasena' => $hash,
-            ':telefono' => $telefono,
-            ':email' => $email
-        ]);
-
-        $updatedCount++;
+    // Validate matricula
+    if (!$matricula || $matricula < 1) {
+        throw new Exception("Matrícula inválida");
     }
+
+    // Validate telefono
+    if (!$telefono || $telefono < 1) {
+        throw new Exception("Teléfono inválido");
+    }
+
+    // Validate email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        throw new Exception("Email inválido");
+    }
+
+    // Check if student exists
+    $stmt = $pdo->prepare("SELECT matricula FROM alumnos WHERE matricula = :matricula");
+    $stmt->execute([':matricula' => $matricula]);
+    if (!$stmt->fetch()) {
+        throw new Exception("El alumno no existe");
+    }
+
+    // Prepare update query
+    $query = "UPDATE alumnos SET telefono = :telefono, email = :email";
+    $params = [':matricula' => $matricula, ':telefono' => $telefono, ':email' => $email];
+
+    // Handle password if provided
+    if (!empty($contrasena)) {
+        if (strlen($contrasena) < 8 || !preg_match('/[A-Za-z]/', $contrasena) || !preg_match('/[0-9]/', $contrasena)) {
+            throw new Exception("La contraseña debe tener al menos 8 caracteres, incluyendo letras y números");
+        }
+        $hash = password_hash($contrasena, PASSWORD_DEFAULT);
+        $query .= ", contrasena = :contrasena";
+        $params[':contrasena'] = $hash;
+    }
+
+    $query .= " WHERE matricula = :matricula";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute($params);
 
     $pdo->commit();
 
     // Success
-    $_SESSION['success'] = "$updatedCount alumnos modificados exitosamente";
+    $_SESSION['success'] = "Alumno modificado exitosamente";
     header("Location: ../gestion-alumnos.php");
     exit();
 

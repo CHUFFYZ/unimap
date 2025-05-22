@@ -6,7 +6,7 @@
     <title>UNIMAP - Calendario Escolar</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
     <link rel="icon" href="data:image/x-icon;base64,AAABAAMAAQ==">
-    <!-- Leaflet CSS -->
+    <link rel="icon"  href="../image/LogoBlanco1.webp" type="image/webp"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <style>
         body {
@@ -49,21 +49,17 @@
             box-shadow: 2px 2px 3px rgba(136, 136, 136, 0.5), -2px -2px 5px rgba(204, 204, 204, 0.5);
             z-index: 0;
         }
-
         #map {
             height: 100%;
             width: 100%;
             will-change: transform;
         }
-
-        /* Optimize image rendering */
         #map img {
             will-change: transform;
-            image-rendering: -webkit-optimize-contrast; /* Improve rendering speed */
-            image-rendering: crisp-edges; /* For sharp edges at low zoom */
+            image-rendering: -webkit-optimize-contrast; 
+            image-rendering: crisp-edges; 
         }
 
-        /* Customize Leaflet zoom controls */
         .leaflet-control-zoom a {
             font-family: 'Poppins', sans-serif;
             font-size: 18px;
@@ -126,14 +122,12 @@
         <div id="map"></div>
     </div>
 
-    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script>
         let map;
         let markers = {};
         let isFlying = false;
 
-        /* Preload the image */
         function preloadImage(url) {
             const img = new Image();
             img.src = url;
@@ -151,7 +145,6 @@
                 return;
             }
 
-            // Preload image
             preloadImage('../image/calendario2.jpg');
 
             map = L.map('map', {
@@ -162,12 +155,11 @@
                 maxBoundsViscosity: 1.0,
                 zoomDelta: 0.5,
                 zoomSnap: 0,
-                fadeAnimation: false, // Disable animations for performance
+                fadeAnimation: false, 
                 zoomAnimation: false,
                 markerZoomAnimation: false
             });
 
-            /* Load image overlay */
             const imageOverlay = L.imageOverlay('../image/calendario2.jpg', bounds, {
                 interactive: true
             });
@@ -179,7 +171,6 @@
             map.fitBounds(bounds);
             map.setView([5000, 0], -3.5);
 
-            /* Custom zoom control */
             L.Control.CustomZoom = L.Control.Zoom.extend({
                 onAdd: function(map) {
                     const container = L.DomUtil.create('div', 'leaflet-control-zoom leaflet-bar');

@@ -18,7 +18,6 @@
             <img src="../image/fondo.webp" alt="fondoimg">
         </div>
         <div class="supercontainer">
-                <!-- Existing header content remains unchanged -->
             <div class="containerlogo">
                 <a id="logoweb" class="fl" href="mapaALUM.php"><img src="../image/LogoBlanco.webp" alt="LogoUnimap"></a>
             </div>
@@ -95,7 +94,6 @@
                     <button id="acceptButton" class="accept-button" onclick="redirectToGuest()">Aceptar</button>
                 </div>
             </div>
-    <!-- Existing scripts remain unchanged -->
     <script>
         document.querySelector('form').addEventListener('submit', function(e) {
             console.log('Formulario enviado');

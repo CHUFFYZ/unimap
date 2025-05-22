@@ -7,7 +7,7 @@ if (!isset($_SESSION['admin']) ||
     !in_array($_SESSION['admin']['tipo'], $allowed)) {
     header("HTTP/1.1 403 Forbidden");
     echo "Acceso restringido a administrativos. Redirigiendo...";
-    header("Refresh: 1; URL=sesionADMIN.php");
+    header("Refresh: 1; URL=../sesionADMIN.php");
     exit();
 }
 ob_end_flush(); // Libera el búfer y envía la salida
@@ -24,7 +24,7 @@ require_once '../../DB-coneccion.php';
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="../image/LogoBlanco1.webp" type="image/webp"/>
+    <link rel="icon" href="../../image/LogoBlanco1.webp" type="image/webp"/>
     <link rel="stylesheet" href="../../css/gestion-alumnos.css">
 </head>
 
@@ -36,7 +36,7 @@ require_once '../../DB-coneccion.php';
             <p>Registro de Alumnos - UNIMAP</p>
         </div>
         <div class="log">
-            <img src="image/LogoBlanco.webp" alt="Logo Universidad">
+            <img src="../../image/LogoBlanco.webp" alt="Logo Universidad">
         </div>
     </header>
 
@@ -92,16 +92,12 @@ require_once '../../DB-coneccion.php';
                 </form>
                 <div class="downloadcontainer">
                     <div class="downloadexel">
-                        <a href="../files/estructura_alumnos.xlsx" download class="btn-secondary">Descargar Estructura</a>
+                        <a href="../../archivos/Estructura-Alumnos.xlsx" download class="btn-secondary">Descargar Estructura</a>
                     </div>
                 </div>
             </div>
         </div>
                
-    </div>
-
-    <div class="barra">
-        <p>© 2025 Universidad Autonoma del Carmen. Todos los derechos reservados.</p>
     </div>
 
     <script>

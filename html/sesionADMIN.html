@@ -24,12 +24,10 @@
                     <h4><span>Mapa Interactivo Unveriversitario</span></h4>
                 </div>
             </div>
-                <!-- Inicio menu---------------------------------------->
             <div class="container-menu">
                 <div class="menu-toggle" id="menu-toggle">&#9776;</div>
             </div>
-            <div class="menu-container" id="menu-container">
-             <!-- Fin menu---------------------------------->    
+            <div class="menu-container" id="menu-container">   
                 <div class="containerinf2">
                     <div id="top-nav2" class="clearfix">
                         <nav class="fr2">
@@ -54,14 +52,12 @@
             </div>
         </div>
 
-<!-------- New Menu Titulo ------->
         <div class="fondosupercontainer">
             <div class="inisesion">
                 <div class="titulo" id="tituloinicio">
                     <h2> Inicio de Sesión </h2>
                 </div>
             </div>
-            <!-- Cuadro del menú con el título dentro -->
             <div class="containerini">
                 <div class="logosweb">
                     <div class="intalumno" id="inicioalumno">
@@ -71,26 +67,19 @@
                         <a id="logalum"><img src="../image/admin.webp" alt="alumnoslogo"></a>
                     </div>     
                 </div>
-                    <!-- Campo de entrada personalizado -->
                 <div class="contenedor-matricula">
                     <input type="text" class="input-personalizado" placeholder="Matrícula" id="matricula">
                 </div>
-                    <!-- Campo de entrada personalizado -->
                 <div class="contenedor-contraseña">
                     <input type="password" class="input-personalizado2" placeholder="Contraseña" id="contraseña">
                 </div>
-                    
-                    <!-- Apartado de texto y enlace -->
                 <div class="contenedor-recuperar">
                     <div class="barra"></div>
                         <h3>¿Olvidaste la contraseña?</h3>
                         <h4><a id="contraseñarecu" href="recucontraAlum.html" target="_blank" class="link-recuperar">Presiona aquí</a></h4>
                 </div>
-                    <!-- Botones de acción -->
                 <div class="contenedor-botones">
-                        <!-- Botón de Acceder -->
                     <button class="btn-acceder" onclick="location.href='mapaADMIN.html'">Acceder</button>
-                         <!-- Botón de Cancelar -->
                     <button class="btn-cancelar" onclick="location.href='cancelar.html'">Cancelar</button>
                     
                 </div>
@@ -98,9 +87,6 @@
         </div>
     </div>
  <script src="../zoom.js"></script>
-
-    <!-- funcion de ocultar por ciertos eventos--------------------------------------->
- 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         var menuToggle = document.getElementById('menu-toggle');
@@ -113,13 +99,11 @@
                 setTimeout(() => {
                     menuContainer.classList.remove('active');
                     menuContainer.classList.remove('exit');
-                }, 300); // La duración debe coincidir con la duración de la animación CSS
+                }, 300); 
             } else {
                 menuContainer.classList.add('active');
             }
         });
-
-        // Cerrar el menú al hacer clic fuera de él
         document.addEventListener('click', function (event) {
             if (!menuContainer.contains(event.target) && !menuToggle.contains(event.target)) {
                 if (menuContainer.classList.contains('active')) {
@@ -127,12 +111,10 @@
                     setTimeout(() => {
                         menuContainer.classList.remove('active');
                         menuContainer.classList.remove('exit');
-                    }, 300); // La duración debe coincidir con la duración de la animación CSS
+                    }, 300); 
                 }
             }
         });
-
-        // Cerrar el menú al cambiar el tamaño de la pantalla
         window.addEventListener('resize', function () {
             if (window.innerWidth > 768) {
                 if (menuContainer.classList.contains('active')) {
@@ -140,7 +122,7 @@
                     setTimeout(() => {
                         menuContainer.classList.remove('active');
                         menuContainer.classList.remove('exit');
-                    }, 300); // La duración debe coincidir con la duración de la animación CSS
+                    }, 300); 
                 }
             }
         });

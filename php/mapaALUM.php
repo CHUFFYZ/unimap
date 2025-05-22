@@ -1,7 +1,7 @@
 <?php
-ob_start(); // Inicia el búfer de salida
+ob_start();
 session_start();
-$allowed = ['alumno']; // Solo acceso alumnos
+$allowed = ['alumno'];
 if (!isset($_SESSION['alumno']) || 
     !isset($_SESSION['alumno']['tipo']) || 
     !in_array($_SESSION['alumno']['tipo'], $allowed)) {
@@ -10,9 +10,8 @@ if (!isset($_SESSION['alumno']) ||
     header("Refresh: 1; URL=iniciosesion.php");
     exit();
 }
-ob_end_flush(); // Libera el búfer y envía la salida
+ob_end_flush();
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,20 +27,16 @@ ob_end_flush(); // Libera el búfer y envía la salida
     <link rel="icon" href="../image/LogoBlanco1.webp" type="image/webp"/>
     <link rel="stylesheet" href="../css/mapaALUM.css">
     <link rel="stylesheet" href="../css/global.css">
-    <!-- Pannellum para imágenes panorámicas -->
     <link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css">
 </head>
 <body>
-    <!-- Pantalla de Bienvenida -->
     <div class="pantalla-bienvenida" id="pantallaBienvenida">
         <h1 id="mensajeBienvenida">¡Bienvenido!</h1>
         <img src="../image/loading1.png" alt="Imagen de bienvenida" class="imagen-bienvenida" id="imagenBienvenida">
         <h1 id="mensajeCargando">Cargando...</h1>
     </div>
     <div id="contenido" style="display: none;">
-        <!-- Aquí puedes incluir tu contenido de mapa.html -->
     </div>
-
     <header>
         <div class="supercontainer">
             <div class="containerlogo">
@@ -53,7 +48,6 @@ ob_end_flush(); // Libera el búfer y envía la salida
                     <h4><span>Mapa Interactivo Universitario</span></h4>
                 </div>
             </div>
-            <!-- Inicio menu -->
             <div class="menu-toggle" id="menu-toggle">☰</div>
             <div class="menu-container" id="menu-container">
                 <div class="containerinf1">
@@ -70,12 +64,12 @@ ob_end_flush(); // Libera el búfer y envía la salida
                         </nav>
                     </div>
                 </div>
-                <div class="containerinf2">
-                    <div id="top-nav2" class="clearfix">
-                        <nav class="fr2">
-                            <a class="btn" href="../html/calendario.html" target="_blank">Calendario Escolar</a>
-                        </nav>
-                    </div>
+                <div class="aboutme">
+                <div id="top-nav2" class="clearfix">
+                    <nav class="fr2">
+                        <a class="btn" href="../html/calendario.html">Calendario Escolar</a>
+                    </nav>
+                </div>
                 </div>
                 <div class="container2">
                     <div id="top-nav2" class="clearfix">
@@ -124,8 +118,6 @@ ob_end_flush(); // Libera el búfer y envía la salida
             <span class="panorama-close-btn">×</span>
         </div>
     </div>
-    
-    <!-- Contenedor AFIs -->
     <div id="popup-overlay" class="popup-overlay"></div>
     <div id="popup" class="popup">
         <h1>Mostrar AFIs por Mes</h1>
@@ -151,21 +143,17 @@ ob_end_flush(); // Libera el búfer y envía la salida
             </form>
         </div>
         <div class="table-container" id="results">
-            <!-- Aquí se mostrarán los resultados de la tabla -->
         </div>
     </div>
     <div class="barra">
-        <p>© 2025 Universidad Autónoma del Carmen. Todos los derechos reservados.</p>
+        <p>© 2025 UNIMAP. Todos los derechos reservados.</p>
     </div>
-
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
     <script src="../js/zoom2.js"></script>
     <script src="../js/menu.js"></script>
     <script src="../js/popup-afi.js"></script>
     <script src="../js/mostarafi2.js"></script>
-    <!--<script src="../js/geolocalizacion.js"></script>-->
-    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
@@ -176,12 +164,11 @@ ob_end_flush(); // Libera el búfer y envía la salida
     <script>
         const h2 = document.querySelector('.palpitante2 h2');
         function restartAnimation() {
-            h2.style.animation = 'none'; // Desactiva la animación
-            h2.offsetHeight; // Forzar reflujo para reiniciar
-            h2.style.animation = 'palpitante2 8s ease-in-out forwards 3s'; // Reactiva
-        }
-        restartAnimation(); // Ejecutar al cargar
-        setInterval(restartAnimation, 20000); // Repetir cada 2.5 minutos
+            h2.style.animation = 'none';
+            h2.offsetHeight;
+            h2.style.animation = 'palpitante2 8s ease-in-out forwards 3s';}
+        restartAnimation();
+        setInterval(restartAnimation, 20000);
     </script>
 </body>
 </html>
