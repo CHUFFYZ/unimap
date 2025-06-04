@@ -22,7 +22,7 @@ session_start();
         </div>
         <div class="supercontainer">
             <div class="containerlogo">
-                <a id="logoweb" class="fl" href="iniciosesion.php"><img src="../image/LogoBlanco.webp" alt="LogoUnimap"></a>
+                <a id="logoweb" class="fl" href="sesionPROFE.php"><img src="../image/LogoBlanco.webp" alt="LogoUnimap"></a>
             </div>
             <div class="MensajeUNIMAP">
                 <div id="nombrelogo">
@@ -63,13 +63,13 @@ session_start();
                     </div>
                 </div>  
                 <div class="containerini">
-                    <form method="POST" action="log-alumnos.php">
+                    <form method="POST" action="log-profe.php">
                         <div class="logosweb">
                             <div class="intalumno" id="inicioalumno">
-                                <h2>Alumnos</h2>
+                                <h2>Docentes</h2>
                             </div>
                             <div class="logoalum">  
-                                <a id="logalum"><img src="../image/alumno.webp" alt="alumnoslogo"></a>
+                                <a id="logalum"><img src="../image/profesor.webp" alt="alumnoslogo"></a>
                             </div>     
                         </div>
                         <div class="contenedor-matricula">
@@ -96,13 +96,6 @@ session_start();
                         </div>         
                     </form>
                 </div>
-                <div class="toggle-container">
-                    <label class="toggle">
-                        <input type="checkbox" id="guestMode" onchange="toggleGuestMode()">
-                        Activar modo invitado
-                    </label>
-                    <button id="acceptButton" class="accept-button" onclick="redirectToGuest()">Aceptar</button>
-                </div>
             </div>
     <script>
         document.querySelector('form').addEventListener('submit', function(e) {
@@ -125,7 +118,6 @@ session_start();
             }
         });
     </script>
-    <script src="../js/invitado.js"></script>
     <script src="../js/menu.js"></script>
 </body>
 </html>

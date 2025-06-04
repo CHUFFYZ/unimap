@@ -39,6 +39,13 @@ session_start();
                             </nav>
                         </div>
                     </div>
+                    <div class="containerinf2">
+                        <div id="top-nav2" class="clearfix">
+                            <nav class="fr2">
+                                <a class="btn" href="sesionPROFE.php">Profesor</a>
+                            </nav>
+                        </div>
+                    </div>
                     <div class="container2">
                         <div id="top-nav2" class="clearfix">
                             <nav class="fr2">

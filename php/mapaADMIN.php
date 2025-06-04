@@ -62,6 +62,13 @@ ob_end_flush();
             <div class="containerinf">
                 <div id="top-nav2" class="clearfix">
                     <nav class="fr2">
+                        <a class="btn" href="acciones-admin/altas-profesores.php">Gestion Profesores</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="containerinf">
+                <div id="top-nav2" class="clearfix">
+                    <nav class="fr2">
                         <a class="btn" href="acciones-admin/altas-alumnos.php">Gestion Alumnos</a>
                     </nav>
                 </div>
