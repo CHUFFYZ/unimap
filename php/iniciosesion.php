@@ -1,9 +1,12 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>nicio Sesion UNIMAP</title>
+    <title>Inicio Sesion UNIMAP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
@@ -19,7 +22,7 @@
         </div>
         <div class="supercontainer">
             <div class="containerlogo">
-                <a id="logoweb" class="fl" href="mapaALUM.php"><img src="../image/LogoBlanco.webp" alt="LogoUnimap"></a>
+                <a id="logoweb" class="fl" href="iniciosesion.php"><img src="../image/LogoBlanco.webp" alt="LogoUnimap"></a>
             </div>
             <div class="MensajeUNIMAP">
                 <div id="nombrelogo">
@@ -78,7 +81,7 @@
                         <div class="contenedor-recuperar">
                             <div class="barra"></div>
                             <h3>¿Olvidaste la contraseña?</h3>
-                            <h4><a id="contraseñarecu" href="restablecercotrasena/reset-request.php" target="_blank" class="link-recuperar">Presiona aquí</a></h4>
+                            <h4><a id="contraseñarecu" href="restablecercotrasena/reset-request.php" class="link-recuperar">Presiona aquí</a></h4>
                         </div>
                         <div class="contenedor-botones">
                             <button type="submit" class="btn-acceder">Acceder</button>
