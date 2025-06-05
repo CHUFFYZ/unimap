@@ -42,7 +42,7 @@ session_start();
                     <div class="containerinf2">
                         <div id="top-nav2" class="clearfix">
                             <nav class="fr2">
-                                <a class="btn" href="sesionPROFE.php">Profesor</a>
+                                <a class="btn" href="sesionPROFE.php">Docentes</a>
                             </nav>
                         </div>
                     </div>
