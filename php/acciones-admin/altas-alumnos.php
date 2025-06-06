@@ -66,8 +66,8 @@ require_once '../../DB-coneccion.php';
                 <div class="form-group">
                     <label for="password">Contraseña:</label>
                     <input type="password" id="password" name="password" required 
-                           pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$" 
-                           title="Debe contener al menos una letra y un número (mínimo 8 caracteres)">
+                        pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$" 
+                        title="Debe contener al menos una letra y un número (mínimo 8 caracteres)">
                 </div>
                 <div class="form-group">
                     <label for="telefono">Teléfono:</label>
@@ -101,7 +101,6 @@ require_once '../../DB-coneccion.php';
     </div>
 
     <script>
-        // Toggle Password Visibility
         function togglePassword() {
             const passwordField = document.getElementById('password');
             const toggleBtn = document.querySelector('.toggle-password i');
@@ -116,7 +115,6 @@ require_once '../../DB-coneccion.php';
             }
         }
 
-        // Form validation
         document.getElementById('studentForm').addEventListener('submit', function(e) {
             const password = document.getElementById('password').value;
             const regex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;

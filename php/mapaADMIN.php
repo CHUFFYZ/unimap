@@ -26,7 +26,7 @@ ob_end_flush();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="icon"  href="../image/LogoBlanco1.webp" type="image/webp"/>
-    <link rel="stylesheet" href="../css/mapaALUM.css">
+    <link rel="stylesheet" href="../css/mapaADMIN.css">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css">
 

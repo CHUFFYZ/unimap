@@ -41,7 +41,6 @@ require_once '../../DB-coneccion.php';
     </header>
 
     <div class="container">
-        <!-- Navigation Button -->
         <div class="section">
             <a href="../mapaADMIN.php" class="btn-secondary"><i class="fas fa-arrow-left"></i> Regresar</a>
             <a href="gestion-profesores.php" class="btn-primary"><i class="fas fa-user-plus"></i> Modificar-Eliminar Profesores</a>
@@ -101,7 +100,7 @@ require_once '../../DB-coneccion.php';
     </div>
 
     <script>
-        // Toggle Password Visibility
+       
         function togglePassword() {
             const passwordField = document.getElementById('password');
             const toggleBtn = document.querySelector('.toggle-password i');
@@ -116,7 +115,7 @@ require_once '../../DB-coneccion.php';
             }
         }
 
-        // Form validation
+       
         document.getElementById('studentForm').addEventListener('submit', function(e) {
             const password = document.getElementById('password').value;
             const regex = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;

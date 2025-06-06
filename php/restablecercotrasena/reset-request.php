@@ -74,18 +74,15 @@ unset($_SESSION['error'], $_SESSION['success']);
     </div>
 
     <script>
-        // Validación en cliente
         document.querySelector('form').addEventListener('submit', function(e) {
             const matricula = document.getElementById('matricula').value;
             const contacto = document.getElementById('contacto').value;
             
-            // Validar matrícula numérica
             if (!/^\d+$/.test(matricula)) {
                 alert('La matrícula debe contener solo números');
                 e.preventDefault();
             }
             
-            // Validar formato contacto
             const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contacto);
             const isPhone = /^\d{10}$/.test(contacto);
             

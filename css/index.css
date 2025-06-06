@@ -89,7 +89,7 @@ p, h2 {
     flex-direction: row;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 860px) {
     .menu-toggle {
         display: block;
     }

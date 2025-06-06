@@ -38,7 +38,6 @@ if (!isset($_SESSION['admin']) ||
             <img src="../image/LogoBlanco.webp" alt="Logo Universidad">
         </div>
     </header>
-    <!-- Agrega esto justo después del header -->
     <div class="action-buttons">
         <button class="btn-primary" onclick="showPopup()">
             <i class="fas fa-search"></i> Mostrar AFIs
@@ -69,8 +68,6 @@ if (!isset($_SESSION['admin']) ||
         <input type="number" id="year" name="year" min="2023" required>
         <button type="submit">Cargar AFIs</button>
     </form>
-
-         <!-- Formulario para borrar datos -->
     <form id="deleteForm" method="POST" action="../delete_afis.php" onsubmit="return confirmDelete()">
         <h2>Borrar AFIs</h2>
         <label for="deleteMonth">Mes:</label>
@@ -90,9 +87,7 @@ if (!isset($_SESSION['admin']) ||
         </select>   
         <button type="submit">Borrar AFIs</button>
     </form>
-    <!-- Botón para mostrar el popup -->
     <div id="popup-overlay" class="popup-overlay"></div>
-    <!-- Contenido del popup -->
     <div id="popup" class="popup">
         <h2>Mostrar AFIs por Mes</h2>
         <div class="form-container">
@@ -117,7 +112,6 @@ if (!isset($_SESSION['admin']) ||
             </form>
         </div>
         <div class="table-container" id="results">
-            <!-- Aquí se mostrarán los resultados de la tabla -->
         </div>
     </div>
     <div class="excel">
@@ -159,7 +153,6 @@ if (!isset($_SESSION['admin']) ||
     <script src="../js/mostarafi.js"></script>
     
     <script>
-        // Función para confirmar dos veces antes de borrar
         function confirmDelete() {
             if (confirm("¿Estás seguro de que quieres borrar los datos seleccionados?")) {
                 return confirm("Esta acción es irreversible. ¿Confirmas el borrado?");

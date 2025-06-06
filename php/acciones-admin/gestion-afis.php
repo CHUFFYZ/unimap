@@ -1,7 +1,7 @@
 <?php
-ob_start(); // Inicia el búfer de salida
+ob_start(); 
 session_start();
-$allowed = ['administrativo']; // Solo acceso administrativo
+$allowed = ['administrativo']; 
 if (!isset($_SESSION['admin']) || 
     !isset($_SESSION['admin']['tipo']) || 
     !in_array($_SESSION['admin']['tipo'], $allowed)) {
@@ -37,7 +37,6 @@ ob_end_flush(); // Libera el búfer y envía la salida
             <img src="../../image/LogoBlanco.webp" alt="Logo Universidad">
         </div>
     </header>
-    <!-- Agrega esto justo después del header -->
     <div class="action-buttons">
         <button class="btn-primary" onclick="showPopup()">
             <i class="fas fa-search"></i> Mostrar AFIs
@@ -69,7 +68,6 @@ ob_end_flush(); // Libera el búfer y envía la salida
         <button type="submit">Cargar AFIs</button>
     </form>
 
-         <!-- Formulario para borrar datos -->
     <form id="deleteForm" method="POST" action="../../delete_afis.php" onsubmit="return confirmDelete()">
         <h2>Borrar AFIs</h2>
         <label for="deleteMonth">Mes:</label>
@@ -116,7 +114,6 @@ ob_end_flush(); // Libera el búfer y envía la salida
             </form>
         </div>
         <div class="table-container" id="results">
-            <!-- Aquí se mostrarán los resultados de la tabla -->
         </div>
     </div>
     <div class="excel">
@@ -158,7 +155,6 @@ ob_end_flush(); // Libera el búfer y envía la salida
     <script src="../../js/mostrarafi2.js"></script>
     
     <script>
-        // Función para confirmar dos veces antes de borrar
         function confirmDelete() {
             if (confirm("¿Estás seguro de que quieres borrar los datos seleccionados?")) {
                 return confirm("Esta acción es irreversible. ¿Confirmas el borrado?");

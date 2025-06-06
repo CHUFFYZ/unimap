@@ -1,7 +1,7 @@
 <?php
-ob_start(); // Inicia el búfer de salida
+ob_start(); 
 session_start();
-$allowed = ['alumno']; // Solo acceso alumnos
+$allowed = ['alumno']; 
 if (!isset($_SESSION['alumno']) || 
     !isset($_SESSION['alumno']['tipo']) || 
     !in_array($_SESSION['alumno']['tipo'], $allowed)) {
@@ -10,7 +10,7 @@ if (!isset($_SESSION['alumno']) ||
     header("Refresh: 1; URL=iniciosesion.php");
     exit();
 }
-ob_end_flush(); // Libera el búfer y envía la salida
+ob_end_flush();
 ?>
 
 <!DOCTYPE html>

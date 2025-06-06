@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$allowed = ['administrativo']; // Solo acceso administrativo
+$allowed = ['administrativo'];
 
 if (!isset($_SESSION['admin']) || 
     !isset($_SESSION['admin']['tipo']) || 
@@ -90,7 +90,7 @@ require_once '../DB-coneccion.php';
         <button type="submit" class="btn-primary">Registrar Alumno</button>
     </form>
         <div class="barra">
-        <p>&copy; 2025 Universidad Autonoma del Carmen. Todos los derechos reservados.</p>
+        <p>&copy; 2025 UNIMAP. Todos los derechos reservados.</p>
         </div>
 
         <script>

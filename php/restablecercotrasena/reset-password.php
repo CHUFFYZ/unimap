@@ -37,8 +37,6 @@ try {
     if (!$user) {
         throw new Exception("Enlace expirado o inválido");
     }
-
-    // Guardar datos en sesión para el update
     $_SESSION['reset_token'] = $token;
     $_SESSION['tipo_usuario'] = $user['tipo'];
     $_SESSION['reset_matricula'] = $user['matricula'];

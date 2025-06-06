@@ -187,7 +187,7 @@ require_once '../../DB-coneccion.php';
     </div>
 
     <script>
-        // Bulk Delete Functionality
+       
         let selectedForDelete = [];
 
         function toggleBulkDelete() {
@@ -197,7 +197,7 @@ require_once '../../DB-coneccion.php';
 
         function attachDeleteListeners() {
             document.querySelectorAll('.mark-delete').forEach(btn => {
-                btn.removeEventListener('click', handleDelete); // Prevent duplicate listeners
+                btn.removeEventListener('click', handleDelete);
                 btn.addEventListener('click', handleDelete);
             });
         }
@@ -239,7 +239,7 @@ require_once '../../DB-coneccion.php';
                 </tr>
             `;
             row.remove();
-            attachDeleteListeners(); // Reattach listeners to new rows
+            attachDeleteListeners(); 
         });
 
         function confirmBulkDelete() {
@@ -288,19 +288,18 @@ require_once '../../DB-coneccion.php';
             selectedForDelete = [];
             selectedTable.innerHTML = '';
             toggleBulkDelete();
-            attachDeleteListeners(); // Reattach listeners after canceling
+            attachDeleteListeners();
         }
 
-        // Initial attachment of delete listeners
+        
         attachDeleteListeners();
 
-        // Modify Functionality
+       
         let originalData = null;
         let modifyingRow = null;
 
         function toggleModify(row) {
             if (modifyingRow && modifyingRow !== row) {
-                // Reset previous row if another is being modified
                 resetRow(modifyingRow);
             }
 
