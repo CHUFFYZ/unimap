@@ -1,0 +1,515 @@
+/*Fuente Principal*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #0040c9;
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all .3s;
+}
+/* Elementos de encabezados */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #464646;
+}
+
+h1 {
+    font-size: 50px;
+    color:#000000;
+}
+h2 {
+    font-size: 44px;
+    color: rgb(224, 228, 5);
+}
+h4 {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+p, h4, h2 {
+    margin: 0;
+}
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+/* Main wrapper para el scroll de la pagina */
+.main-wrapper {
+    min-height: 100vh; /* todo el alto de la pantalla*/
+    display: flex;
+    flex-direction: column;
+}
+/* Fondo */
+.fondo {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    overflow: visible;
+}
+.fondo img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50%;
+    z-index: -1;
+}
+/* Supercontainer (header) */
+.supercontainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    height: 60px;
+    width: auto;
+    background-color: rgb(0, 51, 102);
+    /*background: linear-gradient(135deg, rgb(20, 106, 192)  0%, rgb(0, 51, 102) 100%);*/
+    background: linear-gradient( 135deg, rgb(0, 51, 102)   0%, rgb(20, 106, 192) 100%);
+    border-radius: 35px;
+    border-radius: 10px;
+    z-index: 10;
+}
+/*------------------------------------------------------------------------*/
+
+/* Logo and title */
+
+.containerlogo {
+    width: 45px;
+    height: 45px;
+    margin: 2px;
+    margin-left: 5px;
+    /*filter: drop-shadow(0px 0px 1px white);*/
+}
+
+#logoweb img {
+    width: 100%;
+    margin-left: 5px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#logoweb img:hover {
+    transform: scale(1.2);
+}
+.MensajeUNIMAP {
+    width: auto;
+    height: 50px;
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.MensajeUNIMAP h2 {
+    font-size: 35px;
+    color: rgb(224, 228, 5);
+    line-height: -10;
+}
+
+.MensajeUNIMAP h4 {
+    font-size: 13px;
+    color: #ffffff;
+    line-height: 0;
+}
+
+#nombrelogo {
+    width: 100%;
+    height: auto;
+}
+
+/*--------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------*/
+/* Menu ambueguesa */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translate(-50%,-50%);
+    color: #ffffff; 
+    align-items: center;
+    justify-content: center; 
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+}
+/*---------------------------------*/
+@media only screen and (max-width: 780px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-container {
+        display: none;
+        flex-direction: column;
+    }
+
+    .containerinf2,
+    .container2 {
+        display: none;
+    }
+
+}
+/*---------------------------------*/
+.menu-container.active {
+    background-color: #8d8d8d75;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    display: flex;
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    padding: 0px;
+    flex-direction: column;
+    z-index: 10;
+    }
+/* Animación del menú */
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.menu-container {
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-container.active {
+    animation: slideIn 0.3s forwards;
+}
+
+.menu-container.exit {
+    animation: slideOut 0.3s forwards;
+}
+/*----------------------------------------------------------------*/
+
+/* Menu items */
+.containerinf2,
+.container2 {
+    width: auto;
+    height: 50px;
+    margin: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(131, 126, 126);
+    border-radius: 45px;
+    border: 2.5px solid #ccc;
+    cursor: pointer;
+}
+/* Estilo de colores para los enlaces .btn y del ícono de Facebook */
+a.btn, .fab {
+    background-color: transparent;
+    padding: 23px;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+a.btn:hover, .fab:hover {
+    animation: cambioColor 2s forwards;
+}
+
+@keyframes cambioColor {
+    0% { color: #75a63c; }
+    100% { color: #fbff00; }
+}
+
+a.btn, .fab {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0px;
+    transition: font-size 0.3s ease;
+}
+
+a.btn:hover, .fab:hover {
+    font-size: 18px;
+}
+/*----------------------------------------------------------------------*/
+
+/*---contenedor inicio sesion-----------------------------------------------------------------*/
+
+
+/* Login section */
+.fondosupercontainer {
+    position: relative; /* Changed from absolute */
+    width: 100%;
+    min-height: calc(100vh - 90px); /* Adjust for header height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0px; /* Add padding to ensure content isn't cut off */
+}
+
+.inisesion {
+    position: relative;
+    top: 10px; /* Reduced from 120px */
+    text-align: center;
+    width: 100%;
+}
+
+.inisesion h2 {
+    text-align: center;
+    text-shadow: 2px 3px 5px #343434;
+    font-size: 40px;
+    color: rgb(224, 228, 5);
+    z-index: 9;
+}
+
+.containerini {
+    background-color: #c2c2c2b9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 0px auto;
+    margin-top: 20px;
+    width: 300px;
+    min-height: 355px;
+    position: relative;
+    top: 0; /* Removed fixed positioning */
+    z-index: 5;
+}
+
+.logosweb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.intalumno h2 {
+    color: rgb(0, 0, 0);
+    font-size: 28px;
+    margin: 0 10px;
+}
+
+.logoalum {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.logoalum img {
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+}
+
+/* Input fields */
+.contenedor-matricula,
+.contenedor-contraseña {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.input-personalizado,
+.input-personalizado2 {
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    outline: none;
+}
+
+.input-personalizado2 {
+    padding-right: 40px; /* Space for eye icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 158px;
+    cursor: pointer;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.error-mensaje {
+    color: #bb0f0f;
+    text-align: center;
+    margin: 10px 0;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Forgot password */
+.contenedor-recuperar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17.2px;
+}
+
+.barra {
+    width: 300px;
+    height: 3px;
+    background-color: #add8e6;
+    margin-bottom: 10px;
+}
+
+.contenedor-recuperar h3 {
+    font-size: 17px;
+    margin: 5px 0;
+}
+
+.link-recuperar {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.link-recuperar:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-acceder,
+.btn-cancelar {
+    padding: 10px 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-acceder {
+    background-color: rgb(255, 255, 255);
+    margin-right: 30px;
+    color: rgb(0, 0, 0);
+}
+
+.btn-cancelar {
+    background-color: lightgray;
+    color: black;
+}
+
+.btn-acceder:hover {
+    animation: cambioColorAcceder 2.3s forwards;
+}
+
+.btn-cancelar:hover {
+    animation: cambioColorCancelar 2.3s forwards;
+}
+
+@keyframes cambioColorAcceder {
+    0% { background-color: rgb(255, 255, 255); color: black; }
+    100% { background-color: rgb(3, 1, 105); color: rgb(255, 255, 255); }
+}
+
+@keyframes cambioColorCancelar {
+    0% { background-color: lightgray; color: black; }
+    100% { background-color: rgb(172, 3, 3); color: rgb(255, 255, 255); }
+}
+
+/* boton modo invitado */
+.toggle-container {
+    background-color: #999999d5;
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.418);
+    margin: 20px auto;
+    margin-top: 10px;
+    width: 300px;
+    height: 55px;
+    position: relative;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+}
+
+.toggle {
+    flex: 1;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000102;
+    cursor: pointer;
+}
+
+.toggle:hover {
+    color: #ffffff;
+}
+
+.accept-button {
+    display: none;
+    padding: 8px 15px;
+    font-size: 15px;
+    color: white;
+    background-color: #004080;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.accept-button:hover {
+    background-color: #0066cc;
+}
+/* Landscape mode adjustments */
+@media only screen and (max-height: 500px) {
+    .main-wrapper {
+        min-height: 100vh;
+        padding-bottom: 0px;
+    }
+
+}

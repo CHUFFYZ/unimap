@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 35px;
+    overflow: hidden;
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background: linear-gradient(135deg, #2c3e50, #3498db);*/
+    background: linear-gradient( 135deg, rgb(0, 51, 102)   0%, rgb(20, 106, 192) 100%);
+    color: white;
+    padding: 1rem;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    height: 75px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.13);
+}
+
+button {
+    position: absolute;
+    background-color: #ffffff00;
+    color: rgb(0, 0, 0);
+    border: 3px solid rgba(226, 226, 226, 0.322); 
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    top: 90px;
+    right: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    
+}
+button:hover{
+    background-color: #d40700;
+    border: 2px solid rgba(253, 166, 166, 0.445); 
+    color: white;
+}
+#comentario{
+    position: absolute;
+    margin: 0;
+    top: 0px;
+    left: 15px;
+    right: 15px;
+    text-align: center;
+}
+#comentario h1{
+    font-size: 30px;
+    margin: 0;
+    padding: 5px;
+    line-height: 1.1;
+}
+#map-container {
+    position: absolute;
+    top: 85px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 25px;
+    box-shadow: 2px 2px 3px rgba(136, 136, 136, 0.5), -2px -2px 5px rgba(204, 204, 204, 0.5);
+    z-index: 0;
+    will-change: transform;
+}
+#map {
+    height: 100%;
+    width: 100%;
+    will-change: transform;
+}
+
+#map img {
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: crisp-edges; 
+    will-change: transform;
+}
+
+.leaflet-control-zoom a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    color: #333;
+}
+.leaflet-touch .leaflet-bar a:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    
+}
+.leaflet-touch .leaflet-bar a:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.leaflet-bar {
+ padding: 5px;
+ background-color: blur rgba(187, 181, 181, 0);
+  backdrop-filter: blur(8px);
+}
+.leaflet-control-zoom a:hover {
+    background-color: #e0e0e0;
+}
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.leaflet-disabled {
+    background-color: #f4f4f4 !important;
+    color: #bbb !important;
+    cursor: default !important;
+}
+
+.leaflet-control-attribution {
+    display: none !important;
+}
+.leaflet-control-zoom-in{
+    top: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.leaflet-control-zoom-out{
+    top: 10px;
+    border-radius: 10px;
+     margin-bottom: 5px;
+}
+.leaflet-control-zoom-home{
+    top: 10px;
+    border-radius: 10px;
+     margin-bottom: 5px;
+}
+.leaflet-control-info{
+    top: 10px;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 600px) {
+    header {
+        height: 12px;
+    }
+   
+button {
+    top: 60px;
+    right: 10px;
+    
+}
+#comentario{
+    position: absolute;
+    top: 0px;
+    left: 15px;
+    right: 15px;
+    text-align: center;
+}
+#comentario h1{
+    font-size: 18px;
+}
+#map-container {
+    top: 55px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    will-change: transform;
+}
+
+.leaflet-control-zoom a {
+    font-size: 16px;
+    line-height: 22px;
+}
+}
+#map img{
+    will-change: transform;
+  }}
+.leaflet-container{
+    background-color: #ffffff00;
+    border: 3px solid rgba(226, 226, 226, 0.322); 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(30px);
+
+}

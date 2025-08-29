@@ -1,0 +1,198 @@
+
+
+/* Estilo para el botón de cierre */
+.panorama-close-btn {
+    position: absolute;
+    top: 30px !important;
+    right: 30px !important;
+    font-size: 60px !important;
+    text-shadow: 1px 1px 2px black;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: latir 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes latir {
+    from {
+        transform: scale(1);
+        color: #ffffff;
+        text-shadow: 1px 1px 2px black;
+    }
+    to {
+        transform: scale(1.2);
+        color: #000000;
+        text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    }
+}
+        .panorama-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .panorama-container.visible {
+            display: flex;
+        }
+
+        #panorama {
+            width: 90%;
+            height: 90%;
+        }
+
+        .panorama-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+/* Contenedor de controles de Pannellum */
+.pnlm-controls-container {
+    right: 20px !important;
+    bottom: 20px !important;
+    left: auto !important;
+    top: auto !important;
+}
+
+/* Contenedor de botones de zoom */
+.pnlm-zoom-controls {
+    width: 30px !important;
+    height: 65px !important;
+}
+
+/* Estilo general para los controles */
+.pnlm-controls {
+    background-color: rgba(0, 0, 128, 0) !important;
+    border-color: rgba(255, 0, 255, 0) !important;
+}
+
+/* Botones de zoom */
+.pnlm-zoom-in {
+    width: 30px !important;
+    height: 30px !important;
+    margin-bottom: 5px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease; /* Animación suave */
+}
+
+.pnlm-zoom-out {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease; /* Animación suave */
+}
+
+/* Animación de agrandamiento al pasar el mouse */
+.pnlm-zoom-in:hover,
+.pnlm-zoom-out:hover {
+    transform: scale(1.2); /* Agrandamiento al hover */
+}
+
+/* Animación al hacer clic */
+.pnlm-zoom-in:active,
+.pnlm-zoom-out:active,
+.pnlm-zoom-in.clicked,
+.pnlm-zoom-out.clicked {
+    transform: scale(1.2); /* Agrandamiento al clic */
+}
+
+/* Ajustar íconos de zoom */
+.pnlm-zoom-in::before,
+.pnlm-zoom-out::before {
+    font-size: 16px;
+    color: #000000; /* Íconos negros para contraste */
+}
+
+.leaflet-popup-content-wrapper {
+    cursor: pointer !important;
+}
+.interest-pin {
+    z-index: 500 !important;
+}
+
+
+/*--------------------------------*/
+.user-marker .user-pulse {
+    background: #4285F4;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 20px;
+    height: 20px;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    70% { transform: scale(1.5); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/*--------------------------*/
+/* Estilo para el botón de la brújula */
+.leaflet-control-compass-toggle {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: block !important; /* Forzar visibilidad */
+    cursor: pointer;
+    background: #fff;
+    color: #333;
+    border-top: 1px solid #ccc;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+
+.leaflet-control-compass-toggle img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.leaflet-control-compass-toggle:hover {
+    background: #f4f4f4;
+}
+
+.leaflet-control-compass-toggle.active {
+    background: #0078A8;
+}
+
+.leaflet-control-compass-toggle.active img {
+    filter: brightness(0) invert(1); /* Cambiar color del ícono a blanco cuando está activo */
+}
+
+/* Personalizar la brújula */
+.leaflet-compass {
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+    width: 60px !important;
+    height: 60px !important;
+    z-index: 1000;
+}
+
+.leaflet-compass .compass-digit {
+    font-size: 12px;
+    color: #333;
+}
+
+/* Asegurar que el contenedor de controles no esté oculto */
+.leaflet-control-zoom.leaflet-bar {
+    display: block !important;
+}
