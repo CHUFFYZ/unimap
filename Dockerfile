@@ -46,8 +46,8 @@ COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html && \
     find /var/www/html -type d -exec chmod 755 {} \; && \
     find /var/www/html -type f -exec chmod 644 {} \; && \
-    chmod -R 775 /var/www/html/archivos /var/www/html/basura && \
-    chmod +x /var/www/html/php/iniciosesion.*
+    chmod -R 775 /var/www/html/archivos && \
+    chmod +x /var/www/html/php/sesion/sesion-alumn.*
 
 # Verificación de sintaxis de Apache
 RUN apache2ctl configtest
