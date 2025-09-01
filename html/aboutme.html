@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIMAP - Aboutme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="icon"  href="../image/iconos/logo/LogoBlanco1.svg" type="image/webp"/>
+    <link rel="stylesheet" href="../css/aboutme.css">
+
+</head>
+<body>
+    <header>
+        <a href="aboutme.html">
+            <img class="logo" src="../image/iconos/logo/unimap.webp" alt="Logo UNIMAP">
+        </a>
+        <div class="unimap">
+        <h1>U N I M A P</h1>
+        <h2 data-key="subtitulounimap">Mapa Interactivo Universitario</h2>
+         <!-- 
+        </div>
+                <select id="languageSelector">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+        <div class="center"></div>
+        -->
+    </header>
+    <div class="content">
+        <h2>¿Qué es UNIMAP?</h2>
+        <p>Bienvenidos a UNIMAP, tu guía confiable dentro del campus universitario. Somos una plataforma diseñada para facilitar la navegación y orientación de los estudiantes dentro de su universidad.</p>
+        <p><strong>Nota:</strong> Esto es una demo en fase de prueba.</p>
+        <h1>UNIMAP forma parte de un trabajo de tesis en desarrollo.</h1>
+        <div class="desarrolladores">
+            <h1>Desarrolladores</h1>
+            <div class="student" onclick="window.open('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj_RDGsfk9sZ1qj8asI6uuHkN868gkNpKUCQ&s', '_blank')">
+                <img src="../image/desarrolladores/carlos.png" alt="Foto del integrante 1">
+                <div>
+                    <h3>Estudiante de Ingeniería en Sistemas</h3>
+                    <p>Carlos Alberto Guerra Rodriguez</p>
+                </div>
+            </div>
+            <div class="student" onclick="window.open('https://alan-bracamontes.github.io/des-app-web/02-maquetacion-cv/index.html', '_blank')">
+                <img src="../image/desarrolladores/alan.png" alt="Foto del integrante 2">
+                <div>
+                    <h3>Estudiante de Ingeniería en Diseño Multimedia</h3>
+                    <p>Alan Bracamontes de la Cruz</p>
+                </div>
+            </div>
+        </div>
+       <!--
+        <div class="desarrolladores">
+            <h1>Desarrolladores</h1>
+            <div class="student" onclick="showPopup('../image/carlos.png', 'Carlos Alberto Guerra Rodriguez', '9381563508', '210379@mail.unacar.mx', 'Ing. en Sistemas', '210379')">
+                <img src="../image/carlos.png" alt="Foto del integrante 1">
+                <div>
+                    <h3>Estudiante de Ingeniería en Sistemas</h3>
+                    <p>Carlos Alberto Guerra Rodriguez</p>
+                </div>
+            </div>
+            <div class="student" onclick="showPopup('../image/alan.png', 'Alan Bracamontes de la Cruz', '9999999999', '210348@mail.unacar.mx', 'Ing. en Diseño Multimedia', '210348')">
+                <img src="../image/alan.png" alt="Foto del integrante 2">
+                <div>
+                    <h3>Estudiante de Ingeniería en Diseño Multimedia</h3>
+                    <p>Alan Bracamontes de la Cruz</p>
+                </div>
+            </div>
+        </div>
+        -->
+        <button onclick="window.history.back()">Regresar</button>
+    </div>
+    <div id="popup" class="popup">
+        <img id="popup-img" src="" alt="Foto del estudiante">
+        <h3 id="popup-name"></h3>
+        <p id="popup-matricula"></p>
+        <p id="popup-carrera"></p>
+        <p id="popup-correo"></p>
+        <p id="popup-telefono"></p>
+        <button onclick="closePopup()">Cerrar</button>
+    </div>
+    <script src="../js/popupaboutme.js"></script>
+    <script src="../js/lenguaje2.js"></script>
+</body>
+</html>

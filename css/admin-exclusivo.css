@@ -1,0 +1,296 @@
+
+.menu-container.active {
+    display: flex;
+    position: fixed; /* Cambiado de absolute a fixed */
+    right: 5px;
+    bottom: env(safe-area-inset-bottom); /* Considera áreas seguras en móviles */
+    border-radius: 20px;
+    flex-direction: column;
+    z-index: 3;
+    background-color: #8d8d8d75;
+    backdrop-filter: blur(5px); 
+    height: calc(100% - 88px);
+    max-height: 310px; /* Usa porcentaje en lugar de vh */
+    width: auto;
+    min-width: 200px;
+    max-width: 90vw; /* Limita el ancho máximo */
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+
+@media only screen and (max-width: 1245px) {
+    .supercontainer { 
+    justify-content: space-between;
+    height: 50px;
+    width: auto;
+    padding: 5px;
+    background-color: rgb(0, 51, 102);
+    border-radius: 35px;
+}
+    .menu-toggle {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        color: #ffffff; 
+        align-items: center;
+        justify-content: center; 
+    }
+
+    
+    .menu-container {
+        display: none;
+        flex-direction: column;
+    }
+
+    .container2,
+    .container3,
+    .aboutme {
+        display: none;
+    }
+    .usuario{
+    width: 40px;
+    height: 40px;
+    }
+    .usuario img {
+        width: 40px;
+        height: 40px;
+    }
+    .menu-container.active {
+        top: 60px; /* Reduced spacing for mobile */
+    }
+}
+@media only screen and (max-width: 1115px) {
+    .container2,
+    .container3,
+    .aboutme {
+        width: auto;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
+
+    .menu-container.active .container2,
+    .menu-container.active .container3,
+    .menu-container.active .aboutme {
+        display: flex;
+    }
+    /*-------------------------------*/
+    #location-controls {
+        width: 65%;
+        left: 8px;
+    }
+    #location-details .photos img {
+        width: 120px;
+        height: 80px;
+    }
+    #fullscreen-image img {
+        max-width: 95%;
+        max-height: 85%;
+    }
+
+    #fullscreen-image .fullscreen-close-btn {
+        font-size: 40px;
+        top: 15px;
+        right: 15px;
+    }
+    .building-section h3 {
+        font-size: 1.0em;
+    }
+    a.location-link{
+        font-size: .9em;
+    }
+    #search-box {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    @keyframes palpitante2 {
+        0%{
+            transform: scale(0) translate(0px);
+        }
+        10%{
+            transform: scale(4) translateX();
+        }
+        10%{
+            transform: scale(8) translateX();
+        }
+        20%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        25%{
+            transform: scale(12) translateX(10px)  translateY(-.5px);
+            color: #178cda;
+        }
+        30%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        35%{
+            transform: scale(12) translateX(10px) translateY(0px) ;
+            color: #ffffff;
+        }
+        40%{
+            transform: scale(12) translateX(10px) translateY(-.5px);
+            color: #178cda;
+        }
+        45%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        50%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        55%{
+            transform: scale(12) translateX(10px) translateY(-.5px);
+            color: #178cda;
+        }
+        60%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        65%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        70%{
+            transform: scale(12) translateX(10px) translateY(-.5px);
+            color: #178cda;
+        }
+        75%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        80%{
+            transform: scale(12) translateX(10px) translateY(0px);
+        }
+        90%{
+            transform: scale(8) translateX() ;
+        }
+        95%{
+            transform: scale(4) translateX();
+        }
+        100%{
+            transform: scale(0)translateX(0);
+        }
+    }
+    
+}
+@media only screen and (max-width: 660px) {
+    .btn-cl-bus{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .menu-container.active{
+        top: 55px;
+        height: calc(100% - 80px );
+    }
+
+    .usuario{
+    width: 35px;
+    height: 35px;
+    }
+    .usuario img {
+        width: 35px;
+        height: 35px;
+    }
+    .barra p {
+        font-size: 10px;
+    }
+    .containerlogo {
+        width: 35px;
+        height: 35px;
+        margin-left: 10px;
+        margin-bottom: 4px;
+    }
+    #logoweb img{
+        margin-left: 0;
+    }
+    
+    
+    .MensajeUNIMAP {
+        width: auto;
+        height: 40px;
+        margin-left: 5px;
+    }
+    
+    .MensajeUNIMAP h2 {
+        font-size: 35px;
+        line-height:.8 ;
+    }
+
+    .MensajeUNIMAP h4 {
+        font-size: 13px;
+        line-height: .8;
+    }
+    .supercontainer {
+        height: 45px;
+    }
+    .inisesion{
+    top: 90px;
+    }
+    .containerini{
+    top: 110px;
+    } 
+    #map-container{
+        top: 0px;
+    }
+}
+@media only screen and (max-width: 340px){
+
+    .menu-container.active{
+        top: 45px;
+        height: calc(100% - 70px );
+    }
+    
+    
+    .supercontainer{
+        height: 35px;
+    }
+    .usuario{
+    width: 25px;
+    height: 25px;
+    }
+    .usuario img {
+        width: 25px;
+        height: 25px;
+    }
+    .containerlogo{
+        width: 25px;
+        height: 25px;
+        margin: 0px;
+    }
+    .MensajeUNIMAP {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 40px;
+            margin-left: 5px;
+        }
+    
+    .MensajeUNIMAP h2 {
+        font-size: 27px;
+        line-height:.8 ;
+    }
+
+    .MensajeUNIMAP h4 {
+        font-size: 10px;
+        line-height: .8;
+    }
+    #location-controls {
+        width: calc(100% - 20px);
+        left: 8px;
+    }
+    .building-section h3 {
+        font-size: 1.0em;
+    }
+    a.location-link{
+        font-size: .9em;
+    }
+    #search-box {
+        padding: 8px;
+        font-size: 13px;
+    }
+}

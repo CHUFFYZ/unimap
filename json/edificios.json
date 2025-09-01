@@ -1,0 +1,523 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "C-1",
+        "faculty": "Facultad de Ciencias de la Información",
+        "description": "Planta principal con biblioteca y laboratorios de computación.",
+        "photos": [
+          { "url": "../../../image/galeria/c-1/pb.jpg", "isPanoramic": false },
+          { "url": "../../../image/galeria/c-1/p2.jpg", "isPanoramic": false },
+          { "url": "../../../image/galeria/c-1/p3.jpg", "isPanoramic": false },
+          { "url": "../../../image/galeria/c-1/p4.jpg", "isPanoramic": false },
+          { "url": "../../../image/galeria/c-1/EDIFICIO.webp", "isPanoramic": false },
+          { "url": "../../../image/galeria/c-1/EDIFICIO1.webp", "isPanoramic": false }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1565, 455], [1605, 455], [1605, 495], [1565, 495], [1565, 455]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "C",
+        "faculty": "Centro de Idiomas",
+        "description": "Ofrece programas de inglés y francés.",
+        "photos": [
+          { "url": "../../../image/galeria/ci/2.webp", "isPanoramic": false }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1575, 680], [1615, 680], [1615, 720], [1575, 720], [1575, 680]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "CH",
+        "faculty": "Edificio de Vinculación",
+        "description": "Edificio de la facultad de Vinculación."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1411, 290], [1451, 290], [1451, 330], [1411, 330], [1411, 290]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "T",
+        "faculty": "Facultad de Química",
+        "description": "Edificio de la facultad de Química."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1250, 771], [1290, 771], [1290, 811], [1250, 811], [1250, 771]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "U",
+        "faculty": "Facultad de Química",
+        "description": "Edificio de la facultad de Química."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1265, 872], [1305, 872], [1305, 912], [1265, 912], [1265, 872]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "U-1",
+        "faculty": "Facultad de Química",
+        "description": "Edificio de la facultad de Química."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1205, 895], [1245, 895], [1245, 935], [1205, 935], [1205, 895]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "V",
+        "faculty": "Facultad de Química",
+        "description": "Edificio de la facultad de Química."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1310, 858], [1350, 858], [1350, 898], [1310, 898], [1310, 858]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "E",
+        "faculty": "Gimnasio Universitario y PE de LEFYD",
+        "description": "Gimnasio Universitario de la UNACAR.",
+        "photos": [
+          { "url": "../../../image/galeria/E/1.jpg", "isPanoramic": true }
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [763, 850], [803, 850], [803, 890], [763, 890], [763, 850]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Z",
+        "faculty": "Facultad de Derecho",
+        "description": "Edificio de la facultad de Derecho."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1480, 870], [1520, 870], [1520, 910], [1480, 910], [1480, 870]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "H",
+        "faculty": "Facultad de Ciencias Educativas",
+        "description": "Edificio de la facultad de Ciencias Educativas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1188, 511], [1228, 511], [1228, 551], [1188, 551], [1188, 511]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "I",
+        "faculty": "Facultad de Ciencias Educativas",
+        "description": "Edificio de la facultad de Ciencias Educativas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1153, 530], [1193, 530], [1193, 570], [1153, 570], [1153, 530]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "K",
+        "faculty": "Facultad de Ciencias Educativas",
+        "description": "Edificio de la facultad de Ciencias Educativas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1111, 616], [1151, 616], [1151, 656], [1111, 656], [1111, 616]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "O",
+        "faculty": "Facultad de Ciencias Educativas",
+        "description": "Edificio de la facultad de Ciencias Educativas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1072, 685], [1112, 685], [1112, 725], [1072, 725], [1072, 685]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Q",
+        "faculty": "Facultad de Ciencias Educativas",
+        "description": "Edificio de la facultad de Ciencias Educativas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1196, 640], [1236, 640], [1236, 680], [1196, 680], [1196, 640]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "A_Rectoría",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios A."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [555, 536], [595, 536], [595, 576], [555, 576], [555, 536]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "W_Centro de Educación Continua",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios W."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1351, 874], [1391, 874], [1391, 914], [1351, 914], [1351, 874]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "F-1_Edificio Cafetería, Extensión Universitaria",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios F-1."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1329, 609], [1369, 609], [1369, 649], [1329, 649], [1329, 609]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "J_Coord. General de Obras y Baby Delfín",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios J."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1048, 490], [1088, 490], [1088, 530], [1048, 530], [1048, 490]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "B_Biblioteca Universitaria",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios B."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1602, 575], [1642, 575], [1642, 615], [1602, 615], [1602, 575]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "D_Aula Magna",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios D."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1395, 790], [1435, 790], [1435, 830], [1395, 830], [1395, 790]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "M_Soporte Técnico",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios M."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1002, 582], [1042, 582], [1042, 622], [1002, 622], [1002, 582]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "N_Redes y Patrimonio Universitario",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios N."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [984, 500], [1024, 500], [1024, 540], [984, 540], [984, 500]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "P_Sala Audiovisual",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios P."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1164, 685], [1204, 685], [1204, 725], [1164, 725], [1164, 685]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "G_Servicios Culturales",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios G."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1255, 475], [1295, 475], [1295, 515], [1255, 515], [1255, 475]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "L",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios L."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1066, 570], [1106, 570], [1106, 610], [1066, 610], [1066, 570]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ñ_Sala de Usos Múltiples, Fotocopiado",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios Ñ."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1028, 615], [1068, 615], [1068, 655], [1028, 655], [1028, 615]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "LL_Almacenes y Talleres",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios LL."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [965, 690], [1005, 690], [1005, 730], [965, 730], [965, 690]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ZB_Sutucar",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios ZB."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [465, 730], [505, 730], [505, 770], [465, 770], [465, 730]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ZE_Secretaría Académica",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios ZE."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [448, 701], [488, 701], [488, 741], [448, 741], [448, 701]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Residencia Universitaria",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios Residencia Universitaria."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [646, 1008], [686, 1008], [686, 1048], [646, 1048], [646, 1008]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Z-1",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios Z-1."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1647, 630], [1687, 630], [1687, 670], [1647, 670], [1647, 630]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "J-1",
+        "faculty": "Áreas de Servicios",
+        "description": "Edificio de Servicios J-1."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1105, 470], [1145, 470], [1145, 510], [1105, 510], [1105, 470]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "R",
+        "faculty": "Facultad de Ciencias Económicas Administrativas",
+        "description": "Edificio de la facultad de Ciencias Económicas Administrativas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1253, 630], [1293, 630], [1293, 670], [1253, 670], [1253, 630]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "S",
+        "faculty": "Facultad de Ciencias Económicas Administrativas",
+        "description": "Edificio de la facultad de Ciencias Económicas Administrativas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1313, 740], [1353, 740], [1353, 780], [1313, 780], [1313, 740]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "X",
+        "faculty": "Facultad de Ciencias Económicas Administrativas",
+        "description": "Edificio de la facultad de Ciencias Económicas Administrativas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1394, 874], [1434, 874], [1434, 914], [1394, 914], [1394, 874]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Y",
+        "faculty": "Facultad de Ciencias Económicas Administrativas",
+        "description": "Edificio de la facultad de Ciencias Económicas Administrativas."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [1431, 892], [1471, 892], [1471, 932], [1431, 932], [1431, 892]
+        ]]
+      }
+    }
+  ]
+}

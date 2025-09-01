@@ -1,0 +1,468 @@
+/* admin.css */
+/* Estilos base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f7fb;
+    color: #2d3436;
+    padding: 5px;
+    position: relative;
+    color: #0040c9;
+    font-weight: 300;
+}
+/******/
+
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all .3s;
+}
+
+/* Elementos de encabezados */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #464646;
+}
+
+h2 {
+    font-size: 20px;
+    color: rgb(224, 228, 5);
+}
+
+h4 {
+    font-size: 19px;
+    color: rgb(255, 255, 255);
+}
+
+p, h4 {
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Se elimina el margen por predeterminado del párrafo debajo del título */
+p, h2 {
+    margin: 0;
+}
+
+/* Header con bienvenida */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*background: linear-gradient(135deg, #2c3e50, #3498db);*/
+    background: linear-gradient( 135deg, rgb(0, 51, 102)   0%, rgb(20, 106, 192) 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.welcome-header h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+}
+
+.welcome-header p {
+    color: #ecf0f1;
+    font-size: 0.9rem;
+}
+
+.welcome-header img {
+    width: 60px;
+    height: 60px;
+}
+.log{
+    transition: scale 0.3s ease; 
+}
+
+.log a{
+    width: 50px;
+    height: 50px;
+}
+.log:hover{
+    scale:1.2;
+}
+/* Botones de acción */
+/*
+.action-buttons {
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+    padding: 1rem;
+    border-radius: 8px;
+}*/
+    
+.action-buttons {
+    left: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background:rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#uploadForm {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    background: #3498db;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+a.btn{
+    background-color: #3498db;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+}
+.btn-secondary {
+    background-color: #3498db;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+h1, h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Elementos de formulario */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    font-weight: 500;
+}
+
+select, input[type="number"], input[type="file"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #dfe6e9;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button, .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button:hover, .btn:hover, a.btn:hover{
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos específicos para el botón de borrar */
+#deleteForm button {
+    background-color: #e74c3c;
+}
+
+#deleteForm button:hover {
+    background-color: #c0392b;
+}
+
+/* Contenedores de formularios */
+#uploadForm {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#deleteForm {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.excel {
+    max-width: 800px; /* Asegura que ocupe todo el ancho disponible */
+    display: flex;
+    flex-wrap: nowrap; /* Mantiene los elementos en una sola fila */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#uploadExcelForm {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Permite que tome espacio disponible */
+    max-width: 800px; /* Limita el tamaño máximo */
+    margin-bottom: 2rem;
+}
+
+.downloadcontainer {
+    width: 171px;
+    display: flex;
+    flex-shrink: 0; /* Mantiene el tamaño fijo */
+    margin-left: 2rem; /* Margen entre los elementos */
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.downloadexel {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ocupa todo el ancho disponible del contenedor */
+    display: flex; /* Cambia de grid a flex para usar flexbox */
+    flex-direction: column; /* Organiza los elementos en una columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+}
+
+.downloadcontainer a {
+    width: 121px;
+}
+
+.downloadexel button {
+    align-items: center;
+    justify-content: center;
+    display: flex; /* Asegura que el contenido interno del botón esté centrado */
+    margin-top: 10px; /* Espacio entre el texto y el botón */
+}
+
+
+/************************/
+#searchForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+    font-weight: 500;
+
+}
+
+#searchForm select, input[type="number"], input[type="file"] {
+    width: 100%;
+    padding: 0.4rem;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+#searchForm select:focus, input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+#searchForm button, .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#searchForm button:hover, .btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*----inicio mostrar afis------------------------------------/*
+/* Estilos para el popup */
+/*---- Estilos corregidos para el popup y tabla ----*/
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.popup h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.form-container {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.table-container {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 0px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #56940f;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+td {
+    background-color: white;
+    color: #000;
+}
+
+tr:nth-child(even) td {
+    background-color: #f8f9fa;
+}
+
+/* Botones dentro del popup */
+#searchForm button {
+    margin: 5px;
+    padding: 8px 20px;
+}
+
+#searchForm button[type="submit"] {
+    background-color: #3498db;
+}
+
+#searchForm button[type="button"] {
+    background-color: #6c757d;
+}
+
+@media only screen and (max-width: 480px) {
+    
+
+    table {
+        min-width: 0;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 4px;
+    }
+    .excel {
+        flex-direction: column; /* Coloca los elementos uno debajo del otro */
+        align-items: stretch;  /* Asegura que ocupen todo el ancho disponible */
+    }
+    #uploadExcelForm {
+        margin-bottom: 1rem; /* Añade espacio entre los elementos */
+    }
+
+    .downloadcontainer {
+        margin-left: 0; /* Elimina el margen lateral */
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+}
+/*------fin mostrar afis-----------------------------------------------/*

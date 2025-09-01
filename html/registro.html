@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIMAP - Registro</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="icon" href="../image/iconos/logo/LogoBlanco1.svg" type="image/webp"/>
+    <link rel="stylesheet" href="../css/registro.css">
+    
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">Regresar</button>
+    <div class="container">
+        <h1>Registro en UNIMAP</h1>
+        <p>Por el momento, no se permite el registro automático en nuestra plataforma para garantizar la seguridad y privacidad de los estudiantes, evitando el acceso de terceros no autorizados.</p>
+        <div class="info-box">
+            <p><strong>¿Quieres probar todas las opciones de UNIMAP?</strong></p>
+            <p>Envíanos un correo a <a href="mailto:example@gmail.com">soporte.uninap@gmail.com</a> o contáctanos a través del inbox de nuestra página oficial de Facebook:</p>
+            <a href="https://www.facebook.com/people/UNIMAP-Mapa-Interactivo-Universitario/61576284754408/" target="_blank" class="button">Visitar página de Facebook</a>
+            <p><strong>Datos requeridos:</strong></p>
+            <ul>
+                <li>Matrícula</li>
+                <li>Nombre y apellido</li>
+                <li>Correo institucional</li>
+                <li>Numero telefonico (Opcional)</li>
+            </ul>
+        </div>
+        <p>Nos pondremos en contacto contigo lo antes posible para completar tu registro y darte acceso a todas las funcionalidades de UNIMAP.</p>
+        <div class="footer" id="footer-date">
+          <!-- Universidad Autónoma del Carmen - --> UNIMAP © 
+        </div>
+
+        <script>
+            // Selecciona el elemento por su ID
+            const footerElement = document.getElementById('footer-date');
+
+            // Crea una nueva fecha y obtiene el año
+            const currentYear = new Date().getFullYear();
+
+            // Actualiza el contenido del elemento
+            footerElement.innerHTML = `UNIMAP © ${currentYear}`;
+        </script>
+        </div>
+</body>
+</html>
