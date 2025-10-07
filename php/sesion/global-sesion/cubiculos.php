@@ -116,7 +116,7 @@ ob_end_flush();
                 { nombre: "Ing. Benjamin Tass Herrera ", edificio: "CTI", piso: "2",cubiculo: 204, horario:"9:00am-5:00pm", rol: "Profesor, Gestor", imagen: "../../../image/docentes/profesor.png"  },
                 { nombre: "Dr. Carlos Roman de la Cruz Dorantes", edificio: "CTI", piso: "2", cubiculo: 208, horario:"7:00am-3:00pm", rol: "Profesor", imagen: "../../../image/docentes/profesor.png"  },
                 { nombre: "Dr. Gustavo Verduzco Reyes", edificio: "CTI", piso: "2",cubiculo: 209, horario:"9:00am-5:00pm", rol: "Profesor", imagen: "../../../image/docentes/profesor.png"  },
-              /*director de facultad*/   { nombre: "Dr. Jose Alonso Perez Cruz", edificio: "CTI", piso: "1", cubiculo: 1, horario:"7:00am-3:00pm", rol: "Director FCI", imagen: "../../../image/docentes/profesor.png"  },
+    /*director de facultad*/   { nombre: "Dr. Jose Alonso Perez Cruz", edificio: "CTI", piso: "1", cubiculo: 1, horario:"7:00am-3:00pm", rol: "Director FCI", imagen: "../../../image/docentes/profesor.png"  },
                 { nombre: "Ing. Damaris Perez Cruz", edificio: "CTI", piso: "2",cubiculo: 210, horario:"7:00am-3:00pm", rol: "Profesor", imagen: "../../../image/docentes/profesor.png"  },
                 { nombre: "Dr. Beatriz Herrera Sanchez ", edificio: "CTI", piso: "1",cubiculo: 115, horario:"7:00am-3:00pm", rol: "Profesor", imagen: "../../../image/docentes/profesor.png"  },
              //   { nombre: "Ing. Fernando Sanchez Martinez", edificio: "CTI", piso: "1",cubiculo: 109, horario:"7:00am-3:00pm", rol: "Profesor", imagen: "../../../image/docentes/profesor.png"  },
