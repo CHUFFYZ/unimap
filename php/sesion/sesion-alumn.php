@@ -88,7 +88,7 @@ session_start();
                     <div class="contenedor-recuperar">
                         <div class="barra"></div>
                         <h3>¿Olvidaste la contraseña?</h3>
-                        <h4><a id="contraseñarecu" href="../rest-pasword/rest-contra.php" class="link-recuperar">Presiona aquí</a></h4>
+                        <h4><a id="contraseñarecu" href="../rest-pasword/error.html" class="link-recuperar">Presiona aquí</a></h4>
                     </div>
                     <div class="contenedor-botones">
                         <button type="submit" class="btn-acceder">Acceder</button>
