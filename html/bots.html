@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIMAP - Bots</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="icon" href="../image/iconos/logo/LogoBlanco1.svg" type="image/webp"/>
+    <link rel="stylesheet" href="../css/bots.css">
+</head>
+<body>
+    <button class="back-button" onclick="window.history.back()">Regresar</button>
+    <div class="container">
+        <h1>Bots del Club IA</h1>
+        <p>
+            El Club de Inteligencia Artificial (IA) se enorgullece de presentar una colección de bots diseñados para el beneficio de los estudiantes y aspirantes universitarios. 
+            Estos asistentes virtuales han sido desarrollados para ofrecer una variedad de servicios de apoyo innovadores, cubriendo áreas que van desde la guía académica hasta el soporte emocional inicial.
+        </p>
+        <p>
+            Nuestros bots actúan como asistentes especializados en diversas áreas. Contamos con Serenity, que brinda apoyo emocional, y Astria, una guía para aspirantes. Además, destaca Tutor-bot, un agente conversacional especializado en guiarte sobre temas clave.
+        </p>
+        <h2>Nuestros Bots</h2>
+        <p>
+            A continuación, conoce a los bots que hemos creado y haz clic en el que desees para empezar a interactuar con él.
+        </p>
+        <div class="desarrolladores">
+            <div class="student sereniti-highlight">
+                <div class="click" onclick="window.open('https://t.me/Serenity_unacar_bot', '_blank')">
+                    <h3>Serenity</h3>
+                    <div class="bot">
+                        <img src="../image/bots/serenity.jpg" alt="Foto del integrante 1">
+                        <div>
+                            <p>Agente conversacional (chatbot) de apoyo emocional inicial a la comunidad estudiantil universitaria. <strong>¡Ganador de un concurso estatal y participante en un concurso nacional!</strong></p>
+                        </div>
+                    </div>
+                    <p>Clik aqui</p>
+                </div>
+                <div class="step-images-container-n">
+                    <img class="step-image-n" src="../image/iconos/navegadores/telegram.png" alt="Acceso al mapa">
+                </div>
+                <div class="award-badge">🏆 Ganador Estatal</div>
+            </div>
+            <div class="student">
+                <div class="click" onclick="window.open('https://t.me/ASTRIA_UNACAR_bot ', '_blank')">
+                    <h3>Astria</h3>
+                    <div class="bot">
+                        <img src="../image/bots/astria.jpg" alt="Foto del integrante 1">
+                        <div>
+                            <p>Guía chatbot para los aspirantes a la UNACAR. Ofrece información sobre los procesos de preinscripción, inscripción, examen de admisión y el Reglamento 2025. </p>
+                        </div>
+                    </div>
+                    <p>Clik aqui</p>
+                </div>
+                <div class="step-images-container-n">
+                    <img class="step-image-n" src="../image/iconos/navegadores/telegram.png" alt="Acceso al mapa">
+                </div>
+            </div>
+            <div class="student">
+                <div class="click" onclick="window.open('https://t.me/fsi_tutor_bot', '_blank')">
+                    <h3>Tutor-bot</h3>
+                    <div class="bot">
+                        <img src="../image/bots/tutorbot.png" alt="Foto del integrante 1">
+                        <div>
+                            <p>Tutorbot es un Agente Conversacional que brinda información acerca del programa de tutoría de la Facultad de Ciencias de la Información.</p>
+                            <p>La función principal es servir como una herramienta de apoyo innovadora y accesible. ¡Disponible 24/7!</p>
+                            <p>También brinda información acerca de:</p>
+                            <p class="lista">• Trámites</p>
+                            <p class="lista">• AFIs</p>
+                            <p class="lista">• Procesos de la UNACAR</p>
+                            <p class="lista">• Servicio Social</p>
+                            <p>¡Y mucho más! :)</p>
+                        </div>
+                    </div>
+                    <p>Clik aqui</p>
+                </div>
+                <div class="step-images-container-n">
+                    <img class="step-image-n" src="../image/iconos/navegadores/telegram.png" alt="Acceso al mapa">
+                </div>
+            </div>
+        </div>
+        <div class="info-box">
+            <p><strong>¿Quieres saber más sobre el Club de IA o tienes alguna consulta?</strong></p>
+            <p>
+                Contáctanos para más información sobre nuestros proyectos, bots o cómo unirte:
+            </p>
+            <p>
+                Visita nuestra página oficial de Facebook: 
+                <a href="https://www.facebook.com/clubdeiafci" target="_blank">Club de investigación en inteligencia Artificial </a>
+            </p>
+        </div>
+        <div class="footer" id="footer-date">
+            UNIMAP © 
+        </div>
+    </div>
+    <script>
+        const footerElement = document.getElementById('footer-date');
+        const currentYear = new Date().getFullYear();
+        footerElement.innerHTML = `UNIMAP © ${currentYear}`;
+    </script>
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('image-modal');
+            const modalImage = document.getElementById('modal-image');
+            modalImage.src = imageSrc;
+            modal.style.display = 'flex';
+        }
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.style.display = 'none';
+        }
+        document.getElementById('image-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

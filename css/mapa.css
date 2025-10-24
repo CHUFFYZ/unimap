@@ -52,9 +52,10 @@ p {
 .building-section h2{
     font-size: 18px;/*--alerta importante es para mostrar de que campus es ----------------------------------------------------------------------------------------------------*/
 }
+/*
 .leaflet-bar a, .leaflet-control-layers-toggle {
-    display: none;/*quitar bonton de geolocalizacion*/
-}
+    display: none;quitar bonton de geolocalizacion
+}*/
 /*--inicio de contenedor y contenido de barra--------------------------------------------------------------------*/
 /*contenedor de barra-----------*/
 .supercontainer {
@@ -325,7 +326,8 @@ p {
 /*fin usuario menu-------------------------------------------------------------------------------------------------*/
 
 /*contenedores de opciones del menu----------*/
-.container2,
+
+/*.container2,
 .container3,
 .aboutme {
     min-width: 10px;
@@ -342,9 +344,12 @@ p {
     border: 2.5px solid #ccc;
     cursor: pointer;
     flex-shrink: 0;
-    transition: filter 0.3s ease; /* Transición suave para iluminación */
+    transition: filter 0.3s ease; /* Transición suave para iluminación *//*
+}*/
+.container3{
+    padding: 0px !important;
+    height: 40px;
 }
-
 .container3 a {/*palabra facebook*/
     display: flex;
     align-items: center;
@@ -352,38 +357,9 @@ p {
 }
 
 .container3 i {/*icono facebook*/
-    font-size: 24px;
     transform: scale(1.4);
-    transition: transform 0.3s;
 }
 
-/*fin contenedores de opcionesd el menu*/
-/*estilos para los botones------------------*/
-
-a.btn:hover, .container3 .fab:hover {
-    animation: cambioColor 2s forwards;
-    font-size: 16px;
-}
-
-@keyframes cambioColor {
-    0% { color: #75a63c; }
-    100% { color: #fbff00; }
-}
-
-a.btn, .container3 .fab {
-    background-color: transparent;
-    padding: 5px;
-    color: #ffffff;
-    text-decoration: none;
-    border: none;
-    /*----------------------*/
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.8;
-    margin-top: 2px;
-    transition: font-size 0.3s ease;
-}
 
 /*fin de estilos para los botones*/
 /*menu----------------------------------------*/
@@ -402,6 +378,10 @@ a.btn, .container3 .fab {
     flex-direction: row;
     padding: 5px; /* Ajusta este valor según necesites */
     box-sizing: border-box; /* Esto hace que el padding no aumente el tamaño total */
+    padding: 5px 0px 5px 0px;
+}
+.aboutme{
+    margin-right: 5px;  
 }
 /*fin menu*/
 /*activar el boton cuanto cumpla este requisito-------------*/
@@ -424,22 +404,26 @@ a.btn, .container3 .fab {
     display: flex;
     position: fixed; /* Cambiado de absolute a fixed */
     right: 5px;
-    bottom: env(safe-area-inset-bottom); /* Considera áreas seguras en móviles */
+    top: env(safe-area-inset-bottom); /* Considera áreas seguras en móviles */
     border-radius: 20px;
     flex-direction: column;
     z-index: 3;
     background-color: #8d8d8d75;
     backdrop-filter: blur(5px); 
-    height: calc(100% - 88px);
-    max-height: 260px; /* Usa porcentaje en lugar de vh */
+    height: auto;
+    max-height: calc(100% - 85px); /* Usa porcentaje en lugar de vh */
     width: auto;
     min-width: 200px;
     max-width: 90vw; /* Limita el ancho máximo */
     overflow-y: auto;
     box-sizing: border-box;
+    gap: 8px;
 }
 
-@media only screen and (max-width: 880px) {
+@media only screen and (max-width: 944px) {
+    .aboutme{
+        margin-right: 0px;  
+    }
     .supercontainer { 
     justify-content: space-between;
     height: 50px;
@@ -456,17 +440,10 @@ a.btn, .container3 .fab {
         align-items: center;
         justify-content: center; 
     }
-
-    
     .menu-container {
         display: none;
         flex-direction: column;
-    }
-
-    .container2,
-    .container3,
-    .aboutme {
-        display: none;
+        
     }
     .usuario{
     width: 40px;
@@ -478,6 +455,7 @@ a.btn, .container3 .fab {
     }
     .menu-container.active {
         top: 60px; /* Reduced spacing for mobile */
+        padding: 5px 5px 5px 5px;
     }
 }
 /*---------------------------------*/
@@ -700,7 +678,26 @@ tr:nth-child(even) td {
     bottom: 25px;
     z-index: -2;
 }
+#guia-container2 {
+    position: fixed;
+    left: 5px;
+    bottom: 25px;
+    z-index: -2;
+}
 #guia-container .fa-magnifying-glass {
+    position: static;
+    font-size: 24px;
+    color: #FF6B6B;
+    cursor: pointer;
+    background-color: #F0F0F0;
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    animation: palpitantes 1.2s infinite alternate ease-in-out;
+}
+#guia-container2 .fa-magnifying-glass {
     position: static;
     font-size: 24px;
     color: #FF6B6B;
@@ -723,8 +720,23 @@ tr:nth-child(even) td {
     box-sizing: border-box;
     transition: all 0.3s ease;
 }
+#search-box2 {/*barra del buscador edificio*/
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #0040c9;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
 
 #search-box:focus {
+    outline: none;
+    border-color: #002366;
+    box-shadow: 0 0 8px rgba(0, 64, 201, 0.3);
+}
+#search-box2:focus {
     outline: none;
     border-color: #002366;
     box-shadow: 0 0 8px rgba(0, 64, 201, 0.3);
@@ -733,7 +745,17 @@ tr:nth-child(even) td {
 .palpitante2{/*letras consulta edificios aqui*/
     position: absolute;
     border-radius: 50%;
-    background-color: #000;
+    background-color: #00000000;
+    left: 25px;
+    bottom: 45px;
+    width: auto;
+    height: 1px;
+    z-index: -3;
+}
+.palpitante4{/*letras consulta edificios aqui*/
+    position: absolute;
+    border-radius: 50%;
+    background-color: #00000000;
     left: 25px;
     bottom: 45px;
     width: auto;
@@ -747,6 +769,15 @@ tr:nth-child(even) td {
     text-shadow: 0.08px 0.08px 0 #000;
     animation: palpitante2 8s ease-in-out forwards;
     animation-delay: 3s;
+    margin-top: 20px;
+}
+.palpitante4 h2 {
+    font-size: 1px;
+    color: #fff;
+    text-shadow: 0.08px 0.08px 0 #000;
+    animation: palpitante4 8s ease-in-out forwards;
+    animation-delay: 3s;
+    margin-top: 20px;
 }
 @keyframes palpitante {/*lupa*/
     from {
@@ -843,8 +874,101 @@ tr:nth-child(even) td {
         transform: scale(0)translateX(0);
     }
 }
+@keyframes palpitante4 {
+    0%{
+        transform: scale(0) translate(0px);
+    }
+    10%{
+        transform: scale(4) translateX();
+    }
+    10%{
+        transform: scale(8) translateX();
+    }
+    20%{
+        transform: scale(16) translateX(9px) translateY(0px);
+        color: #ffffff;
+    }
+    25%{
+        transform: scale(16) translateX(9px)  translateY(-.5px);
+        color: #178cda;
+    }
+    30%{
+        transform: scale(16) translateX(9px) translateY(0px);
+        color: #ffffff;
+    }
+    35%{
+        transform: scale(16) translateX(9px) translateY(0px) ;
+        color: #ffffff;
+    }
+    40%{
+        transform: scale(16) translateX(9px) translateY(-.5px);
+        color: #178cda;
+    }
+    45%{
+        transform: scale(16) translateX(9px) translateY(0px);
+        color: #ffffff;
+    }
+    50%{
+        transform: scale(16) translateX(9px) translateY(0px);
+        color: #ffffff;
+    }
+    55%{
+        transform: scale(16) translateX(9px) translateY(-.5px);
+        color: #178cda;
+    }
+    60%{
+        transform: scale(16) translateX(9px) translateY(0px);
+        color: #ffffff;
+    }
+    65%{
+        transform: scale(16) translateX(9px) translateY(0px);
+        color: #ffffff;
+    }
+    70%{
+        transform: scale(16) translateX(9px) translateY(-.5px);
+        color: #178cda;
+    }
+    75%{
+        transform: scale(16) translateX(9px) translateY(0px);
+        color: #ffffff;
+    }
+    80%{
+        transform: scale(16) translateX(9px) translateY(0px);
+        color: #ffffff;
+    }
+    90%{
+        transform: scale(8) translateX() ;
+    }
+    95%{
+        transform: scale(4) translateX();
+    }
+    100%{
+        transform: scale(0)translateX(0);
+    }
+}
 /*---inicio controles de localizacion---------------------------------------------------------*/
 #location-controls {/*desplegable de ubicaciones del mapa*/
+    position: fixed;
+    left: 8px;
+    top: auto;
+    bottom: 25px;
+    width: 380px;
+    max-width: 380px;
+    height: calc(100% - 150px); 
+    max-height: 500px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    overflow-y: auto;
+    transform: translateY(0px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    /*scrollbar-width: none;*/
+    scrollbar-color: #888 #f1f1f1; 
+}
+#location-controls2 {/*desplegable de ubicaciones del mapa*/
     position: fixed;
     left: 8px;
     top: auto;
@@ -873,7 +997,11 @@ tr:nth-child(even) td {
     visibility: visible;
     transform: translateY(-55px);
 }
-
+#location-controls2.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-55px);
+}
 .building-section {
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
@@ -897,8 +1025,29 @@ tr:nth-child(even) td {
     text-decoration: none;
     border: 1.5px solid transparent;
 }
-
+.campus-section h2{
+    font-size: 1.2rem;
+    padding: 5px;
+}
+.osm-location-link {
+    display: block;
+    padding: 8px 12px;
+    margin: 10px 0;
+    background: #f0f4ff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    color: #0040c9;
+    text-decoration: none;
+    border: 1.5px solid transparent;
+    border-color: #0040c9;
+}
 .location-link:hover {
+    background: #0040c9;
+    color: white;
+    transform: translateX(5px);
+    border-color: transparent;
+}
+.osm-location-link:hover {
     background: #0040c9;
     color: white;
     transform: translateX(5px);
@@ -973,14 +1122,97 @@ tr:nth-child(even) td {
     transition: all 0.3s ease;
     z-index: 21;
 }
+#osm-location-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    max-height: 80%;
+    overflow-y: auto;
+    display: none;
+}
+#osm-location-details h2{
+    font-size: 22px;
+}
+#osm-location-details.visible {
+    display: block;
+}
 
+#osm-location-details .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+#osm-location-details .photos img,
+#osm-location-details .photos video {
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
+    gap: 10px;
+    margin: 0px 0;
+    cursor: pointer;
+}
+#osm-location-details .derechos{
+    margin: 0px 0;
+    font-size: 10px;
+}
+
+#osm-location-details .go-to-map {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+#osm-location-details .go-to-map:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+.pnlm-fullscreen-toggle-button{
+    background-color: white !important;
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+}
+.pnlm-controls{
+    background-color: rgba(255, 255, 255, 0) ;
+    border-radius: 50%;
+}
 #location-details.visible {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
 }
-
+#location-details2.visible {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
 #location-details .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: #0040c9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#location-details2 .close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -993,27 +1225,60 @@ tr:nth-child(even) td {
 #location-details .close-btn:hover {
     transform: scale(1.2);
 }
-
+#location-details2 .close-btn:hover {
+    transform: scale(1.2);
+}
 #location-details h2 {
+    color: #0040c9;
+    font-size: 1.3em;
+    margin-bottom:10px;
+}
+#location-details2 h2 {
     color: #0040c9;
     font-size: 1.3em;
     margin-bottom: 10px;
 }
-
 #location-details .faculty {
     color: #464646;
     font-size: 1.1em;
     margin-bottom: 15px;
 }
-
+#location-details2 .faculty {
+    color: #464646;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
 #location-details .photos {
     display: flex;
     overflow-x: auto;
     gap: 10px;
     margin-bottom: 15px;
 }
-
+#location-details2 .photos {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 15px;
+}
 #location-details .photos img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+    cursor: pointer;
+    color: #00000000;
+}
+#osm-location-details .photos{
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+#osm-location-details .derechos{
+    margin-bottom: 10px;
+}
+#osm-location-details .photos img{
     width: 150px;
     height: 100px;
     object-fit: cover;
@@ -1039,7 +1304,11 @@ tr:nth-child(even) td {
     font-size: 0.9em;
     line-height: 1.5;
 }
-
+#location-details2 .comments {
+    color: #464646;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
 #fullscreen-image {
     position: fixed;
     top: 0;
@@ -1228,7 +1497,7 @@ border-bottom: 0px solid black !important;
 }
 
 .barra p {
-    font-size: 15px;
+    font-size: 14px;
     margin: 0; /* Elimina márgenes que podrían desalinearlo */
 }
 /*final barra final----------------------------------------------------------------------------------------------------*/
@@ -1284,6 +1553,7 @@ border-bottom: 0px solid black !important;
 .leaflet-container {
     width: 100% !important;
     height: 100% !important;
+    background: #ebeaea !important;
     /*background: #f8f7f7 !important;*/
 }
 /*fin opciones de leaflet----------------------------------------------------------------------------------------------*/
@@ -1343,32 +1613,26 @@ border-bottom: 0px solid black !important;
 
 /*inicio responsive----------------------------------------------------------------------------------------------------*/
 @media (max-width: 880px) {
-    .container2,
-    .container3,
-    .aboutme {
-        width: auto;
-        flex-direction: column;
-        flex-shrink: 0;
-    }
 
-    .menu-container.active .container2,
-    .menu-container.active .container3,
-    .menu-container.active .aboutme {
+    .menu-container.active{
         display: flex;
     }
     .menu-usuario.active{
         top: 60px;
         max-height: calc(100% - 85px );
     }
-   
-    .menu-container.active {
-        height: calc(100% - 85px );
-
-    }
     /*-------------------------------*/
     #location-controls {
         width: 65%;
         left: 8px;
+    }
+    #location-controls2 {
+        width: 65%;
+        left: 8px;
+    }
+    #location-details .photos img {
+        width: 120px;
+        height: 80px;
     }
     #location-details .photos img {
         width: 120px;
@@ -1394,8 +1658,83 @@ border-bottom: 0px solid black !important;
         padding: 8px;
         font-size: 13px;
     }
+     #search-box2 {
+        padding: 8px;
+        font-size: 13px;
+    }
 
     @keyframes palpitante2 {
+        0%{
+            transform: scale(0) translate(0px);
+        }
+        10%{
+            transform: scale(4) translateX();
+        }
+        10%{
+            transform: scale(8) translateX();
+        }
+        20%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        25%{
+            transform: scale(12) translateX(10px)  translateY(-.5px);
+            color: #178cda;
+        }
+        30%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        35%{
+            transform: scale(12) translateX(10px) translateY(0px) ;
+            color: #ffffff;
+        }
+        40%{
+            transform: scale(12) translateX(10px) translateY(-.5px);
+            color: #178cda;
+        }
+        45%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        50%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        55%{
+            transform: scale(12) translateX(10px) translateY(-.5px);
+            color: #178cda;
+        }
+        60%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        65%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        70%{
+            transform: scale(12) translateX(10px) translateY(-.5px);
+            color: #178cda;
+        }
+        75%{
+            transform: scale(12) translateX(10px) translateY(0px);
+            color: #ffffff;
+        }
+        80%{
+            transform: scale(12) translateX(10px) translateY(0px);
+        }
+        90%{
+            transform: scale(8) translateX() ;
+        }
+        95%{
+            transform: scale(4) translateX();
+        }
+        100%{
+            transform: scale(0)translateX(0);
+        }
+    }
+    @keyframes palpitante4 {
         0%{
             transform: scale(0) translate(0px);
         }
@@ -1518,6 +1857,9 @@ border-bottom: 0px solid black !important;
     .supercontainer {
         height: 45px;
     }
+    .menu-container.active{
+        top: 55px;
+    }
     .inisesion{
     top: 90px;
     }
@@ -1527,6 +1869,7 @@ border-bottom: 0px solid black !important;
     #map-container{
         top: 0px;
     }
+    
 }
 @media only screen and (min-width: 551px) and (max-width:768px){
     .barra p {
@@ -1539,8 +1882,14 @@ border-bottom: 0px solid black !important;
         font-size: 13px;
         text-align: center;
     }
+    .menu-container.active{
+        top: 55px;
+    }
 }
 @media only screen and (max-width: 480px) {
+    .menu-container.active{
+        top: 55px;
+    }
     table {
         min-width: 0;
         font-size: 14px;
@@ -1674,28 +2023,47 @@ border-bottom: 0px solid black !important;
 
 /* Estilos para el botón de geolocalización */
 .leaflet-control-geolocation {
-    display: none;
-    background-color: #fff;
-    border: 2px solid rgba(0,0,0,0.2);
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    line-height: 26px;
-    width: 30px;
-    height: 30px;
-    margin-bottom: 2px; /* Espacio entre botones */
+    border-radius: 30px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 30px !important;
+    filter: drop-shadow(2px 2px 2px #00000079) !important;
+    margin: 8px 0 !important; /* Espaciado vertical entre botones */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+.leaflet-control-routes{
+    border-radius: 30px !important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 30px !important;
+    filter: drop-shadow(2px 2px 2px #00000079) !important;
+    margin: 8px 0 !important; /* Espaciado vertical entre botones */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .leaflet-control-geolocation.active {
     background-color: #1E90FF; /* Azul cuando está activo */
     color: #fff;
 }
-
+.leaflet-control-routes.active{
+    background-color: #1E90FF; /* Azul cuando está activo */
+    color: #fff;
+}
 .leaflet-control-geolocation i {
     font-size: 18px;
     vertical-align: middle;
 }
-
+.leaflet-control-routes i{
+    font-size: 18px;
+    vertical-align: middle;
+}
+#close-routes-menu{
+    font-size: 30px !important;
+}
 /* Asegurar transiciones suaves para marcadores */
 .marker-inner {
     transition: transform 0.3s ease;
@@ -1709,3 +2077,75 @@ border-bottom: 0px solid black !important;
     z-index: 10;
     display: none; /* Inicialmente oculto */
 }
+
+#campus-selection-popup {
+    width: calc(100% - 15px);
+    max-Width: 300px;
+    height: calc(100% - 60px);
+    max-Height: 490px;
+    overflow-y: auto;
+    
+}
+/*---Capas por nivel----------------*/
+.explore-levels{
+    position: relative;
+    font-size: .8rem;
+    line-height: .16rem;
+    /*color: hsla(0, 0%, 100%, .65);*/
+    color: hsl(0, 0%, 100%);
+    padding: .5rem 1rem;
+    border: 1px solid #586172;
+    background-color: #4a5366;
+    border-radius: 50px;
+    width: -webkit-fit-content;
+    width: fit-content;
+    width: -moz-fit-content;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.explore-levels:hover {
+text-decoration: underline;
+}
+.rute{
+    display: none;
+    position: relative;
+    font-size: .8rem;
+    line-height: .16rem;
+    /*color: hsla(0, 0%, 100%, .65);*/
+    color: hsl(0, 0%, 100%);
+    padding: .5rem 1rem;
+    border: 1px solid #586172;
+    background-color: #4a5366;
+    border-radius: 50px;
+    width: -webkit-fit-content;
+    width: fit-content;
+    width: -moz-fit-content;
+    overflow: hidden;
+    cursor: pointer;
+    
+}
+.rute:hover {
+text-decoration: underline;
+}
+#level-menu button {
+width: 100%;
+border: 1px solid #ddd;
+border-radius: 3px;
+}
+#level-menu button:hover {
+background-color: #f0f0f0;
+}
+.close-levels:hover {
+background-color: #d32f2f !important;
+}
+
+/*-------------------*/
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+

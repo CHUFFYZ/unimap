@@ -153,21 +153,22 @@ ob_end_flush();
         </div>
         <div id="location-controls"></div>
         <div id="location-details"></div>
-        <div id="fullscreen-image">
-            <span class="fullscreen-close-btn">×</span>
-            <img src="" alt="Imagen en pantalla completa">
-            <video src="" alt="" style="display: none;"></video>
-        </div>
-        <div id="panorama-viewer" class="panorama-container">
-            <div id="panorama"></div>
-            <span class="panorama-close-btn">×</span>
-        </div>
+    </div>
+    <div id="fullscreen-image">
+        <span class="fullscreen-close-btn">×</span>
+        <img src="" alt="Imagen en pantalla completa">
+        <video src="" alt="" style="display: none;"></video>
+    </div>
+    <div id="panorama-viewer" class="panorama-container">
+        <div id="panorama"></div>
+        <span class="panorama-close-btn">×</span>
     </div>
     <div class="barra">
         <p><span data-key="msjcopyright">&copy; 2025 UNIMAP. Todos los derechos reservados.</span></p>
     </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
+    <script src="../../../js/locations.js"></script>
     <script src="../../../js/zoom2.js"></script>
     <script src="../../../js/global.js"></script>
     <script src="../../../js/menu.js"></script>

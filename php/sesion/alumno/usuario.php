@@ -392,7 +392,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['user_image'])) {
         footerElement.innerHTML = `UNIMAP © ${currentYear}`;
 
         function redirectToChangePassword() {
-            window.location.href = '../../rest-pasword/error.html';
+            window.location.href = '../../rest-pasword/rest-contra.php';
         }
 
         // Funciones para manejo de modales

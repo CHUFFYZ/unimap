@@ -315,24 +315,9 @@ p {
 /*fin usuario menu-------------------------------------------------------------------------------------------------*/
 
 /*contenedores de opciones del menu----------*/
-.container2,
-.container3,
-.aboutme {
-    min-width: 10px;
+.container3{
+    padding: 0px !important;
     height: 40px;
-    margin: 5px;
-    text-align: left;
-    padding: 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(131, 126, 126);
-    border-radius: 45px;
-    border: 2.5px solid #ccc;
-    cursor: pointer;
-    flex-shrink: 0;
-    transition: filter 0.3s ease; /* Transición suave para iluminación */
 }
 
 .container3 a {/*palabra facebook*/
@@ -342,39 +327,11 @@ p {
 }
 
 .container3 i {/*icono facebook*/
-    font-size: 24px;
     transform: scale(1.4);
-    transition: transform 0.3s;
 }
 
 /*fin contenedores de opcionesd el menu*/
 /*estilos para los botones------------------*/
-
-a.btn:hover, .container3 .fab:hover {
-    animation: cambioColor 2s forwards;
-    font-size: 16px;
-}
-
-@keyframes cambioColor {
-    0% { color: #75a63c; }
-    100% { color: #fbff00; }
-}
-
-a.btn, .container3 .fab {
-    background-color: transparent;
-    padding: 5px;
-    color: #ffffff;
-    text-decoration: none;
-    border: none;
-    /*----------------------*/
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.8;
-    margin-top: 2px;
-    transition: font-size 0.3s ease;
-}
-
 /*fin de estilos para los botones*/
 /*menu----------------------------------------*/
 .menu-toggle {/*aqui solo va el icono del menu*/
@@ -392,6 +349,10 @@ a.btn, .container3 .fab {
     flex-direction: row;
     padding: 5px; /* Ajusta este valor según necesites */
     box-sizing: border-box; /* Esto hace que el padding no aumente el tamaño total */
+    padding: 5px 0px 5px 0px;
+}
+.aboutme{
+    margin-right: 5px;  
 }
 /*fin menu*/
 /*activar el boton cuanto cumpla este requisito-------------*/
@@ -414,22 +375,26 @@ a.btn, .container3 .fab {
     display: flex;
     position: fixed; /* Cambiado de absolute a fixed */
     right: 5px;
-    bottom: env(safe-area-inset-bottom); /* Considera áreas seguras en móviles */
+    top: env(safe-area-inset-bottom); /* Considera áreas seguras en móviles */
     border-radius: 20px;
     flex-direction: column;
     z-index: 3;
     background-color: #8d8d8d75;
     backdrop-filter: blur(5px); 
-    height: calc(100% - 88px);
-    max-height: 160px; /* Usa porcentaje en lugar de vh */
+    height: auto;
+    max-height: calc(100% - 85px); /* Usa porcentaje en lugar de vh */
     width: auto;
     min-width: 200px;
     max-width: 90vw; /* Limita el ancho máximo */
     overflow-y: auto;
     box-sizing: border-box;
+    gap: 8px;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 720px) {
+    .aboutme{
+        margin-right: 0px;  
+    }
     .supercontainer { 
     justify-content: space-between;
     height: 50px;
@@ -467,7 +432,8 @@ a.btn, .container3 .fab {
         height: 40px;
     }
     .menu-container.active {
-        top: 55px; /* Reduced spacing for mobile */
+        top: 60px; /* Reduced spacing for mobile */
+        padding: 5px 5px 5px 5px;
     }
 }
 /*---------------------------------*/
@@ -1003,11 +969,7 @@ a.btn, .container3 .fab {
     }
     .menu-usuario.active{
         top: 65px;
-        max-height: calc(100% - 85px );
-    }
-   
-    .menu-container.active {
-        top: px;
+        max-height: auto;
     }
     /*-------------------------------*/
     #location-controls {
@@ -1142,6 +1104,9 @@ a.btn, .container3 .fab {
     }
     .supercontainer {
         height: 45px;
+    }
+    .menu-container.active{
+        top: 55px;
     }
     .inisesion{
     top: 90px;

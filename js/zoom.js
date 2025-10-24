@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         zoomAnimationThreshold: 2
     });
 
-    const imageOverlay = L.imageOverlay('image/mapa/campus1.svg', bounds);
+    const imageOverlay = L.imageOverlay('image/locations/mapa/campus1.svg', bounds);
     imageOverlay.on('load', () => {
         pantallaBienvenida.classList.add('fade-out');
     });
@@ -317,85 +317,85 @@ document.addEventListener('DOMContentLoaded', function() {
             places: [{
                 name: 'C-1',
                 coords: [475, 1585],
-                icon: { iconUrl: 'image/pines/pin-fci-c1.svg', color: 'azul-claro' }
+                icon: { iconUrl: 'image/locations/CP/pines/pin-fci-c1.svg', color: 'azul-claro' }
             }],
-            icon: { iconUrl: 'image/pines/pin-fci.svg', color: 'azul-claro' },
+            icon: { iconUrl: 'image/locations/CP/pines/pin-fci.svg', color: 'azul-claro' },
             usarIconoGrupal: false
         },
         'Centro de Idiomas': {
-            places: [{ name: 'C', coords: [700, 1595], icon: { iconUrl: 'image/pines/pin-ci.svg', color: 'amarillo' } }],
-            icon: { iconUrl: 'image/pines/pin-ci.svg', color: 'amarillo' },
+            places: [{ name: 'C', coords: [700, 1595], icon: { iconUrl: 'image/locations/CP/pines/pin-ci.svg', color: 'amarillo' } }],
+            icon: { iconUrl: 'image/locations/CP/pines/pin-ci.svg', color: 'amarillo' },
             usarIconoGrupal: false
         },
         'Edificio de Vinculacion': {
-            places: [{ name: 'CH', coords: [310, 1431], icon: { iconUrl: 'image/pines/pin-ev-ch.svg', color: 'verde-azul' }}],
-            icon: { iconUrl: 'image/pines/pin-ev.svg', color: 'verde-azul' },
+            places: [{ name: 'CH', coords: [310, 1431], icon: { iconUrl: 'image/locations/CP/pines/pin-ev-ch.svg', color: 'verde-azul' }}],
+            icon: { iconUrl: 'image/locations/CP/pines/pin-ev.svg', color: 'verde-azul' },
             usarIconoGrupal: false
         },
         'Facultad de Quimica': {
             places: [
-                { name: 'T', coords: [791, 1270], icon: { iconUrl: 'image/pines/pin-fq-t.svg', color: 'cafe' } },
-                { name: 'U', coords: [892, 1285], icon: { iconUrl: 'image/pines/pin-fq-u.svg', color: 'cafe' } },
-                { name: 'U-1', coords: [915, 1225], icon: { iconUrl: 'image/pines/pin-fq-u1.svg', color: 'cafe' } },
-                { name: 'V', coords: [878, 1330], icon: { iconUrl: 'image/pines/pin-fq-v.svg', color: 'cafe' } }
+                { name: 'T', coords: [791, 1270], icon: { iconUrl: 'image/locations/CP/pines/pin-fq-t.svg', color: 'cafe' } },
+                { name: 'U', coords: [892, 1285], icon: { iconUrl: 'image/locations/CP/pines/pin-fq-u.svg', color: 'cafe' } },
+                { name: 'U-1', coords: [915, 1225], icon: { iconUrl: 'image/locations/CP/pines/pin-fq-u1.svg', color: 'cafe' } },
+                { name: 'V', coords: [878, 1330], icon: { iconUrl: 'image/locations/CP/pines/pin-fq-v.svg', color: 'cafe' } }
             ],
-            icon: { iconUrl: 'image/pines/pin-fq.svg', color: 'cafe' },
+            icon: { iconUrl: 'image/locations/CP/pines/pin-fq.svg', color: 'cafe' },
             usarIconoGrupal: false
         },
         'Gimnasio Universitario y PE de LEFYD': {
-            places: [{ name: 'E', coords: [870, 783], icon: { iconUrl: 'image/pines/pin-gu.svg', color: 'naranja' } }],
-            icon: { iconUrl: 'image/pines/pin-gu.svg', color: 'naranja' },
+            places: [{ name: 'E', coords: [870, 783], icon: { iconUrl: 'image/locations/CP/pines/pin-gu.svg', color: 'naranja' } }],
+            icon: { iconUrl: 'image/locations/CP/pines/pin-gu.svg', color: 'naranja' },
             usarIconoGrupal: false
         },
         'Facultad de Derecho': {
-            places: [{ name: 'Z', coords: [890, 1500], icon: { iconUrl: 'image/pines/pin-fd-z.svg', color: 'durazno' } }],
-            icon: { iconUrl: 'image/pines/pin-fd.svg', color: 'durazno' },
+            places: [{ name: 'Z', coords: [890, 1500], icon: { iconUrl: 'image/locations/CP/pines/pin-fd-z.svg', color: 'durazno' } }],
+            icon: { iconUrl: 'image/locations/CP/pines/pin-fd.svg', color: 'durazno' },
             usarIconoGrupal: false
         },
         'Facultad de Ciencias Educativas': {
             places: [
-                { name: 'H', coords: [531, 1208], icon: { iconUrl: 'image/pines/pin-fce-h.svg', color: 'rosa-claro' } },
-                { name: 'I', coords: [550, 1173], icon: { iconUrl: 'image/pines/pin-fce-i.svg', color: 'rosa-claro' } },
-                { name: 'K', coords: [636, 1131], icon: { iconUrl: 'image/pines/pin-fce-k.svg', color: 'rosa-claro' } },
-                { name: 'O', coords: [705, 1092], icon: { iconUrl: 'image/pines/pin-fce-o.svg', color: 'rosa-claro' } },
-                { name: 'Q', coords: [660, 1216], icon: { iconUrl: 'image/pines/pin-fce-q.svg', color: 'rosa-claro' } },
+                { name: 'H', coords: [531, 1208], icon: { iconUrl: 'image/locations/CP/pines/pin-fce-h.svg', color: 'rosa-claro' } },
+                { name: 'I', coords: [550, 1173], icon: { iconUrl: 'image/locations/CP/pines/pin-fce-i.svg', color: 'rosa-claro' } },
+                { name: 'K', coords: [636, 1131], icon: { iconUrl: 'image/locations/CP/pines/pin-fce-k.svg', color: 'rosa-claro' } },
+                { name: 'O', coords: [705, 1092], icon: { iconUrl: 'image/locations/CP/pines/pin-fce-o.svg', color: 'rosa-claro' } },
+                { name: 'Q', coords: [660, 1216], icon: { iconUrl: 'image/locations/CP/pines/pin-fce-q.svg', color: 'rosa-claro' } },
 
             ],
-            icon: { iconUrl: 'image/pines/pin-fce.svg', color: 'rosa-claro' },
+            icon: { iconUrl: 'image/locations/CP/pines/pin-fce.svg', color: 'rosa-claro' },
             usarIconoGrupal: false
         },
         'Areas de Servicios':{
             places: [
-                { name: 'A_Rectoria', coords: [556, 575], icon: { iconUrl: 'image/pines/pin-rectoria-a.svg', color: 'rojo' }},
-                { name: 'W_Centro de Educacion Continua', coords: [894, 1371], icon: { iconUrl: 'image/pines/pin-cec-w.svg', color: 'morado' } },
-                { name: 'F-1_Edificio Cafeteria, Extension Universitaria', coords: [629, 1349], icon: { iconUrl: 'image/pines/pin-ec-f1.svg', color: 'rosa-oscuro' }},
-                { name: 'J_Coord. General de Obras y Baby Delfin', coords: [510, 1068], icon: { iconUrl: 'image/pines/pin-bd-j.svg', color: 'crema' }},
-                { name: 'B_Biblioteca Universitaria', coords: [595, 1622], icon: { iconUrl: 'image/pines/pin-biblioteca.svg', color: 'verde-oscuro' }},
-                { name: 'D_Aula Magna', coords: [810, 1415], icon: { iconUrl: 'image/pines/pin-am-d.svg', color: 'verde-claro' }},
-                { name: 'M_Soporte Tecnico', coords: [602, 1022], icon: { iconUrl: 'image/pines/pin-st-m.svg', color: 'azul-intenso' }},
-                { name: 'N_Redes y Patrimonio Universitario', coords: [520, 1004], icon: { iconUrl: 'image/pines/pin-rpu-n.svg', color: 'azul-intenso' }},
-                { name: 'P_Sala Audiovisual', coords: [705, 1184], icon: { iconUrl: 'image/pines/pin-sa-p.svg', color: 'azul-oscuro' } },
-                { name: 'G_Servicios Culturales', coords: [495, 1275], icon: { iconUrl: 'image/pines/pin-sc-g.svg', color: 'azul-oscuro' }},
-                { name: 'L', coords: [590, 1086], icon: { iconUrl: 'image/pines/pin-fcea-l.svg', color: 'azul-oscuro' } },
-                { name: 'Ñ_Sala de Usos Multiples, Fotocopiado', coords: [635, 1048], icon: { iconUrl: 'image/pines/pin-sum-ñ.svg', color: 'azul-oscuro' }},
-                { name: 'LL_Almacenes y Talleres', coords: [710, 985], icon: { iconUrl: 'image/pines/pin-at-ll.svg', color: 'azul-oscuro' }},
-                { name: 'ZB_Sutucar', coords: [750, 485], icon: { iconUrl: 'image/pines/pin-s-zb.svg', color: 'azul-oscuro' }},
-                { name: 'ZE_Sec. Academica', coords: [721, 468], icon: { iconUrl: 'image/pines/pin-sa-ze.svg', color: 'azul-oscuro' }},
-                { name: 'Residencia Universitaria', coords: [1028, 666], icon: { iconUrl: 'image/pines/pin-RU.svg', color: 'azul-oscuro' }},
-                { name: 'Z-1', coords: [650, 1667], icon: { iconUrl: 'image/pines/pin-Z1.svg', color: 'azul-oscuro' }},
-                { name: 'J-1', coords: [490, 1125], icon: { iconUrl: 'image/pines/pin-j1.svg', color: 'azul-oscuro' }}
+                { name: 'A_Rectoria', coords: [556, 575], icon: { iconUrl: 'image/locations/CP/pines/pin-rectoria-a.svg', color: 'rojo' }},
+                { name: 'W_Centro de Educacion Continua', coords: [894, 1371], icon: { iconUrl: 'image/locations/CP/pines/pin-cec-w.svg', color: 'morado' } },
+                { name: 'F-1_Edificio Cafeteria, Extension Universitaria', coords: [629, 1349], icon: { iconUrl: 'image/locations/CP/pines/pin-ec-f1.svg', color: 'rosa-oscuro' }},
+                { name: 'J_Coord. General de Obras y Baby Delfin', coords: [510, 1068], icon: { iconUrl: 'image/locations/CP/pines/pin-bd-j.svg', color: 'crema' }},
+                { name: 'B_Biblioteca Universitaria', coords: [595, 1622], icon: { iconUrl: 'image/locations/CP/pines/pin-biblioteca.svg', color: 'verde-oscuro' }},
+                { name: 'D_Aula Magna', coords: [810, 1415], icon: { iconUrl: 'image/locations/CP/pines/pin-am-d.svg', color: 'verde-claro' }},
+                { name: 'M_Soporte Tecnico', coords: [602, 1022], icon: { iconUrl: 'image/locations/CP/pines/pin-st-m.svg', color: 'azul-intenso' }},
+                { name: 'N_Redes y Patrimonio Universitario', coords: [520, 1004], icon: { iconUrl: 'image/locations/CP/pines/pin-rpu-n.svg', color: 'azul-intenso' }},
+                { name: 'P_Sala Audiovisual', coords: [705, 1184], icon: { iconUrl: 'image/locations/CP/pines/pin-sa-p.svg', color: 'azul-oscuro' } },
+                { name: 'G_Servicios Culturales', coords: [495, 1275], icon: { iconUrl: 'image/locations/CP/pines/pin-sc-g.svg', color: 'azul-oscuro' }},
+                { name: 'L', coords: [590, 1086], icon: { iconUrl: 'image/locations/CP/pines/pin-fcea-l.svg', color: 'azul-oscuro' } },
+                { name: 'Ñ_Sala de Usos Multiples, Fotocopiado', coords: [635, 1048], icon: { iconUrl: 'image/locations/CP/pines/pin-sum-ñ.svg', color: 'azul-oscuro' }},
+                { name: 'LL_Almacenes y Talleres', coords: [710, 985], icon: { iconUrl: 'image/locations/CP/pines/pin-at-ll.svg', color: 'azul-oscuro' }},
+                { name: 'ZB_Sutucar', coords: [750, 485], icon: { iconUrl: 'image/locations/CP/pines/pin-s-zb.svg', color: 'azul-oscuro' }},
+                { name: 'ZE_Sec. Academica', coords: [721, 468], icon: { iconUrl: 'image/locations/CP/pines/pin-sa-ze.svg', color: 'azul-oscuro' }},
+                { name: 'Residencia Universitaria', coords: [1028, 666], icon: { iconUrl: 'image/locations/CP/pines/pin-RU.svg', color: 'azul-oscuro' }},
+                { name: 'Z-1', coords: [650, 1667], icon: { iconUrl: 'image/locations/CP/pines/pin-Z1.svg', color: 'azul-oscuro' }},
+                { name: 'J-1', coords: [490, 1125], icon: { iconUrl: 'image/locations/CP/pines/pin-j1.svg', color: 'azul-oscuro' }}
             ],
-            icon: { iconUrl: 'image/pines/pin-sa.svg', color: 'azul-oscuro' },
+            icon: { iconUrl: 'image/locations/CP/pines/pin-sa.svg', color: 'azul-oscuro' },
             usarIconoGrupal: false
         },
         'Facultad de Ciencias Economicas Administrativas': {
             places: [
-                { name: 'R', coords: [650, 1273], icon: { iconUrl: 'image/pines/pin-fcea-r.svg', color: 'azul' } },
-                { name: 'S', coords: [760, 1333], icon: { iconUrl: 'image/pines/pin-fcea-s.svg', color: 'azul' } },
-                { name: 'X', coords: [910, 1414], icon: { iconUrl: 'image/pines/pin-fcea-x.svg', color: 'azul' }},
-                { name: 'Y', coords: [892, 1451], icon: { iconUrl: 'image/pines/pin-fcea-y.svg', color: 'azul' } }
+                { name: 'R', coords: [650, 1273], icon: { iconUrl: 'image/locations/CP/pines/pin-fcea-r.svg', color: 'azul' } },
+                { name: 'S', coords: [760, 1333], icon: { iconUrl: 'image/locations/CP/pines/pin-fcea-s.svg', color: 'azul' } },
+                { name: 'X', coords: [910, 1414], icon: { iconUrl: 'image/locations/CP/pines/pin-fcea-x.svg', color: 'azul' }},
+                { name: 'Y', coords: [892, 1451], icon: { iconUrl: 'image/locations/CP/pines/pin-fcea-y.svg', color: 'azul' } }
             ],
-            icon: { iconUrl: 'image/pines/pin-fcea.svg', color: 'azul' },
+            icon: { iconUrl: 'image/locations/CP/pines/pin-fcea.svg', color: 'azul' },
             usarIconoGrupal: false
         },
     };

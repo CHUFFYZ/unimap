@@ -1,0 +1,182 @@
+/*#level-menu {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+    text-align: center;
+}*/
+#level-menu {
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: hsl(0, 0%, 100%);
+    padding: .5rem .5rem;
+    border: 1px solid #586172;
+    background-color: #4a5366;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 1000;
+    text-align: center;
+}
+.explore-levels{
+    position: relative;
+    font-size: .8rem;
+    line-height: .16rem;
+    /*color: hsla(0, 0%, 100%, .65);*/
+    color: hsl(0, 0%, 100%);
+    padding: .5rem 1rem;
+    border: 1px solid #586172;
+    background-color: #4a5366;
+    border-radius: 50px;
+    width: -webkit-fit-content;
+    width: fit-content;
+    width: -moz-fit-content;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#level-menu button {
+    display: block;
+    margin: 5px 0;
+    padding: 5px 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #3b4252;
+    color: #757c8b;
+}
+
+#level-menu .close-levels {
+    margin-top: 10px;
+    padding: 5px 5px;
+    background-color: #f44336;
+    color: white;
+    border: 1px solid #58617200;
+    cursor: pointer;
+}
+
+#not-available-popup, #campus-selection-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    text-align: center;
+}
+
+#not-available-popup #close-not-available, #campus-selection-popup #close-selection {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#not-available-popup #accept-btn, #campus-selection-popup #accept-selection-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#not-available-popup #accept-btn:hover, #campus-selection-popup #accept-selection-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+#campus-selection-popup button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#campus-selection-popup #campus1-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#campus-selection-popup #campus2-btn, 
+#campus-selection-popup #campus3-btn, 
+#campus-selection-popup #jardin-btn, 
+#campus-selection-popup #ccu-btn, 
+#campus-selection-popup #museo-btn, 
+#campus-selection-popup #sabancuy-btn {
+    background-color: #ccc;
+    color: #666;
+}
+
+#campus-selection-popup #cancel-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+#location-details .explore-levels i {
+    margin-right: 5px;
+}
+
+#location-details .go-to-map, #osm-location-details .go-to-map {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.leaflet-control-geolocation.active {
+    background-color: #1E90FF;
+}
+/*----------------------------------------*/
+.marker-blue {
+    border-color: #0040c9; /* Color para Campus Principal */
+    /* Opcional: background-color, border, etc. */
+}
+.marker-green {
+    border-color: #00ff00; /* Color para Campus 2 */
+}
+.marker-red {
+    border-color: #ff0000; /* Color para Campus 3 */
+}
+.marker-purple {
+    border-color: #800080; /* Color para Jardín Botánico */
+}
+.marker-orange {
+    border-color: #ff6829; /* Color para Centro Cultural Universitario */
+}
+.marker-yellow {
+    border-color: #f8da00; /* Color para Museo Guanal */
+}
+.marker-cyan {
+    border-color: #00ccff; /* Color para Campus Sabancuy */
+}
+.marker-gris {
+    border-color: #7a7a7a; /* Color para Campus Sabancuy */
+}
+
+
+.osm-location-link {
+    text-decoration: none;
+}
+/* Repite para cada color */

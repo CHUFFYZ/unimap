@@ -111,6 +111,15 @@ p {
     cursor: pointer;
     margin-top: 10px;
 }
+.step-image a{
+    max-width: 48%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
 .step-image-n {
     max-width: 20%;
     height: 50px;

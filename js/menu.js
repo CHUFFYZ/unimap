@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!clickedInsideMenu && !clickedOnToggle && !clickedOnToggleChild) {
             closeMenu(currentMenu);
         }
-    });
+    }); 
 
     // Cerrar menús al redimensionar
     window.addEventListener('resize', function() {

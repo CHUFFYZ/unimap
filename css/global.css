@@ -71,10 +71,12 @@
 
 /* Estilo general para los controles */
 .pnlm-controls {
-    background-color: rgba(0, 0, 128, 0) !important;
-    border-color: rgba(255, 0, 255, 0) !important;
+    background-color: rgba(0, 0, 128, 0);
+    border-color: rgba(255, 0, 255, 0);
 }
-
+.pnlm-container * {
+    box-sizing: content-box; 
+}
 /* Botones de zoom */
 .pnlm-zoom-in {
     width: 30px !important;

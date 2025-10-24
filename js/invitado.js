@@ -11,5 +11,5 @@ function toggleGuestMode() {
   
   function redirectToGuest() {
     // Redirige a la página para invitados
-    window.location.href = "../../index.html";
+    window.location.href = "../../index.php";
   }

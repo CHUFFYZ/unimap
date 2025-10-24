@@ -1,0 +1,85 @@
+#routes-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    max-width: 300px;
+}
+#routes-popup h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+#routes-popup #close-routes-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.route-item {
+    padding: 8px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+.route-item:hover {
+    background: #f0f0f0;
+}
+.route-checkmark {
+    margin-right: 8px;
+}
+
+
+#routes-menu {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    padding: 10px;
+    z-index: 1000;
+    width: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    font-family: Arial, sans-serif;
+}
+
+#routes-menu h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#close-routes-menu {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+}
+
+.route-item {
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+.route-item:hover {
+    background-color: #f0f0f0;
+}
+
+.route-checkmark {
+    margin-right: 5px;
+}
+
+.route-name {
+    font-size: 14px;
+}
