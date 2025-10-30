@@ -21,7 +21,7 @@ const campuses = {
         geojson: '../../../data/campus2_buildings.json',
         center: [700, 1200], // [lat, lng]
         zoom: 0, // Zoom inicial
-        description: 'cetis el mejor',
+        description: 'Campus 2',
         photos: [
             { url: '../../../image/locations/C2/galeria/campus/1.jpg', isPanoramic: false },
             { url: '../../../image/locations/C2/galeria/campus/1d.jpg', isPanoramic: true },
@@ -126,7 +126,10 @@ const locations = {
                     { url: '../../../image/locations/CP/galeria/C-1/EDIFICIO.webp', isPanoramic: false },
                     { url: '../../../image/locations/CP/galeria/C-1/EDIFICIO1.webp', isPanoramic: false }
                 ],
-                comments: 'Este edificio es la planta principal de la Facultad de Ciencias de la Información, fundada en 1980. Es conocido por su biblioteca especializada y laboratorios de computación.',
+                comments: [
+                    'Este edificio es la planta principal de la Facultad de Ciencias de la Información, fundada en 1980.',
+                    'Es conocido por su biblioteca especializada y laboratorios de computación.'
+                ],
                 floors: 4,
                 hasLevelExploration: true
             }],
@@ -142,7 +145,8 @@ const locations = {
                     { url: '../../../image/locations/CP/galeria/ci/2.webp', isPanoramic: false }
                 ],
                 comments: [
-                    'El Centro de Idiomas de la UNACAR ofrece programas de enseñanza de inglés y francés, tanto para estudiantes universitarios como para el público en general. Su objetivo es fortalecer las competencias lingüísticas de los alumnos.',
+                    'El Centro de Idiomas de la UNACAR ofrece programas de enseñanza de inglés y francés, tanto para estudiantes universitarios como para el público en general.',
+                    'Su objetivo es fortalecer las competencias lingüísticas de los alumnos.',
                     'Oferta educativa:',
                     '*Inglés: 4 niveles para licenciatura.',
                     '*Francés: Cursos optativos y especializados para propósitos académicos.',
@@ -218,7 +222,18 @@ const locations = {
                 { name: 'W_Centro de Educación Continua', coords: [894, 1371], icon: { iconUrl: '../../../image/locations/CP/pines/pin-cec-w.svg', color: 'morado' }, comments: ['Edificio de Servicios W'], floors: 1, hasLevelExploration: false },
                 { name: 'F-1_Edificio Cafetería, Extensión Universitaria', coords: [629, 1349], icon: { iconUrl: '../../../image/locations/CP/pines/pin-ec-f1.svg', color: 'rosa-oscuro' }, comments: ['Edificio de Servicios F-1'], floors: 3, hasLevelExploration: false },
                 { name: 'J_Coord. General de Obras y Baby Delfín', coords: [510, 1068], icon: { iconUrl: '../../../image/locations/CP/pines/pin-bd-j.svg', color: 'crema' }, comments: ['Edificio de Servicios J'], floors: 2, hasLevelExploration: false },
-                { name: 'B_Biblioteca Universitaria', coords: [595, 1622], icon: { iconUrl: '../../../image/locations/CP/pines/pin-biblioteca.svg', color: 'verde-oscuro' }, comments: ['Edificio de Servicios B'], floors: 4, hasLevelExploration: false },
+                { name: 'B_Biblioteca Universitaria', coords: [595, 1622], icon: { iconUrl: '../../../image/locations/CP/pines/pin-biblioteca.svg', color: 'verde-oscuro' }, 
+                comments: [
+                    'Biblioteca Central',
+                    'Función Principal: Coordina el Sistema Bibliotecario completo y centraliza la administración, normatividad y tecnología para fortalecer el modelo educativo.',
+                    'Servicios Destacados: Acceso a Catálogos, Bases de Datos (incluyendo recursos de CONRICyT), Colecciones de ebooks y revistas, y Recursos Abiertos.',
+                    '<a href="https://unacar.mx/biblioteca">Visita el sitio web de la biblioteca</a>',
+                    'Calidad: Sus procesos están certificados bajo la norma ISO 9001:2008 en las áreas de organización bibliográfica y servicios al público.',
+                    'Contacto (Central): Dirección de Bibliotecas (Mtro. William Benítez Mateo): wbenitez@delfin.unacar.mx.',
+                    'Teléfono (Atención al Público): 938 38 11018, Ext. 1509 y 1517.',
+                    'Teléfono (Jefe de Biblioteca – Campus Principal): 938 38 11018, Ext. 1509.',
+                    'Misión: Satisfacer las necesidades de aprendizaje, conocimiento e información de los universitarios por medio de los servicios bibliotecarios y colecciones documentales'
+                ], floors: 4, hasLevelExploration: false },
                 { name: 'D_Aula Magna', coords: [810, 1415], icon: { iconUrl: '../../../image/locations/CP/pines/pin-am-d.svg', color: 'verde-claro' }, comments: ['Edificio de Servicios D'], floors: 1, hasLevelExploration: false },
                 { name: 'M_Soporte Técnico', coords: [602, 1022], icon: { iconUrl: '../../../image/locations/CP/pines/pin-st-m.svg', color: 'azul-intenso' }, comments: ['Edificio de Servicios M'], floors: 2, hasLevelExploration: false },
                 { name: 'N_Redes y Patrimonio Universitario', coords: [520, 1004], icon: { iconUrl: '../../../image/locations/CP/pines/pin-rpu-n.svg', color: 'azul-oscuro' }, comments: ['Edificio de Servicios N'], floors: 3, hasLevelExploration: false },

@@ -253,6 +253,7 @@ function showLocationDetails(building, placeName, faculty, photos, comments, cam
         </div>
         <div class="faculty">${faculty}</div>
         <div class="photos">${photoHTML}</div>
+        <div class="derechos">Algunas imagenes pudieron ser obtenias de Google Maps</div>
         <div class="comments">${commentsHTML}</div>
     `;
     if (showGoButton) {
@@ -411,17 +412,19 @@ function showOSMLocationDetails(building, placeName, faculty, photos, comments, 
             .join('')
         : '<p>Imágenes y videos muy pronto.</p>';
     const commentsHTML = safeComments.map(comment => `<p>${comment}</p>`).join('');
-    let innerHTML = `
-        <span class="close-btn">×</span>
-        <h2>Zona: ${placeName}</h2>
-        <div class="faculty">${faculty}</div>
-        <div class="photos">${photoHTML}</div>
-        <div class="derechos">Imagenes obtenidas de Google Maps</div>
-        <div class="comments">${commentsHTML}</div>
-    `;
-    if (showGoButton) {
-        innerHTML += `<button class="go-to-map">Ir al mapa</button>`;
-    }
+    let derechosHTML = 'Imagenes obtenidas de Google Maps';
+if (showGoButton) {
+    derechosHTML += ` <button class="go-to-map">Ir al mapa</button>`;
+}
+
+let innerHTML = `
+    <span class="close-btn">×</span>
+    <h2>Zona: ${placeName}</h2>
+    <div class="faculty">${faculty}</div>
+    <div class="photos">${photoHTML}</div>
+    <div class="derechos">${derechosHTML}</div>
+    <div class="comments">${commentsHTML}</div>
+`;
     detailsPanel.innerHTML = innerHTML;
     detailsPanel.classList.add('visible');
     history.pushState({ popup: 'osm-location-details' }, null, '');

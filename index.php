@@ -96,7 +96,7 @@ if (!empty($_SESSION)) {
             </div>
         <div class="unimap">
             <div class="containerlogo">
-                <a id="logoweb" class="fl" href="index.html"><img src="image/iconos/logo/unimap.webp" alt="LogoUnimap"></a>
+                <a id="logoweb" class="fl" href="index.php"><img src="image/iconos/logo/unimap.webp" alt="LogoUnimap"></a>
             </div>
             <div class="MensajeUNIMAP">
                 <div id="nombrelogo">
