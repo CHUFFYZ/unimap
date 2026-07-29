@@ -1,0 +1,381 @@
+/*Fuente Principal*/
+/*Body es el elemento que se llama para enlazarlo con html a css*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #0040c9;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all .3s;
+}
+
+/* Elementos de encabezados */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #464646;
+}
+
+h1 {
+    font-size: 50px;
+    color:#000000;
+}
+
+h2 {
+    font-size: 44px;
+    color: rgb(224, 228, 5);
+    
+    /*text-shadow: 
+        2px 2px 0 white,   /* Sombra diagonal abajo derecha */
+       /* -2px -2px 0 white, /* Sombra diagonal arriba izquierda */
+        /*-2px 2px 0 white,  /* Sombra diagonal abajo izquierda */
+       /* 2px -2px 0 white,  /* Sombra diagonal arriba derecha */
+        /*2px 0 0 white,     /* Sombra a la derecha */
+        /*-2px 0 0 white,    /* Sombra a la izquierda */
+        /*0 2px 0 white,     /* Sombra abajo */
+        /*0 -2px 0 white;    /* Sombra arriba */
+}
+
+h4 {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+}
+
+p, h4 {
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Se elimina el margen por predeterminado del párrafo debajo del título */
+p, h2 {
+    margin: 0;
+}
+
+body {
+    background: url('../image/fondo.webp') no-repeat center center fixed;
+    object-position: 50%;/*cambia la posicion fija de la img*/
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    z-index: -99;
+}
+/*----------------------------------------*/
+.error-message {
+    color: #dc3545;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    background: #f8d7da;
+}
+
+.success-message {
+    color: #28a745;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    background: #d4edda;
+}
+.supercontainer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    left: 5px;
+    right: 5px;
+    height: 95px;
+    top: 5px;
+    /*background-color: rgb(131, 126, 126);*/
+    background-color:rgb(0, 51, 102);
+    background: linear-gradient(135deg, rgb(20, 106, 192)  0%, rgb(0, 51, 102) 100%);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.containerlogo {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 2px;
+    z-index: 1;
+}
+
+#logoweb img {
+    width: 100%;
+    margin-left: 4px;
+    height: auto;
+    transition: transform 0.3s ease;
+    /*background-color: rgb(131, 126, 126);*/
+}
+#logoweb img:hover{
+    transform: scale(1.2);
+}
+
+
+.MensajeUNIMAP {
+    width: auto;
+    height: 80px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#nombrelogo {
+    width: 100%;
+    height: auto;
+}
+/*-----------------------------*/
+.back-button {
+position: absolute;
+top: 115px;
+right: 20px;
+background-color: rgba(0, 0, 0, 0.342); /* Fondo blanco semi-transparente */
+color: white; /* El texto se mantiene blanco */
+border: 2px solid rgba(255, 255, 255, 0.4); /* Borde más visible */
+padding: 10px 20px;
+font-size: 1rem;
+border-radius: 25px;
+cursor: pointer;
+transition: background-color 0.3s ease, border 0.3s ease;
+z-index: 999;
+backdrop-filter: blur(10px); /* Añadimos el efecto de desenfoque de fondo */
+}
+
+.back-button:hover {
+background-color: #d40700;
+border: 2px solid #8e6ee3;
+color: white;
+}
+
+.recovery-container {
+    top: 155px;
+    background: rgba(255, 255, 255, 0.76);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: auto;
+    left: auto;
+    right: auto;
+    max-width: 500px;
+    position: absolute;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #1e3c72;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1e3c72;
+    box-shadow: 0 0 8px rgba(30, 60, 114, 0.2);
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.accept-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.accept-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.cancel-btn {
+    background: #f44336;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #da190b;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .recovery-container {
+        padding: 30px;
+    }
+    
+    h1 {
+        font-size: 1.75em;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    input, button {
+        padding: 15px;
+    }
+    .back-button {
+        font-size: 1em;
+        top: 120px;
+        right: 15px;
+    }
+
+    .containerlogo {
+        width: 40px;
+        height: 40px;
+        margin: 2px;
+        margin-left: 10px;
+    }
+    #logoweb img{
+        margin-left: 0;
+    }
+    
+    
+    .MensajeUNIMAP {
+        height: 50px;
+        margin-left: 10px;
+    }
+    
+    #nombrelogo {
+        width: 100%;
+        height: auto;
+    }
+    #nombrelogo h2{
+        font-size: 35px;
+
+    }
+    #nombrelogo h4{
+        font-size: 13px;
+        margin-top: -5px;
+    }
+        
+    .supercontainer {
+        height: 70px;
+    }
+    .back-button {
+        top: 105px;
+        right: 20px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .recovery-container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .back-button {
+        font-size: 1em;
+        top: 120px;
+        right: 15px;
+    }
+
+    .containerlogo {
+        width: 40px;
+        height: 40px;
+        margin: 2px;
+        margin-left: 10px;
+    }
+    #logoweb img{
+        margin-left: 0;
+    }
+    
+    
+    .MensajeUNIMAP {
+        height: 50px;
+        margin-left: 10px;
+    }
+    
+    #nombrelogo {
+        width: 100%;
+        height: auto;
+    }
+    #nombrelogo h2{
+        font-size: 35px;
+
+    }
+    #nombrelogo h4{
+        font-size: 13px;
+        margin-top: -5px;
+    }
+        
+    .supercontainer {
+        height: 70px;
+    }
+    .back-button {
+        top: 105px;
+        right: 20px;
+    }
+    
+    
+}

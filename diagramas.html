@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unimap - Diagramas de Flujo de Datos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad: true});</script>
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #003087; /* Azul UNACAR */
+    color: white;
+    text-align: center;
+    padding: 2em;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #003087;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.mermaid {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #003087;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    header p {
+        font-size: 1em;
+    }
+    
+    section {
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+}
+</style>
+<body>
+    <!--<header>
+        <h1>Unimap - Diagramas de Flujo de Datos</h1>
+        <p>Visualización de los procesos del sistema interactivo para la UNACAR</p>
+    </header>-->
+    <main>
+        <section>
+            <h2>Nivel 0: Contexto</h2>
+            <div class="mermaid">
+                graph TD
+                    A[Invitado] --> |Consulta Mapa| SistemaUnimap((Sistema Unimap))
+                    B[Alumno] --> |Búsqueda y Acceso| SistemaUnimap
+                    C[Profesor] --> |Consulta Mapa| SistemaUnimap
+                    D[Administrativo] --> |Gestión Datos| SistemaUnimap
+                    SistemaUnimap --> |Mapa y Datos| A
+                    SistemaUnimap --> |Mapa y Cuenta| B
+                    SistemaUnimap --> |Mapa e Info| C
+                    SistemaUnimap --> |Reportes| D
+            </div>
+        </section>
+        <section>
+            <h2>Nivel 1: Módulos Principales</h2>
+            <div class="mermaid">
+                graph TD
+    A[Invitado] --> |Consulta Mapa| M1((1.0 Gestión Usuarios))
+    B[Alumno] --> |Registro/Inicio| M1
+    C[Profesor] --> |Inicio Sesión| M1
+    D[Administrativo] --> |Gestión Usuarios| M1
+    A --> |Navegación Básica| M2((2.0 Navegación Mapa))
+    B --> |Búsqueda/Calificar| M2
+    C --> |Consulta| M2
+    D --> |Edición Mapa| M2
+    B --> |Consulta Cubículos/AFIS| M3((3.0 Consulta Datos))
+    C --> |Consulta AFIS| M3
+    D --> |Gestión AFIS| M3
+    B --> |Queja Anónima| M4((4.0 Buzón Quejas))
+    D --> |Consultar/Eliminar Quejas| M4
+    D --> |Actualizar Eventos/Facultades| M5((5.0 Administración))
+    M1 --> |Datos Usuarios| DB1[(BD Usuarios)]
+    M2 --> |Datos Mapa| DB2[(BD Mapa)]
+    M3 --> |Datos AFIS| DB3[(BD AFIS)]
+    M4 --> |Quejas| DB4[(BD Quejas)]
+    M5 --> |Datos Admin| DB5[(BD Facultades)]
+    M1 --> |Acceso| A
+    M1 --> |Acceso| B
+    M1 --> |Acceso| C
+    M1 --> |Acceso| D
+    M2 --> |Mapa| A
+    M2 --> |Mapa| B
+    M2 --> |Mapa| C
+    M2 --> |Mapa Actualizado| D
+    M3 --> |Info| B
+    M3 --> |Info| C
+    M3 --> |Reportes| D
+    M4 --> |Confirmación| B
+    M4 --> |Reportes| D
+    M5 --> |Actualizaciones| D
+            </div>
+        </section>
+        <section>
+            <h2>Nivel 2: Gestión de Usuarios</h2>
+            <div class="mermaid">
+                graph TD
+                    B[Alumno] --> |Matrícula, Nombre, etc.| S1((1.1 Registrar Usuario))
+                    C[Profesor] --> |Matrícula, Nombre, etc.| S1
+                    D[Administrativo] --> |Matrícula, Nombre, etc.| S1
+                    B --> |Matrícula, Contraseña| S2((1.2 Validar Inicio))
+                    C --> |Matrícula, Contraseña| S2
+                    D --> |Matrícula, Contraseña| S2
+                    B --> |Solicitud de Reinicio| S3((1.3 Recuperar Contraseña))
+                    C --> |Solicitud de Reinicio| S3
+                    D --> |Solicitud de Reinicio| S3
+                    S1 --> |Datos Validados| DB1[(BD Usuarios)]
+                    S2 --> |Credenciales Validadas| DB1
+                    S3 --> |Token de Reinicio| DB1
+                    S1 --> |Confirmación de Registro| B
+                    S1 --> |Confirmación de Registro| C
+                    S1 --> |Confirmación de Registro| D
+                    S2 --> |Acceso a Dashboard| B
+                    S2 --> |Acceso a Dashboard| C
+                    S2 --> |Acceso a Dashboard| D
+                    S3 --> |Token Enviado| B
+                    S3 --> |Token Enviado| C
+                    S3 --> |Token Enviado| D
+            </div>
+        </section>
+        <section>
+            <h2>Nivel 2: Navegación Mapa</h2>
+            <div class="mermaid">
+                graph TD
+                    A[Invitado] --> |Búsqueda/Zoom| S1((2.1 Cargar Mapa Vectorial))
+                    B[Alumno] --> |Búsqueda/Calificar| S1
+                    C[Profesor] --> |Consulta| S1
+                    D[Administrativo] --> |Edición| S1
+                    S1 --> |Capas| S2((2.2 Superponer Capas))
+                    S2 --> |Info| S3((2.3 Mostrar Popups/Vistas 360°))
+                    S3 --> |Reset| S4((2.4 Reset Zoom Inicial))
+                    S1 --> |Datos Mapa| DB2[(BD Mapa)]
+                    S2 --> |Edificios/Rutas| DB2
+                    S3 --> |Descripciones| DB2
+                    S4 --> |Mapa Básico| A
+                    S4 --> |Mapa con Calificación| B
+                    S4 --> |Mapa Consulta| C
+                    S4 --> |Mapa Editado| D
+            </div>
+        </section>
+        <section>
+            <h2>Nivel 2: Consulta de Cubículos y Eventos AFIS</h2>
+            <div class="mermaid">
+                graph TD
+                    B[Alumno] --> |Búsqueda Profesor/Salón/Calificar| S1((3.1 Buscar Cubículo/Salón))
+                    C[Profesor] --> |Consulta| S1
+                    D[Administrativo] --> |Gestión AFIS| S1
+                    B --> |Nomenclatura| S2((3.2 Filtrar por Nomenclatura))
+                    C --> |Filtro| S2
+                    D --> |Filtro| S2
+                    B --> |Fecha Evento| S3((3.3 Mostrar Calendario Mensual))
+                    C --> |Calendario| S3
+                    D --> |Calendario| S3
+                    B --> |Info Facultad| S4((3.4 Detallar Facultad/Carrera))
+                    C --> |Detalles| S4
+                    D --> |Detalles| S4
+                    S1 --> |Datos Cubículo| DB3[(BD AFIS)]
+                    S2 --> |Filtro| DB3
+                    S3 --> |Calendario| DB3
+                    S4 --> |Detalles| DB5[(BD Facultades)]
+                    S4 --> |Info con Calificación| B
+                    S4 --> |Info| C
+                    S4 --> |Reportes Gestión| D
+            </div>
+        </section>
+        <section>
+            <h2>Nivel 2: Buzón de Quejas Anónimo</h2>
+            <div class="mermaid">
+                graph TD
+                    B[Alumno] --> |Texto Queja| S1((4.1 Registrar Mensaje))
+                    S1 --> |Mensaje| S2((4.2 Enviar Notificación))
+                    S2 --> |Reporte| S3((4.3 Generar Reporte))
+                    S1 --> |Queja| DB4[(BD Quejas)]
+                    S3 --> |Reporte| DB4
+                    S2 --> |Confirmación| B
+                    S3 --> |Reporte/Eliminar| D[Administrativo]
+            </div>
+        </section>
+        <section>
+            <h2>Nivel 2: Administración</h2>
+            <div class="mermaid">
+                graph TD
+                    D[Administrativo] --> |Eventos AFIS| S1((5.1 Actualizar Eventos AFIS))
+                    D --> |Info Facultades| S2((5.2 Editar Info Facultades))
+                    D --> |Puntos Seguridad| S3((5.3 Agregar Puntos Seguridad))
+                    D --> |Evaluaciones| S4((5.4 Evaluar Profesores))
+                    S1 --> |Eventos| DB3[(BD AFIS)]
+                    S2 --> |Detalles| DB5[(BD Facultades)]
+                    S3 --> |Puntos| DB3
+                    S4 --> |Evaluaciones| DB3
+                    S4 --> |Reporte Actualizaciones| D
+            </div>
+        </section>
+        <section>
+            <h2>Nivel 3: Actualizar Eventos AFIS</h2>
+            <div class="mermaid">
+                graph TD 
+                D[Administrativo] --> |Día, Descripción, etc.| S1((5.1.1 Validar Datos)) 
+                S1 --> |Datos Validados| S2((5.1.2 Guardar en BD)) 
+                S2 --> |Evento Guardado| S3((5.1.3 Generar Reporte)) 
+                S2 --> |Evento| DB3[(BD AFIS)] 
+                S3 --> |Reporte Actualización| D 
+                S2 --> |Confirmación| D
+            </div>
+        </section>
+    </main>
+    <!--<footer>
+        <p>Desarrollado por Carlos Alberto Guerra Rodríguez y Alan Bracamontes de la Cruz - ExpoCiencias Campeche 2025</p>
+    </footer>-->
+</body>
+</html>
